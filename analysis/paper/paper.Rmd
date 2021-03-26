@@ -48,9 +48,20 @@ library(factoextra)
 
 ```{r get-data, eval = TRUE}
 sites <- read.csv(here::here('analysis/data/raw_data/Roalkvam_DialPast_March2021_data.csv'))
+
 ```
 
 ```{r wrangling}
+sites <- sites %>% 
+      # Find mean age for each site (to be used in the plot below)
+  rowwise() %>% 
+  mutate(mean_date = mean(c(reported_start_bp, reported_end_bp)),
+         .keep = "unused") %>% 
+  mutate(
+    artefact_count = sum(c_across(core:flake_retouch_other))) %>% 
+  filter(artefact_count > 100)
+  
+
 lithics <- sites %>%
   # Combine flint projectiles into a single variable
   mutate(
@@ -64,31 +75,26 @@ lithics <- sites %>%
       microblade_retouch_other + blade_retouch_other + fragment_retouch_other +
       flake_retouch_other,
     .keep = "unused") %>%
-    # Find mean age for each site (to be used in the plot below)
-  rowwise() %>% 
-  mutate(
-    mean_date = mean(c(reported_start_bp, reported_end_bp)),
-    .keep = "unused") %>% 
-  ungroup() %>% 
   # Make site names the rownames
   column_to_rownames(var = "site") %>% 
   # Deselect a few of the columns not be used
   select(-one_of(c("n", "excavation_project", "excavated_m3")))
 ```
 
-```{r cor, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 7, fig.width = 10}
+```{r cor, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 5, fig.width = 10}
 # Perform correspondence analysis on the data. 'mean_age' is meant for colouring
 # so is excluded here
 calithics <- CA(select(lithics, -mean_date), graph = FALSE)
 
 # Find date to hold the central tendency date
-centdate <- mean(lithics$mean_date)
+centdate <- mean(lithics$mean_date) / 1000
 
 # Call to plot
-fviz_ca_row(calithics, col.row = lithics$mean_date, title = "",
+fviz_ca_row(calithics, col.row = lithics$mean_date / 1000, title = "",
                      repel = TRUE) +
   scale_color_gradient2(name = "Years cal. BP", low="blue", mid="yellow", 
-                        high="red", midpoint = centdate)
+                        high="red", midpoint = centdate) +
+  theme(legend.position = "bottom")
 
 fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "") 
 
@@ -99,7 +105,7 @@ Figure \@ref(fig:cor) displays a correspondence analysis using the lithic count 
 ```{r pcadata}
 # Tried to do this to avoid having to type the variable names into both mutate()
 # and select(). The general syntax select(-(vector_of_variable_names)) worked,
-# but not: mutate(new_varaible = artefact_count / sum(vector_of_variable_names))
+# but not: mutate(new_varaible = sum(vector_of_variable_names) / artefact_count)
 primary_lithics <- c("core", "core_fragment", "blade", "microblade", "chip",
                      "fragment", "flake", "flake_other", "fragment_other", 
                      "chip_other", "blade_other",  "microblade_other", 
@@ -116,15 +122,6 @@ secondary_lithics <- c("axe_debitage", "axe", "chisel", "microlith",
 
 lithics2 <- sites %>% 
   select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project) %>% 
-  rowwise() %>% 
-  # Create a new column with mutate() called "artefact_count" which is to hold 
-  # the sum() of the artefact columns for each row. 
-  mutate(
-    artefact_count = sum(c_across(core:flake_retouch_other))) %>% 
-  mutate(
-    mean_date = mean(c(reported_start_bp, reported_end_bp)),
-    .keep = "unused") %>% 
-  ungroup() %>% 
   # The reason for not using .keep below is for the option to retain artefact_count
   mutate(chip_freq =  sum(chip, chip_other) / artefact_count,
          core_freq = sum(core, core_other) / artefact_count,
@@ -149,9 +146,10 @@ lithics2 <- sites %>%
 
 ```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
 pcalithics <- PCA(select(lithics2, -mean_date), scale.unit = TRUE, graph = FALSE)
-fviz_pca(pcalithics, col.ind = lithics2$mean_date, col.var = "black", 
+fviz_pca(pcalithics, col.ind = lithics2$mean_date / 1000, col.var = "black", 
          repel = TRUE) +  scale_color_gradient2(name = "Years cal. BP", 
-         low="blue", mid="yellow", high="red", midpoint = centdate)
+         low="blue", mid="yellow", high="red", midpoint = centdate) +
+  theme(legend.position = "bottom")
 
 ```
 
