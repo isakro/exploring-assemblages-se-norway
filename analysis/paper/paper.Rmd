@@ -1,17 +1,12 @@
 ---
-title: "Title Goes Here"
+title: "Exploring the composition of lithic assemblages in Mesolithic south-eastern Norway"
 author:
-  - Myfirstname Mylastname:
-      email: fl@oneplace.edu
-      institute: [UofO]
+  - Isak Roalkvam:
+      email: isak.roalkvam@iakh.uio.no
+      institute: [UiO]
       correspondence: true
-  - Yourfirstname Yourlastname:
-      email: fl@another.edu
-      institute: [UofA]
-      correspondence: false
 institute:
-  - UofO: University of One Place
-  - UofA: University of Another Place
+  - UiO: University of Oslo
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
@@ -23,21 +18,9 @@ output:
       - --lua-filter=../templates/pagebreak.lua
 bibliography: references.bib
 csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
-abstract: |
-  Text of abstract
-keywords: |
-  keyword 1; keyword 2; keyword 3
-highlights: |
-  These are the highlights. 
 ---
 
 <!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
-
-<!-- With the following code you can access and display values from the yml header above. -->
-
-Keywords: `r rmarkdown::metadata$keywords`
-
-Highlights: `r rmarkdown::metadata$highlights`
 
 <!-- The following code chunk defines some general settings how code chunks should behave. -->
 
@@ -53,42 +36,126 @@ knitr::opts_chunk$set(
 )
 ```
 
-<!-- The actual document text starts here: -->
-
-# Introduction
-
-Here is a citation [@Marwick2017]
-
-# Background
-
-# Methods
-
-# Results
+```{r libraries, eval = TRUE}
+library(tidyverse)
+library(FactoMineR)
+library(factoextra)
+library(patchwork)
+```
 
 <!-- Here's some example analysis code: -->
 
-```{r get-data, eval = FALSE}
-# Note the path that we need to use to access our data files when rendering this document
-my_data <- read.csv(here::here('analysis/data/raw_data/my_csv_file.csv'))
+# Plots
+
+```{r get-data, eval = TRUE}
+sites <- read.csv(here::here('analysis/data/raw_data/Roalkvam_DialPast_March2021_data.csv'))
 ```
 
-```{r demo-plot, fig.cap="A plot of random numbers"}
-plot(rnorm(10))
+```{r wrangling}
+lithics <- sites %>%
+  # Combine flint projectiles into a single variable
+  mutate(
+    projectile = microlith + tanged_point + transverse_point + 
+    single_edged_point + hognipen_point + projectile_undefined,
+    small_tool = scraper + knife + burin + drill + blade_retouch + 
+      microblade_retouch + chip_retouch + fragment_retouch + flake_retouch,
+    macro_tool = axe + chisel, 
+    macro_tool_other = axe_other + chisel_other + club_hatchet_other,
+    small_tool_other = knife_other + scraper_other + drill_other + 
+      microblade_retouch_other + blade_retouch_other + fragment_retouch_other +
+      flake_retouch_other,
+    .keep = "unused") %>%
+    # Find mean age for each site (to be used in the plot below)
+  rowwise() %>% 
+  mutate(
+    mean_date = mean(c(reported_start_bp, reported_end_bp)),
+    .keep = "unused") %>% 
+  ungroup() %>% 
+  # Make site names the rownames
+  column_to_rownames(var = "site") %>% 
+  # Deselect a few of the columns not be used
+  select(-one_of(c("n", "excavation_project", "excavated_m3")))
 ```
 
-Figure \@ref(fig:demo-plot) shows how we can have a caption and cross-reference for a plot
+```{r cor, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 7, fig.width = 10}
+# Perform correspondence analysis on the data. 'mean_age' is meant for colouring
+# so is excluded here
+calithics <- CA(select(lithics, -mean_date), graph = FALSE)
 
-```{r demo-inline-code}
-x <- round(pi, 2)
+# Find date to hold the central tendency date
+centdate <- mean(lithics$mean_date)
+
+# Call to plot
+fviz_ca_row(calithics, col.row = lithics$mean_date, title = "",
+                     repel = TRUE) +
+  scale_color_gradient2(name = "Years cal. BP", low="blue", mid="yellow", 
+                        high="red", midpoint = centdate)
+
+fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "") 
+
 ```
 
-Here is an example of inline code `r x` in the middle of a sentence.
+Figure \@ref(fig:cor) displays a correspondence analysis using the lithic count data. \@ref(fig:cor)
 
-# Discussion
+```{r pcadata}
+# Tried to do this to avoid having to type the variable names into both mutate()
+# and select(). The general syntax select(-(vector_of_variable_names)) worked,
+# but not: mutate(new_varaible = artefact_count / sum(vector_of_variable_names))
+primary_lithics <- c("core", "core_fragment", "blade", "microblade", "chip",
+                     "fragment", "flake", "flake_other", "fragment_other", 
+                     "chip_other", "blade_other",  "microblade_other", 
+                     "core_other", "core_fragment_other")
 
-# Conclusion
+secondary_lithics <- c("axe_debitage", "axe", "chisel", "microlith", 
+"tanged_point", "transverse_point", "single_edged_point", "hognipen_point",
+"projectile_undefined", "microburin", "scraper", "knife", "burin", "drill", 
+"blade_retouch", "microblade_retouch", "chip_retouch", "fragment_retouch",
+"flake_retouch", "axe_other", "axe_debitage_other", "chisel_other",
+"club_hatchet_other", "grinding_slab_stone", "projectile_point_other",
+"knife_other", "scraper_other", "drill_other", "microblade_retouch_other", 
+"blade_retouch_other", "fragment_retouch_other", "flake_retouch_other")
 
-# Acknowledgements
+lithics2 <- sites %>% 
+  select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project) %>% 
+  rowwise() %>% 
+  # Create a new column with mutate() called "artefact_count" which is to hold 
+  # the sum() of the artefact columns for each row. 
+  mutate(
+    artefact_count = sum(c_across(core:flake_retouch_other))) %>% 
+  mutate(
+    mean_date = mean(c(reported_start_bp, reported_end_bp)),
+    .keep = "unused") %>% 
+  ungroup() %>% 
+  mutate(chip_freq = artefact_count / sum(chip, chip_other),
+         core_freq = artefact_count / sum(core, core_other),
+         primary_freq = artefact_count / sum(core, core_fragment, blade, 
+                     microblade, chip, fragment, flake, flake_other, 
+                     fragment_other, chip_other, blade_other,  microblade_other, 
+                     core_other, core_fragment_other),
+         secondary_freq = artefact_count / sum(axe_debitage, axe, chisel, 
+                microlith, tanged_point, transverse_point, single_edged_point,
+                hognipen_point, projectile_undefined, microburin, scraper, 
+                knife, burin, drill, blade_retouch, microblade_retouch, 
+                chip_retouch, fragment_retouch, flake_retouch, axe_other,
+                axe_debitage_other, chisel_other, club_hatchet_other, 
+                grinding_slab_stone, projectile_point_other, knife_other,
+                scraper_other, drill_other, microblade_retouch_other, 
+                blade_retouch_other, fragment_retouch_other,
+                flake_retouch_other),
+         lithic_dens = artefact_count / excavated_m3) %>%
+  select(-primary_lithics, -secondary_lithics, -excavated_m3, -artefact_count) %>% 
+  column_to_rownames("site")
+```
+
+```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
+pcalithics <- PCA(select(lithics2, -mean_date), graph = FALSE)
+fviz_pca(pcalithics, col.ind = lithics2$mean_date, col.var = "black", 
+         repel = TRUE) +  scale_color_gradient2(name = "Years cal. BP", 
+         low="blue", mid="yellow", high="red", midpoint = centdate)
+
+```
+
+Figure \@ref(fig:pca-analysis) displays a principle components analysis using the continuous measures as defined by @Bicho2020
 
 <!-- The following line inserts a page break  -->
 
