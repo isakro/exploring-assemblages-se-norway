@@ -40,7 +40,6 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(FactoMineR)
 library(factoextra)
-library(patchwork)
 ```
 
 <!-- Here's some example analysis code: -->
@@ -95,7 +94,7 @@ fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "")
 
 ```
 
-Figure \@ref(fig:cor) displays a correspondence analysis using the lithic count data. \@ref(fig:cor)
+Figure \@ref(fig:cor) displays a correspondence analysis using the lithic count data.
 
 ```{r pcadata}
 # Tried to do this to avoid having to type the variable names into both mutate()
@@ -126,13 +125,14 @@ lithics2 <- sites %>%
     mean_date = mean(c(reported_start_bp, reported_end_bp)),
     .keep = "unused") %>% 
   ungroup() %>% 
-  mutate(chip_freq = artefact_count / sum(chip, chip_other),
-         core_freq = artefact_count / sum(core, core_other),
-         primary_freq = artefact_count / sum(core, core_fragment, blade, 
+  # The reason for not using .keep below is for the option to retain artefact_count
+  mutate(chip_freq =  sum(chip, chip_other) / artefact_count,
+         core_freq = sum(core, core_other) / artefact_count,
+         primary_freq = sum(core, core_fragment, blade, 
                      microblade, chip, fragment, flake, flake_other, 
                      fragment_other, chip_other, blade_other,  microblade_other, 
-                     core_other, core_fragment_other),
-         secondary_freq = artefact_count / sum(axe_debitage, axe, chisel, 
+                     core_other, core_fragment_other) / artefact_count,
+         secondary_freq =  sum(axe_debitage, axe, chisel, 
                 microlith, tanged_point, transverse_point, single_edged_point,
                 hognipen_point, projectile_undefined, microburin, scraper, 
                 knife, burin, drill, blade_retouch, microblade_retouch, 
@@ -141,21 +141,21 @@ lithics2 <- sites %>%
                 grinding_slab_stone, projectile_point_other, knife_other,
                 scraper_other, drill_other, microblade_retouch_other, 
                 blade_retouch_other, fragment_retouch_other,
-                flake_retouch_other),
+                flake_retouch_other) / artefact_count,
          lithic_dens = artefact_count / excavated_m3) %>%
   select(-primary_lithics, -secondary_lithics, -excavated_m3, -artefact_count) %>% 
   column_to_rownames("site")
 ```
 
 ```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
-pcalithics <- PCA(select(lithics2, -mean_date), graph = FALSE)
+pcalithics <- PCA(select(lithics2, -mean_date), scale.unit = TRUE, graph = FALSE)
 fviz_pca(pcalithics, col.ind = lithics2$mean_date, col.var = "black", 
          repel = TRUE) +  scale_color_gradient2(name = "Years cal. BP", 
          low="blue", mid="yellow", high="red", midpoint = centdate)
 
 ```
 
-Figure \@ref(fig:pca-analysis) displays a principle components analysis using the continuous measures as defined by @Bicho2020
+Figure \@ref(fig:pca-analysis) displays a principle components analysis using continuous measures as defined by @Bicho2020
 
 <!-- The following line inserts a page break  -->
 
