@@ -9,7 +9,7 @@ institute:
   - UiO: University of Oslo
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
-    bookdown::word_document2:
+    bookdown::html_document2:
       fig_caption: yes
       reference_docx: "../templates/template.docx" # Insert path for the DOCX file
       pandoc_args:
@@ -31,6 +31,7 @@ knitr::opts_chunk$set(
   message = FALSE,
   echo = FALSE,
   comment = "#>",
+  fig.width = 9,
   fig.path = "../figures/",
   dpi = 300
 )
@@ -38,6 +39,8 @@ knitr::opts_chunk$set(
 
 ```{r libraries, eval = TRUE}
 library(tidyverse)
+library(patchwork)
+library(gt)
 library(FactoMineR)
 library(factoextra)
 ```
@@ -81,7 +84,7 @@ lithics <- sites %>%
   select(-one_of(c("n", "excavation_project", "excavated_m3")))
 ```
 
-```{r cor, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10}
+```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10}
 # Perform correspondence analysis on the data. 'mean_age' is meant for colouring
 # so is excluded here
 calithics <- CA(select(lithics, -mean_date, -artefact_count), graph = FALSE)
@@ -91,24 +94,39 @@ eigval <- get_eigenvalue(calithics)
 explained_cumul_dim2 <- eigval[2,3]
 
 # Find date to hold the central tendency date
-centdate <- mean(lithics$mean_date) / 1000
+centdate <- (sum(range(lithics$mean_date)) / 2) / 1000
 
-# Call to plot
-fviz_ca_row(calithics, col.row = lithics$mean_date / 1000, title = "",
-                     repel = TRUE) +
-  scale_color_gradient2(name = "ka BP", low="blue", mid="yellow", 
+# Plot with site names tags (probably most immediately relevant for an audience 
+# familiar with the sites)
+fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+                     repel = TRUE, shape = 21, pointsize = 2.9) +
+  scale_fill_gradient2(name = "ka BP", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom") 
+```
 
-fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "") 
+```{r cor, fig.cap = "Correspondence analysis using artefact count data."}
+# Plot without site names tags
+fviz_ca_row(calithics, geom = "point", col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+                     repel = TRUE, shape = 21, pointsize = 2.9) +
+  scale_fill_gradient2(name = "ka BP", low="yellow", mid="orange", 
+                        high="red", midpoint = centdate) +
+  theme(legend.position = "bottom") 
+#guide(fill = guide_legend(reverse = TRUE)) # Reverses the legend but makes it
+                                            # discrete
+
+# Plot variables
+fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "B") 
 
 ```
 
-Figure \@ref(fig:cor) displays a CA using the lithic count data. While there is a considerable degree of mixing, and no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension appears associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot, combined with the fact that the two first dimensions of the CA-analysis account for as much as `r round(explained_cumul_dim2, 2)` % of the inertia in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites being pulled towards the bottom, along the second dimension. The sites from the later parts of the Mesolithic are mainly drawn out along the first dimension of the plot. 
 
-The earliest sites are characterised by microburins, projectiles, macro tools and associated debitage in flint. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, while complete cores appear to be a trait more defining of assemblages with later dates. The non-flint material on the earliest sites also appears to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades appear to these sites. 
 
-The first dimension of the plot is mainly defined by macro tools and associated debitage in non-flint materials that stand in contrast to more flint dominated assemblages and non-flint projectiles. While the outer end of the first dimensions is dominated by later Mesolithic sites such as Stokke/Polland 3, Vallermyrene 4 and Gunnarsrød 10, which are all associated with axe production in non-flint materials, the later Mesolithic sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these later sites. In addition, Nedre Hobekk 2 represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite is typically seen as a feature of the Middle Mesolithic, but is evidently not as prominent a part of the assemblages on the sites treated here, with the exception of for Nedre Hobekk 2. T
+Figure \@ref(fig:cor) displays a CA using the lithic count data. While no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot, combined with the fact that the two first dimensions of the CA-analysis account for as much as `r round(explained_cumul_dim2, 2)` % of the inertia in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. The sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension. 
+
+The column plot reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as macro tools and associated debitage. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, while complete cores appear to be a trait more defining of assemblages with later dates. The non-flint material on the earliest sites also appear to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites. 
+
+The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages and non-flint projectiles. While the outer end of the first dimensions is dominated by later Mesolithic sites such as Stokke/Polland 3, Vallermyrene 4 and Gunnarsrød 10, which are all associated with axe production in non-flint materials, the later Mesolithic sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these later sites. In addition, Nedre Hobekk 2 represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite is typically seen as a feature of the Middle Mesolithic, but is evidently not as prominent a part of the assemblages on the other sites that are contemporaneous with Nedre Hobekk 2. T
 
 ```{r pcadata}
 # Tried to do this to avoid having to type the variable names into both mutate()
@@ -154,14 +172,71 @@ lithics2 <- sites %>%
 
 ```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
 pcalithics <- PCA(select(lithics2, -mean_date), scale.unit = TRUE, graph = FALSE)
-fviz_pca(pcalithics, col.ind = lithics2$mean_date / 1000, col.var = "black", 
-         repel = TRUE) +  scale_color_gradient2(name = "ka BP", 
-         low="blue", mid="yellow", high="red", midpoint = centdate) +
-  theme(legend.position = "bottom")
+fviz_pca(pcalithics, geom.ind = "point", fill.ind = lithics2$mean_date / 1000, 
+          repel = TRUE, col.var = "black", pointshape = 21,  pointsize = 2.9,
+         title = "") + 
+  scale_fill_gradient2(name = "ka BP",  low="yellow", mid="orange", 
+                        high="red", midpoint = centdate) +
+  theme(legend.position = "bottom") 
 
 ```
 
-Figure \@ref(fig:pca-analysis) displays a principle components analysis using variations of the continuous measures for degree of mobility as operationalised by @Bicho2020. While the investigation performed by @Bicho2020 indicates that the relative frequency of chips, cores, and blanks might be more sensitive to mobility patterns than the volumetric density of lithics, and the fequency of retouched artefacts, these last dimensions are capturing the most variation in the dataset presented here. If frequency of secondarily worked artefacts is taken as a proxy for mobility, these findings would consequently be in line with previous research into Mesolithic Norway, indicating that earlier sites are associated with higher degree of mobility that sites from later phases.  
+Figure \@ref(fig:pca-analysis) displays a principle components analysis using variations of the continuous measures for degree of mobility as operationalised by @Bicho2020. While the investigation performed by @Bicho2020 indicates that the relative frequency of chips, cores, and blanks might be more sensitive to mobility patterns than the volumetric density of lithics, and the frequency of retouched artefacts, these last dimensions are capturing the most variation in the dataset presented here. If frequency of secondarily worked artefacts is taken as a proxy for mobility, these findings would consequently be in line with previous research into Mesolithic Norway, indicating that earlier sites are associated with higher degree of mobility that sites from later phases. 
+
+```{r eigenvalues, fig.cap = "Table showing the eigenvalues of the components."}
+# Scree plot indicates an 'elbow' at the second dimension. 
+# The two first dimension account for 68 % and the first three
+# for 87 % (see table below)
+# fviz_screeplot(pcalithics, addlabels=TRUE)
+
+# Create a table showing the eigenvalues of the components
+round(as.tibble(get_eig(pcalithics)), 2) %>% 
+  rename("Eigenvalue" = eigenvalue, "Variance (%)" = variance.percent, 
+         "Cumulative variance (%)" = cumulative.variance.percent) %>% 
+  rownames_to_column(var = "Component") %>% 
+gt(rowname_col = "row", auto_align = FALSE)
+```
+
+```{r var_contrib, fig.cap = "Contribution of variables to components."}
+# The plots below investigates the contribution of the variables to the
+# components. The code has in large part been taken from 
+# Bicho & Cascalheira (2020).
+var <- get_pca_var(pcalithics)
+dim1 <- fviz_contrib(pcalithics, choice = "var", axes = 1,
+                     color = "black", fill = "gold2", 
+                     title = "Contribution of variables to Component 1")
+dim2 <- fviz_contrib(pcalithics, choice = "var", axes = 2, 
+                     color = "black", fill = "gold2", 
+                     title = "Contribution of variables to Component 2")
+dim3 <- fviz_contrib(pcalithics, choice = "var", axes = 3,
+                     color = "black", fill = "gold2", 
+                     title = "Contribution of variables to Component 3")
+dim4 <- fviz_contrib(pcalithics, choice = "var", axes = 4,
+                     color = "black", fill = "gold2", 
+                     title = "Contribution of variables to Component 4")
+
+# Patchwork for arranging plots
+(dim1 | dim2) /
+(dim3 | dim4)
+```
+
+
+```{r var_cor, fig.cap = "Plots showing the correlation between the variables"}
+plt1 <- fviz_pca_var(pcalithics,
+                  col.var = "black",
+                  title = "Correlation plot: Component 1/Component 2",
+                  repel = TRUE
+                  )
+plt2 <- fviz_pca_var(pcalithics,
+                  col.var = "black",
+                  axes = 3:4,
+                  title = "Correlation plot: Component 3/Component 4",
+                  repel = TRUE
+                  )
+
+plt1 + plt2
+```
+
 
 
 

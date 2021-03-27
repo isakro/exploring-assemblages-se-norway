@@ -17,11 +17,11 @@ knitr::opts_chunk$set(
 Title <- "Title of your paper goes here"
 ```
 
-# dialpastrepository
+# exploring-assemblages-se-norway
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/isakro/dialpastrepository/master?urlpath=rstudio)
 
-This repository contains the data and code for our paper:
+This repository contains the data and code for the paper:
 
 > Authors, (YYYY). *`r Title`*. Name of journal/book
 > <https://doi.org/xxx/xxx>
