@@ -1,9 +1,9 @@
-Package: dialpastrepository
+Package: exploring-assemblages-se-norway
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R:
-    person(given = "First",
-           family = "Last",
+    person(given = "Isak",
+           family = "Roalkvam",
            role = c("aut", "cre"),
            email = "first.last@example.com")
 Description: What the package does (one paragraph).
@@ -14,6 +14,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: bookdown,
-    here
+    here,
+    factoextra (>= 1.0.7),
+    FactoMineR (>= 2.4),
+    gt (>= 0.2.2),
+    knitr (>= 1.30),
+    patchwork (>= 1.1.0),
+    rmarkdown (>= 2.5),
+    tidyverse (>= 1.3.0)
 Suggests: devtools,
     git2r
