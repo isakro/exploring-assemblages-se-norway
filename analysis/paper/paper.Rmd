@@ -105,9 +105,9 @@ fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title
   theme(legend.position = "bottom") 
 ```
 
-```{r cor, fig.cap = "Correspondence analysis using artefact count data."}
+```{r cor, fig.cap = "Correspondence analysis using artefact count data. A) Object map, B) Variable map.", fig.height = 13}
 # Plot without site names tags
-fviz_ca_row(calithics, geom = "point", col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+plt1 <- fviz_ca_row(calithics, geom = "point", col.row = "black", fill = lithics$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "ka BP", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
@@ -116,17 +116,20 @@ fviz_ca_row(calithics, geom = "point", col.row = "black", fill = lithics$mean_da
                                             # discrete
 
 # Plot variables
-fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "B") 
+plt2 <- fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "B") 
+
+plt1 /
+plt2
 
 ```
 
+Figure \@ref(fig:cor) displays a CA using the lithic count data. While no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot, combined with the fact that the two first dimensions of the CA-analysis account for as much as `r round(explained_cumul_dim2, 2)` % of the inertia or variance in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. The sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension.
 
+The column plot reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as macro tools and associated debitage. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, while complete cores appear to be a trait more defining of assemblages with later dates. The non-flint material on the earliest sites also appear to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites.
 
-Figure \@ref(fig:cor) displays a CA using the lithic count data. While no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot, combined with the fact that the two first dimensions of the CA-analysis account for as much as `r round(explained_cumul_dim2, 2)` % of the inertia in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. The sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension. 
+The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages and non-flint projectiles. While the outer end of the first dimensions is dominated by later Mesolithic sites such as Stokke/Polland 3, Vallermyrene 4 and Gunnarsrød 10, which are all associated with axe production in non-flint materials, the later Mesolithic sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these later sites.  Although the sample size is quite strained and the discussion of finer chronological points might as a consequence not be warranted, the first dimension does appear to be of of less importance for the absolute latest sites, as indicated by their location to the left of the plot. This could indicate that specialised axe production sites disappear towards the end of the Mesolithic, a notion that would be in line with previous research.
 
-The column plot reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as macro tools and associated debitage. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, while complete cores appear to be a trait more defining of assemblages with later dates. The non-flint material on the earliest sites also appear to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites. 
-
-The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages and non-flint projectiles. While the outer end of the first dimensions is dominated by later Mesolithic sites such as Stokke/Polland 3, Vallermyrene 4 and Gunnarsrød 10, which are all associated with axe production in non-flint materials, the later Mesolithic sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these later sites. In addition, Nedre Hobekk 2 represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite is typically seen as a feature of the Middle Mesolithic, but is evidently not as prominent a part of the assemblages on the other sites that are contemporaneous with Nedre Hobekk 2. T
+In addition, Nedre Hobekk 2 represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite is typically seen as a feature of the end of the EM and the MM, but is evidently not as prominent a part of other sites that are contemporaneous with Nedre Hobekk 2 treated here. T
 
 ```{r pcadata}
 # Tried to do this to avoid having to type the variable names into both mutate()
@@ -181,7 +184,7 @@ fviz_pca(pcalithics, geom.ind = "point", fill.ind = lithics2$mean_date / 1000,
 
 ```
 
-Figure \@ref(fig:pca-analysis) displays a principle components analysis using variations of the continuous measures for degree of mobility as operationalised by @Bicho2020. While the investigation performed by @Bicho2020 indicates that the relative frequency of chips, cores, and blanks might be more sensitive to mobility patterns than the volumetric density of lithics, and the frequency of retouched artefacts, these last dimensions are capturing the most variation in the dataset presented here. If frequency of secondarily worked artefacts is taken as a proxy for mobility, these findings would consequently be in line with previous research into Mesolithic Norway, indicating that earlier sites are associated with higher degree of mobility that sites from later phases. 
+Figure \@ref(fig:pca-analysis) displays a principle components analysis using variations of the continuous measures for degree of mobility as operationalised by @Bicho2020. While the investigation performed by @Bicho2020 indicates that the relative frequency of chips, cores, and blanks might be more sensitive to mobility patterns than the volumetric density of lithics, and the frequency of retouched artefacts, these last dimensions are capturing the most variation in the dataset presented here. If frequency of secondarily worked artefacts is taken as a proxy for mobility, these findings would consequently be in line with previous research into the Mesolithic of Norway, indicating that earlier sites are associated with higher degree of mobility that sites from later phases.
 
 ```{r eigenvalues, fig.cap = "Table showing the eigenvalues of the components."}
 # Scree plot indicates an 'elbow' at the second dimension. 
@@ -220,7 +223,6 @@ dim4 <- fviz_contrib(pcalithics, choice = "var", axes = 4,
 (dim3 | dim4)
 ```
 
-
 ```{r var_cor, fig.cap = "Plots showing the correlation between the variables"}
 plt1 <- fviz_pca_var(pcalithics,
                   col.var = "black",
@@ -236,9 +238,6 @@ plt2 <- fviz_pca_var(pcalithics,
 
 plt1 + plt2
 ```
-
-
-
 
 <!-- The following line inserts a page break  -->
 
