@@ -49,7 +49,7 @@ library(rnaturalearth)
 
 ```{r get-data, eval = TRUE}
 assemblages <- read.csv(here::here('analysis/data/raw_data/assemblage_data.csv'))
-site_pts <- st_read('analysis/data/raw_data/sites.gpkg')
+site_pts <- st_read(here::here('analysis/data/raw_data/sites.gpkg'))
 countries <- ne_download(scale = 110, type = 'land', category = 'physical',
                          returnclass = "sf")
 ```
@@ -64,21 +64,23 @@ Although each individual assemblage can potentially have been impacted by an inf
 
 ## Archaeological context and material
 
-The `r nrow(assemblages)` coastal sites chosen for analysis here have a relatively limited geographical distribution in south-eastern Norway. The sites were excavated as part of four larger excavation projects that all took place within the last 15 years [@solheim2013b; @jaksland2014a; @melvold2014b; @reitan2014l; @solheim2017b]. The institution responsible for all of these excavations was the Museum of Cultural History in Oslo. This has led to a considerable overlap in the archaeological personnel involved, and comparable excavation practices across the excavations. Furthermore, with these projects, major efforts were made to standardise how lithic artefacts were to be classified at the Museum of Cultural History. As a result, this should reduce the amount of artificial patterning in the data incurred by discrepancies in the employed systems for categorisation [@clark2006; @dibble2017]. In this setting, for example, bias could potentially follow from the fact that two of the projects have sites with relatively contemporaneous dates [@solheim2013b; @jaksland2014]. Any project-dependent classification practice could as a consequence lead to an exaggeration of chronological differences between the assemblages. While certainly difficult to fully account for, I do believe that the relative contemporaneity of the excavation projects, as well as the overlap in excavation and classification practices should minimise the above-mentioned effects, making the data-set a good candidate for exploratory data analysis.
+The `r nrow(assemblages)` coastal sites chosen for analysis here have a relatively limited geographical distribution in south-eastern Norway. The sites were excavated as part of four larger excavation projects that all took place within the last 15 years [@solheim2013b; @jaksland2014a; @melvold2014b; @reitan2014l; @solheim2017b] . The institution responsible for all of these excavations was the Museum of Cultural History in Oslo. This has led to a considerable overlap in the archaeological personnel involved, and comparable excavation practices across the excavations. Furthermore, with these projects, major efforts were made to standardise how lithic artefacts were to be classified at the Museum of Cultural History. As a result, this should reduce the amount of artificial patterning in the data incurred by discrepancies in the employed systems for categorisation [@clark2006; @dibble2017]. In this setting, for example, bias could potentially follow from the fact that two of the projects have sites with relatively contemporaneous dates [@solheim2013b; @jaksland2014]. Any project-dependent classification practice could as a consequence lead to an exaggeration of chronological differences between the assemblages. While certainly difficult to fully account for, I do believe that the relative contemporaneity of the excavation projects, as well as the overlap in excavation and classification practices should minimise the above-mentioned effects, making the data-set a good candidate for exploratory data analysis.
 
-A defining characteristic of the Norwegian Mesolithic is that a clear majority of the known sites are located in coastal areas. Furthermore, coastal sites, including those treated here, appear to predominantly have been located on or close to the contemporary shoreline when they were in use [@breivik2018; @solheim2020]. In south-eastern Norway, this pattern is combined with a continuous regression of the shoreline, following from isostatic rebound [e.g. @sørensen1979; @romundset2018]. The fairly rapid shoreline displacement means that the location of the sites tend not to have retained their strategic or ecologically beneficial shore-bound location for long periods of time [cf. @perreault2019, 47]. The shore-bound settlement, combined with the rapid shoreline displacement has resulted in a relatively high degree of spatial separation of cumulative palimpsests, to follow the terminology of @bailey2007, while the reconstruction of the trajectory of shoreline displacement combined with shore-bound settlement allows for a relatively good chronological control of these accumulation events. In other parts of the world a higher degree of spatial distribution means that while the physical separation of material can help delineate discrete events, this typically comes at the cost of loosing temporal resolution, as any stratigraphic relationship between the events is lost [@bailey2007]. However, as the rate of isostatic rebound has varied throughout the Mesolithic in the region, and local topography and bathymetry will have impacted how rapidly a site lost its shore-bound location, this effect is not evenly distributed in time and space. In the earliest part of the Mesolithic, the displacement rate within the study area would have been around as much as 8.8 cm/year, which is reduced to around 0.5 cm/year in the Late Mesolithic [@sørensen2014]. Thus, while relative sea-level change appears to have reduced the degree of mixing that has occurred in the assemblages, this could vary depending on when and where they were in use, in turn potentially reducing the degree to which their composition can be directly compared - a point that is returned to in the discussion of the results.
+A defining characteristic of the Norwegian Mesolithic is that a clear majority of the known sites are located in coastal areas. Furthermore, coastal Mesolithic sites, including those treated here, appear to predominantly have been located on or close to the contemporary shoreline when they were in use [@breivik2018; @solheim2020]. In south-eastern Norway, this pattern is combined with a continuous regression of the shoreline, following from isostatic rebound [e.g. @sørensen1979; @romundset2018]. The fairly rapid shoreline displacement means that the sites tend not to have retained their strategic or ecologically beneficial shore-bound location for long periods of time [cf. @perreault2019, 47]. The shore-bound settlement, combined with the rapid shoreline displacement has resulted in a relatively high degree of spatial separation of cumulative palimpsests, to follow the terminology of @bailey2007, while the reconstruction of the trajectory of shoreline displacement combined with shore-bound settlement allows for a relatively good chronological control of these accumulation events. In other parts of the world a higher degree of spatial distribution means that while the physical separation of material can help delineate discrete events, this typically comes at the cost of loosing temporal resolution, as any stratigraphic relationship between the events is lost [@bailey2007]. However, as the rate of isostatic rebound has varied throughout the Mesolithic in the region, and local topography and bathymetry will have impacted how rapidly a site lost its shore-bound location, this effect is not evenly distributed in time and space. In the earliest part of the Mesolithic, the displacement rate within the study area would have been around as much as 8.8 cm/year, falling to around 0.5 cm/year in the Late Mesolithic [@sørensen2014]. Thus, while relative sea-level change appears to have reduced the degree of mixing that has occurred in the assemblages, this could vary depending on when and where they were in use, in turn potentially reducing the degree to which their composition can be directly compared - a point that is returned to in the discussion of the results.
 
-In a series of case studies from Northern Norway, @bølviken1982 were among a group of scholars often attributed the popularisaton of correspondence analysis (CA) in wider archaeologcal circles [@baxter1994]. In southern Norway, however, the use of multivariate statistics in Mesolithic research is to my knowledge limited to @solheim2013a use of CA to analyse the assemblage data from eight sites excavated in connection with a development-led project. As these sites, which are included in this study, have relatively contemporaneous dates, the Solheims analysis was mainly aimed at
+In a series of case studies from Northern Norway, @bølviken1982 were among a group of scholars often attributed the popularisaton of correspondence analysis (CA) in wider archaeologcal circles [@baxter1994]. In southern Norway, however, the use of multivariate statistics in Mesolithic research is to my knowledge limited to @solheim2013a use of CA to analyse the assemblage data from eight sites excavated in connection with a development-led project. As these sites, which are included in this study, have relatively contemporaneous dates, the Solheims analysis was mainly aimed at identifying potential variation in the
 
-There have been a few studies that have conducted comprehensive analyses of artefact inventories and site features to get at variation in Mesolithic site types [@viken2018; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear and subjectively defined, and several of the studies cited here ultimately draw their conclusions based on an arguably over-constraining trichotomy of site types. As Binford originally clarified, which is a point that has also been retiterated by several authors since; these categories are best understood as extremes on a continuous scale.
+There have been a few studies that have conducted comprehensive analyses of artefact inventories and site features to get at variation in Mesolithic site types [@viken2018; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear and subjectively defined, and several of the studies cited here ultimately draw their conclusions based on an arguably over-constraining trichotomy of site types. As Binford originally clarified, a point that has also been retiterated by several authors since; these categories are best understood as extremes on a continuous scale.
 
 ## Methods
 
-The first part of the analysis involves employing the method of correspondence analysis (CA), using the lithic count data as classified for the original excavation reports. The purpose of this exercise is to evaluate the degree to which the assemblages align with patterns that have been suggested by earlier application of more informally driven methods. The expectation is that chronological trends will be the main driver of While some artefact categories will be combined in an attempt to reduce the amount of subjective discretion that can be expected to have impacted the classification of the individual assemblages, this will largely involve an analysis that assumes that the artefact categories employed in Norwegian Stone Age archaeology are, at least to a certain extent, behaviorally meaningful.
+The first part of the analysis involves employing the method of correspondence analysis (CA), using the lithic count data as classified for the original excavation reports. The purpose of this exercise is to evaluate the degree to which the composition of the assemblages align with patterns that have been suggested by earlier application of more informally driven methods. The expectation is that chronological trends will be the main driver of this part of the analysis. While some artefact categories from the original reports are collapsed in an attempt to reduce the amount of subjective discretion that can be expected to have impacted the classification of the individual assemblages, this will largely involve an analysis that assumes that the artefact categories employed in Norwegian Stone Age archaeology are, at least to a certain extent, behaviorally meaningful.
 
-However, given the vast inferential leap that this assumption involves, the second part of the analysis employs a suite of measures developed for the classification of lithic assemblages developed with this limitation in mind. These measures are taken from the framework of whole assemblage behavioural index, as developed by , and is aimed to get at more specific behavioural dimensions relating to mobility patterns among hunter-gatherers. Through a series of studies, show that the relationship between lithic volumetric density and relative frequency of retouched artefacts provides consistent and comparable results across a wide range of chronological and cultural context. These measures have, however, to my knowledge not seen application in Scandinavian archaeology as of yet. Following the continuous operationalisations of these measures, principal components analysis (PCA) is more suitable than CA for this part of the analysis [e.g. @baxter1994, 100; @Bicho2020].
+However, given the vast inferential leap that this assumption involves, the second part of the analysis employs a suite of measures developed for the classification of lithic assemblages developed with this limitation in mind. These measures are taken from the framework of whole assemblage behavioural index, as developed by , and is aimed to get at more specific behavioural dimensions relating to mobility patterns among hunter-gatherers. Through a series of studies, show that the relationship between lithic volumetric density and relative frequency of retouched artefacts provides consistent and comparable results across a wide range of chronological and cultural context. Following the continuous operationalisations of these measures, principal components analysis (PCA) is more suitable than CA for this part of the analysis [e.g. @baxter1994, 100; @Bicho2020].
 
 # Theory/calculation
+
+Higher frequency of secondarily worked lithics
 
 # Results
 
@@ -89,7 +91,8 @@ sites <- assemblages %>%
   mutate(mean_date = mean(c(reported_start_bp, reported_end_bp)),
          .keep = "unused") %>% 
   mutate(
-    artefact_count = sum(c_across(core:flake_retouch_other))) %>% 
+    artefact_count = sum(c_across(core:flake_retouch_other)),
+    flint_count = sum(c_across(core:flake_retouch))) %>% 
   filter(artefact_count > 100)
   
 
@@ -112,10 +115,10 @@ lithics <- sites %>%
   select(-one_of(c("n", "excavation_project", "excavated_m3")))
 ```
 
-```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10}
+```{r co_data}
 # Perform correspondence analysis on the data. 'mean_age' is meant for colouring
 # so is excluded here
-calithics <- CA(select(lithics, -mean_date, -artefact_count), graph = FALSE)
+calithics <- CA(select(lithics, -mean_date, -artefact_count, -flint_count), graph = FALSE)
 
 # Retrieve eigenvalues
 eigval <- get_eigenvalue(calithics)
@@ -123,7 +126,9 @@ explained_cumul_dim2 <- eigval[2,3]
 
 # Find date to hold the central tendency date
 centdate <- (sum(range(lithics$mean_date)) / 2) / 1000
+```
 
+```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10, eval = FALSE}
 # Plot with site names tags (probably most immediately relevant for an audience 
 # familiar with the sites)
 fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
@@ -151,7 +156,7 @@ plt2
 
 ```
 
-Figure \@ref(fig:cor) displays the CA using the lithic count data. While no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot (Figure \@ref(fig:cor)A), combined with the fact that the two first dimensions of the CA-analysis account for as much as `r round(explained_cumul_dim2, 2)` % of the inertia or variance in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. The sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension.
+Figure \@ref(fig:cor) displays the CA using the lithic count data. While no clear-cut clusters can be readily delineated, the general impression from the plots is still that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot (Figure \@ref(fig:cor)A), combined with the fact that the two first dimensions of the CA accounts for as much as `r round(explained_cumul_dim2, 2)` % of the inertia or variance in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. The sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension.
 
 The column plot (Figure \@ref(fig:cor)B) reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as macro tools and associated debitage. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, while the cores themselves appear to be a trait more defining of assemblages with later dates. The non-flint material on the earliest sites appears to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites.
 
@@ -167,7 +172,7 @@ For example, a vast amount of artefacts defined as debitage are likely to have f
 
 Reducing the number of such inferential leaps by aggregating artefact groups could potentially subsume important variation, but it does also reduce the possibility that the conclusions of any analysis is not simply the result of the employed units of analysis, and an overly naive trust in the fact that these units reflect any behaviourally meaningful categories. This realisation has led to a wide range of outside Scandinavian Mesolithic research, meaning a range of empirical measures associated with various mobility patterns are available.
 
-Within this framework, retouch is viewed as a means of extending the use-life of lithics by repeated rejuvination and modification of edges. At logistical basecamps the extended time spent in a single location would imply a better control of raw material availability, and allow for longer trips to retrieve these. Higher availability of lithic raw materials should in turn reduce the necessity for extensive retouch, meaning the material expectation for logistical basecamps would be relatively high density of lithics and a low relative frequency of retouched artefacts. Higher degree of mobility, on the other hand, would mean a higher dependency on artefacts and material groups could bring with them, and dimensions such as weight, reliabilty, repairability and the degree to which artefacts could be manipulated to fulfill a wide range of tasks would likely have been of concern. From this it follows that the empirical expectation for short-term camps is a higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017].
+Within this framework, retouch is viewed as a means of extending the use-life of lithics by repeated rejuvination and modification of edges. At logistical basecamps, the extended time spent in a single location would imply a better control of raw material availability, and allow for longer trips to retrieve these. Higher availability of lithic raw materials should in turn reduce the necessity for extensive retouch, meaning the material expectation for logistical basecamps would be relatively high density of lithics and a low relative frequency of retouched artefacts. Higher degree of mobility, on the other hand, would mean a higher dependency on the artefacts and material people could bring with them, and dimensions such as weight, reliabilty, repairability and the degree to which artefacts could be manipulated to fulfill a wide range of tasks would likely have been of concern. From this it follows that the empirical expectation for short-term camps is a higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017].
 
 Of these the most well-estbalished is the. base don the assumption that, this measure and has been shown to display a meaningful measure across a wide range of temporal, geographical and cultural contexts.
 
@@ -175,19 +180,26 @@ Of these the most well-estbalished is the. base don the assumption that, this me
 # Tried to do this to avoid having to type the variable names into both mutate()
 # and select(). The general syntax select(-(vector_of_variable_names)) worked,
 # but not: mutate(new_varaible = sum(vector_of_variable_names) / artefact_count)
-primary_lithics <- c("core", "core_fragment", "blade", "microblade", "chip",
-                     "fragment", "flake", "flake_other", "fragment_other", 
+primary_flint <- c("core", "core_fragment", "blade", "microblade", "chip",
+                     "fragment", "flake")
+
+primary_lithics <- c(primary_flint, "flake_other", "fragment_other", 
                      "chip_other", "blade_other",  "microblade_other", 
                      "core_other", "core_fragment_other")
 
-secondary_lithics <- c("axe_debitage", "axe", "chisel", "microlith", 
-"tanged_point", "transverse_point", "single_edged_point", "hognipen_point",
-"projectile_undefined", "microburin", "scraper", "knife", "burin", "drill", 
-"blade_retouch", "microblade_retouch", "chip_retouch", "fragment_retouch",
-"flake_retouch", "axe_other", "axe_debitage_other", "chisel_other",
-"club_hatchet_other", "grinding_slab_stone", "projectile_point_other",
-"knife_other", "scraper_other", "drill_other", "microblade_retouch_other", 
-"blade_retouch_other", "fragment_retouch_other", "flake_retouch_other")
+secondary_flint <- c("axe_debitage", "axe", "chisel", "microlith", 
+                    "tanged_point", "transverse_point", "single_edged_point",
+                    "hognipen_point", "projectile_undefined", "microburin",
+                    "scraper", "knife", "burin", "drill", "blade_retouch",
+                    "microblade_retouch", "chip_retouch", "fragment_retouch",
+                    "flake_retouch")
+
+secondary_lithics <- c(secondary_flint, "axe_other", "axe_debitage_other",
+                       "chisel_other", "club_hatchet_other", 
+                       "grinding_slab_stone", "projectile_point_other", 
+                       "knife_other", "scraper_other", "drill_other", 
+                       "microblade_retouch_other", "blade_retouch_other",
+                       "fragment_retouch_other", "flake_retouch_other")
 
 lithics2 <- sites %>% 
   select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project) %>% 
@@ -209,26 +221,61 @@ lithics2 <- sites %>%
                 blade_retouch_other, fragment_retouch_other,
                 flake_retouch_other) / artefact_count,
          lithic_dens = artefact_count / excavated_m3) %>%
-  select(-primary_lithics, -secondary_lithics, -excavated_m3, -artefact_count) %>% 
+  select(-primary_lithics, -secondary_lithics, -excavated_m3, -artefact_count,
+         -flint_count) %>% 
   column_to_rownames("site")
+
+flint2 <- sites %>% 
+  select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project) %>% 
+  select(!ends_with("other")) %>% 
+  # The reason for not using .keep below is for the option to retain artefact_count
+  mutate(chip_freq =  sum(chip) / artefact_count,
+         core_freq = sum(core) / artefact_count,
+         primary_freq = sum(core, core_fragment, blade, 
+                     microblade, chip, fragment, flake) / artefact_count,
+         secondary_freq =  sum(axe_debitage, axe, chisel, 
+                microlith, tanged_point, transverse_point, single_edged_point,
+                hognipen_point, projectile_undefined, microburin, scraper, 
+                knife, burin, drill, blade_retouch, microblade_retouch, 
+                chip_retouch, fragment_retouch, flake_retouch) / artefact_count,
+         flint_dens = flint_count / excavated_m3) %>%
+  select(-primary_flint, -secondary_flint, -excavated_m3, -artefact_count,
+         -flint_count) %>% 
+  column_to_rownames("site")
+
+wabicor <- cor(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
+wabicorflint <- cor(log10(flint2$flint_dens), log10(flint2$secondary_freq))
 ```
 
-```{r wabi, fig.cap = "Whole-assemblage behavioural index", fig.height = 5, fig.width = 10}
+Figure \@ref(fig:wabi) displays the WABI as found for the site data. This indicates a negative correlation between the two variables (r = `r round(wabicor, 2)`) and a general tendency for younger sites to be associated with a higher volumetric density of lithics and a lower relative frequency of secondarily worked lithics than older sites. Following @clark2017, this would be in line with a general transition from a expedient to curated lithic technology. Variable raw-material availability can also impact these measures as [@manninen2014]. Variation in raw-material use over time could consequently mean that these patterns could be an effect of the available raw material rather than mobility strategies. However, as is evident in when considering both plots in \@ref(fig:wabi), the pattern is evident for both the lithics considered in aggregate and for the flint data specifically. Although the distribution is slightly more spread out along the y-axis than the x-axis in the flint data, indicating that differences in volumtric density of flint is not as clearly chronologically, the general pattern is the same.
 
-ggplot(lithics2, aes(log10(lithic_dens), log10(secondary_freq * 100), 
+```{r wabi, fig.cap = "Whole-assemblage behavioural index", fig.height = 5, fig.width = 10}
+w1 <- ggplot(lithics2, aes(lithic_dens, secondary_freq * 100, 
                      fill = mean_date / 1000)) + 
   geom_point(shape = 21, size = 3) +
   geom_smooth(method = "lm", col = "black", se = FALSE) +
-  labs(x = "Lithic volumetric density (log10)", 
+  labs(x = "Volumetric density of lithics (log10)", 
        y = "Relative frequency of secondarily worked lithics (log10)") +
   scale_fill_gradient2(name = "ka BP",  low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
+  scale_y_log10() +
+  scale_x_log10() +
   theme_classic()
 
-wabicor <- cor(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
-```
+w2 <- ggplot(flint2, aes(flint_dens, secondary_freq * 100, 
+                     fill = mean_date / 1000)) + 
+  geom_point(shape = 21, size = 3) +
+  geom_smooth(method = "lm", col = "black", se = FALSE) +
+  labs(x = "Volumetric density of flint (log10)", 
+       y = "Relative frequency of secondarily worked flint (log10)") +
+  scale_fill_gradient2(name = "ka BP",  low="yellow", mid="orange", 
+                        high="red", midpoint = centdate) +
+  scale_y_log10() +
+  scale_x_log10() +
+  theme_classic()
 
-Figure \@ref(fig:wabi) displays the WABI as found for the site data. This indicates a negative correlation between the two variables (pearsons r = `r round(wabicor, 2)`) and a general tendency for younger sites to be associated with a higher volumetric density of lithics and a lower relative frequency of secondarily worked lithics than older sites. Following @clark2017, this would be in line with a general transition from a expedient to curated lithic technology.
+w1 | w2
+```
 
 ```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
 pcalithics <- PCA(select(lithics2, -mean_date), scale.unit = TRUE, graph = FALSE)
