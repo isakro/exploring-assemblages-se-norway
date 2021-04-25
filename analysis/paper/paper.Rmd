@@ -46,6 +46,9 @@ library(factoextra)
 library(sf)
 library(rnaturalearth)
 ```
+```{r get-functions, include = FALSE}
+#source("plot_functions.R", local = knitr::knit_global())
+```
 
 ```{r get-data, eval = TRUE, results = 'hide'}
 # gis <- read.csv(here::here('../../site_data.csv'))
@@ -349,6 +352,32 @@ lithics2 <- sites %>%
          -chip_other, -core_other, -core_fragment_other) %>% 
   column_to_rownames("site")
 
+lithics3 <- sites %>% 
+  select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project,
+         -reported_start_bp, -reported_end_bp, -askeladden_id) %>% 
+  # The reason for not using .keep below is for the option to 
+  #retain artefact_count
+  mutate(chip_freq =  sum(chip, chip_other),
+         core_freq = sum(core, core_other),
+         blanks = sum(blade, microblade, fragment, flake, flake_other, 
+                     fragment_other, blade_other,  microblade_other, -core, -core_fragment, -chip, 
+         -chip_other, -core_other, -core_fragment_other),
+         secondary =  sum(axe_debitage, axe, chisel, 
+                microlith, tanged_point, transverse_point, single_edged_point,
+                hognipen_point, projectile_undefined, microburin, scraper, 
+                knife, burin, drill, blade_retouch, microblade_retouch, 
+                chip_retouch, fragment_retouch, flake_retouch, axe_other,
+                axe_debitage_other, chisel_other, club_hatchet_other, 
+                grinding_slab_stone, projectile_point_other, knife_other,
+                scraper_other, drill_other, microblade_retouch_other, 
+                blade_retouch_other, fragment_retouch_other,
+                flake_retouch_other),
+         lithic_dens = artefact_count / excavated_m3) %>%
+  select(-blanks_lithics, -secondary_lithics, -excavated_m3, -artefact_count,
+         -flint_count, -nonflint_count, -core, -core_fragment, -chip, 
+         -chip_other, -core_other, -core_fragment_other) %>% 
+  column_to_rownames("site")
+
 # Repeat but for flint only
 flint2 <- sites %>% 
   select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project, 
@@ -356,7 +385,7 @@ flint2 <- sites %>%
   select(!ends_with("other")) %>% 
   mutate(chip_freq =  sum(chip) / artefact_count,
          core_freq = sum(core) / artefact_count,
-         blanks_freq = sum( blade, microblade, fragment, flake) / artefact_count,
+         blanks_freq = sum(blade, microblade, fragment, flake) / artefact_count,
          secondary_freq =  sum(axe_debitage, axe, chisel, 
                 microlith, tanged_point, transverse_point, single_edged_point,
                 hognipen_point, projectile_undefined, microburin, scraper, 
@@ -368,7 +397,7 @@ flint2 <- sites %>%
          -core_fragment, -chip) %>% 
   column_to_rownames("site")
 
-wabicor <- cor(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
+wabicor <- cor.test(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
 wabicorflint <- cor(log10(flint2$flint_dens), log10(flint2$secondary_freq))
 ```
 
@@ -405,7 +434,7 @@ w1 | w2
 ```
 
 ```{r pca-analysis, fig.cap = "PCA.", fig.height = 7, fig.width = 10}
-pcalithics <- PCA(select(lithics2, -mean_date), scale.unit = TRUE, graph = FALSE)
+pcalithics <- PCA(select(lithics2, -mean_date, -nonflint_freq), scale.unit = TRUE, graph = FALSE)
 fviz_pca(pcalithics, geom.ind = "point", fill.ind = lithics2$mean_date / 1000, 
           repel = TRUE, col.var = "black", pointshape = 21,  pointsize = 2.9,
          title = "") + 
