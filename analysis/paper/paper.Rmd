@@ -53,9 +53,6 @@ source(here::here("analysis/script/plot_functions.R"), local = knitr::knit_globa
 ```
 
 ```{r get-data, eval = TRUE, results = 'hide'}
-# gis <- read.csv(here::here('../../site_data.csv'))
-# gis$askeladden_id <- as.integer(str_replace_all(gis$askeladden_id, c("-1" = "", "-0" = "", "-2" = "", "-3" = "", "-4" = "")))
-
 assemblages <- read.csv(here::here('analysis/data/raw_data/assemblage_data.csv'))
 site_pts <- st_read(here::here('analysis/data/raw_data/sites.gpkg'))
 
@@ -63,6 +60,11 @@ site_pts <- st_read(here::here('analysis/data/raw_data/sites.gpkg'))
 #countries <- ne_download(scale = 10, type = 'countries', category = 'physical',
 #                         returnclass = "sf")
 countries <- st_read(here::here('analysis/data/raw_data/naturalearth_countries.gpkg'))
+
+
+gis <- read.csv(here::here('../../site_data.csv'))
+gis$askeladden_id <- as.integer(str_replace_all(gis$askeladden_id, c("-1" = "", "-0" = "", "-2" = "", "-3" = "", "-4" = "")))
+gisjoin <- right_join(gis, sites, by = c("askeladden_id" = "askeladden_id"))
 ```
 
 <!-- Here's some example analysis code: -->
@@ -203,7 +205,7 @@ The date ranges provided for the sites are taken from the original excavation re
 
 In a series of case studies from Northern Norway, @bølviken1982 were among a group of scholars often attributed the popularisaton of correspondence analysis (CA) in wider archaeologcal circles [@baxter1994]. In southern Norway, however, the use of multivariate statistics in Mesolithic research is to my knowledge limited to @solheim2013a use of CA to analyse the assemblage data from eight sites excavated in connection with a development-led project. As these sites, which are included in this study, have relatively contemporaneous dates, the Solheims analysis was mainly aimed at identifying potential variation in the
 
-Previous studies of lithic artefacts in Norway have typically had a focus on chronological trends associated with formal tool types [e.g. @helskog1976; @reitan2016], involved refit-studies of the entirety of individual assemblages [@skar1986], or been concerned with technological processes associated with certain sub-categories of the site inventories, such as blades or axes [e.g. @damlien2016; @solheim2020]. Some studies have involved in-depth analyses of handful of sites, either in terms of intrasite spatial organisation [@nærøy2018], or in terms of technological organisation. There are also some comprehensive evaluations of entire lithic assemblages associated with a larger group of sites to get at potential site types and associated mobility patterns [@breivik2016; @viken2018c; @breivik2020]. However, the subjeticely driven analyses of these data makes the weighting of different variables unclear, and these studies draw their conclusions based on an arguably over-constraining predefined trichotomy of site types. Each site could have had complex life histories and been associated with a wide range of tasks that in sum make up the assemblages. Finally, only a single study concerned with eight Middle-Mesolithic assemblages that are also treated here has employed a multivariate quantitative framework to help structure such a treatment [@solheim2013]. In sum, therefore, previous studies are typically either limited to a small number of sites, to a subset of the inventories, or to more subjectively driven methods.
+Previous studies of lithic artefacts in Norway have typically had a focus on chronological trends associated with formal tool types [e.g. @helskog1976; @reitan2016], involved refit-studies of the entirety of individual assemblages [@skar1986], or been concerned with technological processes associated with certain sub-categories of the site inventories, such as blades or axes [e.g. @damlien2016; @solheim2020]. Some studies have involved in-depth analyses of handful of sites in terms of intrasite spatial organisation [@nærøy2018], and technological organisation [@eigeland2015; @mansrud2016;]. There are also some more comprehensive evaluations of a larger number of entire lithic assemblages to get at potential site types and associated mobility patterns [@breivik2016; @viken2018c; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear, and these studies draw their conclusions based on an arguably over-constraining predefined trichotomy of site types. Each site could have had complex life histories and been associated with a wide range of tasks that in sum make up the assemblages. Finally, only a single study concerned with eight Middle-Mesolithic assemblages --- assemblages that are also treated here --- has employed a multivariate quantitative framework to help structure such a treatment [@solheim2013]. In sum, therefore, previous studies are typically either limited to a small number of sites, to a subset of the inventories, or to more subjectively and narratively driven methods.
 
 There have been a few studies that have conducted comprehensive analyses of artefact inventories and site features to get at variation in Mesolithic site types [@viken2018; @breivik2020]. As Binford originally clarified, a point that has also been retiterated by several authors since; these categories are best understood as extremes on a continuous scale.
 
@@ -358,17 +360,16 @@ lithics2 <- sites %>%
          -chip_other, -core_other, -core_fragment_other) %>% 
   column_to_rownames("site")
 
-lithics3 <- sites %>% 
+lithics3 <- gisjoin %>% 
   select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project,
          -reported_start_bp, -reported_end_bp, -askeladden_id) %>% 
   # The reason for not using .keep below is for the option to 
   #retain artefact_count
-  mutate(chip_freq =  sum(chip, chip_other),
-         core_freq = sum(core, core_other),
-         blanks = sum(blade, microblade, fragment, flake, flake_other, 
-                     fragment_other, blade_other,  microblade_other, -core, -core_fragment, -chip, 
-         -chip_other, -core_other, -core_fragment_other),
-         secondary =  sum(axe_debitage, axe, chisel, 
+  mutate(chip_freq =  sum(chip, chip_other) / artefact_count,
+         core_freq = sum(core, core_other) / artefact_count,
+         blanks_freq = sum(blade, microblade, fragment, flake, flake_other, 
+                     fragment_other, blade_other,  microblade_other) / artefact_count,
+         secondary_freq =  sum(axe_debitage, axe, chisel, 
                 microlith, tanged_point, transverse_point, single_edged_point,
                 hognipen_point, projectile_undefined, microburin, scraper, 
                 knife, burin, drill, blade_retouch, microblade_retouch, 
@@ -377,12 +378,20 @@ lithics3 <- sites %>%
                 grinding_slab_stone, projectile_point_other, knife_other,
                 scraper_other, drill_other, microblade_retouch_other, 
                 blade_retouch_other, fragment_retouch_other,
-                flake_retouch_other),
-         lithic_dens = artefact_count / excavated_m3) %>%
+                flake_retouch_other) / artefact_count,
+         nonflint_freq = nonflint_count / artefact_count,
+         lithic_dens = artefact_count / excavated_m3,
+         viewsize_5k = log10(viewsize_5k),
+         viewsize_10k = log10(viewsize_10k),
+         fetch = log10(avg_fetch)) %>%
   select(-blanks_lithics, -secondary_lithics, -excavated_m3, -artefact_count,
          -flint_count, -nonflint_count, -core, -core_fragment, -chip, 
-         -chip_other, -core_other, -core_fragment_other) %>% 
+         -chip_other, -core_other, -core_fragment_other, -cat, -municipality, -quality,
+         -elev_minimum, -site_size, -cent_elev, -phase, -slope_average, -aspect_average,
+         -infiltration_mode,-emergence_50, -emergence_500, -emergence_1k, -location,
+         -island_size) %>% 
   column_to_rownames("site")
+
 
 # Repeat but for flint only
 flint2 <- sites %>% 
@@ -540,7 +549,7 @@ plt1 + plt2
 
 The results of the CA does appear to align reasonably well with previous research that has been based on more informal analyses of artefact types, indicating that the employed artefact categories are capturing some behaviorally meaningful patterning that changes over time. However, as several authors have pointed out in relation to the application of CA for seriation purposes, 'time is not the only dimension'. This is evident in the present data as well, highlighted by the influence of the later Mesolithic axe production sites, which it would be reasonable to assume corresponds to a more pervasive cultural change than a purely typo-chronological development of artefact morphology. Unpicking and aligning the signficance of these chronological patterns with any specific behavioural dimensions using the CA results is, however, another task entirely. This follows most clearly from the fact that for the most part we lack even a most basic understanding of what any individual lithic object has been used for, leaving the behavioural significance of the employed units of analysis unclear (see section, above).
 
-The consistent nature of the negative correlation between LVD and relative retouch frequency across this study (r = -0.50), @clark2017 (r = -0.50) and @Bicho2020 (r = -0.48) is striking. While this result is perhaps not surprising given the previous and plentiful indications of the same trends, these results do speak to the cross-cultural and cross-temporal applicability of the measure, and consequently the potential it holds for comparative studies. The findings indicated by the WABI, as well as by the negative correlation between relative frequency of primarily and secondarily worked lithics, do align more clearly with previous suggestions concerning the overall mobility patterns in Mesolithic Norway. However, the question then becomes: What is the significance of the negatively correlated variables of relative frequency of cores and chips? Given that these are more or less orthogonal to the WABI variables on the first and second component, this would indicate that if one of these variable pairs is taken to reflect the scale between expedient and curated technologies, it should follow that the other variable pair is not correlated with these. As the entire temporal range of the sites is spread out between the extremes of the chip and core variables, one possibility is that these are indicative of site types that are temporally ubiquitous. In attempt to determine if this might be the case, it was decided to introduce site locational data from a previous study that in addition to surveyed sites involved the analysis of the sites treated here @roalkvam2020. Of the variables considered, this study found that the most consistently important environmental covariates for the location of sites in the region was related to the exposure of the sites, and failed to identify any diachronic variation in this pattern. As it has previously been proposed that sites located in areas exposed to wind and waves and with large overview of surrounding areas is a characteristic of hunting stations or similarly temporary , one could envisage that variablity in site functionality might be reflected in degree of exposure. However, introducing these variables does not clarify the picture, as both variables show negligible degrees of correlation with any of the variables pertaining to the assemblage data.
+these results do speak to the cross-cultural and cross-temporal applicability of the measure, and consequently the potential it holds for comparative studies. The findings indicated by the WABI, as well as by the negative correlation between relative frequency of primarily and secondarily worked lithics, do align more clearly with previous suggestions concerning the overall mobility patterns in Mesolithic Norway. However, the question then becomes: What is the significance of the negatively correlated variables of relative frequency of cores and chips? Given that these are more or less orthogonal to the WABI variables on the first and second component, this would indicate that if one of these variable pairs is taken to reflect the scale between expedient and curated technologies, it should follow that the other variable pair is not correlated with these. As the entire temporal range of the sites is spread out between the extremes of the chip and core variables, one possibility is that these are indicative of site types that are temporally ubiquitous. In attempt to determine if this might be the case, it was decided to introduce site locational data from a previous study that in addition to surveyed sites involved the analysis of the sites treated here @roalkvam2020. Of the variables considered, this study found that the most consistently important environmental covariates for the location of sites in the region was related to the exposure of the sites, and failed to identify any diachronic variation in this pattern. As it has previously been proposed that sites located in areas exposed to wind and waves and with large overview of surrounding areas is a characteristic of hunting stations or similarly temporary , one could envisage that variablity in site functionality might be reflected in degree of exposure. However, introducing these variables does not clarify the picture, as both variables show negligible degrees of correlation with any of the variables pertaining to the assemblage data.
 
 This is arguably more established than the variables included bysimilarities between the variable plots of @Bicho2020 and the variables indicated in is striking. This pertains to the negative correlation between core and chip frequency, and the negative correlation between primary and secondarily worked lithics. This last
 
@@ -548,7 +557,7 @@ These measures are taken from the framework of whole assemblage behavioural inde
 
 # Conclusion
 
-The results of the CA using the entirety of the lithic assemblages align more or less with results of previous research in south-eastern Norway. This would indicate that in general, meaningful chronological patterning is associated with the employed artefact groups. Precisely what behavioural implication the development in the use of these types have, however, is unclear
+The results of the CA using the entirety of the lithic assemblages align more or less with results of previous research in south-eastern Norway. This would indicate that in general, meaningful chronological patterning is associated with the employed artefact categories. These tendencies are already well-established when it comes to formal tool types, but the have been given less focus in terms of entire assemblages these notions have previously Precisely what behavioural implication the development in the use of these types have, however, is unclear
 
 The results of considering variables that are have been associated with mobility patterns gave rise to two competing hypotheses. These pertain to whether the degree of curation associated with the assemblages as captured by the changing ratio of primary to secondarily worked lithics over time is the result of changing raw material availability or mobility patterns. The orthogonal relationship between core to chip frequency would in this framework be expected to be capturing the opposite relationship. If degree of curation mainly reflects changes in raw-material quality and availability, this would then indicate that mobility patterns are comparable throughout the Mesolithic as the core to chip frequency is not time-dependent. And vice verca --- if the changing mobility patterns is the main driver of the transition from curated to expedient technological organisation, as operationalised here, While this would be in line with findings from a recent evaluation of the locational patterns associated with the sites [@roalkvam2020], there is no readily available empirical evidence, no smoking gun, se findings are the results of an exploratory analysis, and are therefore perhaps best seen as potentially laying the framework for later targeted strategic test of these competing hypotheses.
 
