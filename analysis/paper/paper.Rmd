@@ -93,48 +93,37 @@ sites <- assemblages %>%
   filter(artefact_count > 100)
 
 h3 <- radiocarbon %>% 
-  filter(site == "Hovland 3") 
+  filter(site == "Vallermyrene 1") 
 
 h3dat <- R_Date(h3$lab_code, h3$c14_bp, h3$error)
-h3_sum <- oxcal_Sum(h3dat)
-h3_run <- executeOxcalScript(h3_sum)
-h3_text <- readOxcalOutput(h3_run)
-h3_result <- parseFullOxcalOutput(h3_text)
 
-oxcal_code <- paste(' Plot()
+
+oxcal_code <- paste0('Plot()
    {
     Sequence()
     {
      Boundary("Start");
      Phase()
-     {',
+     {
+    ',
       h3dat,
-     '};
+     '
+     Sum("Vallermyrene 1");
+     };
      Boundary("End");
     };
   };')
 my_result_file <- executeOxcalScript(oxcal_code)
 my_result_text <- readOxcalOutput(my_result_file)
-my_result_data <- parseOxcalOutput(my_result_text)
+my_result_data <- parseOxcalOutput(my_result_text, only.R_Date = FALSE)
+plot(my_result_data$` Vallermyrene 1 `$posterior_probabilities$dates, my_result_data$` Vallermyrene 1 `$posterior_probabilities$probabilities, type = "l")
 
-my_oxcal_code <- ' Plot()
- {
-  Sequence("Sequence1")
-  {
-   Boundary("Beginn");
-   Phase("Phase1")
-   {
-    R_Date("Lab-1",5000,25);
-    R_Date("Lab-2",4900,37);
-   };
-   Boundary("Between");
-   Phase("Phase2")
-   {
-    R_Date("Lab-3",4800,43);
-   };
-   Boundary("End");
-  };
- };'
+
+pst <- get_posterior_probabilities(my_result_data)
+# h3_sum <- oxcal_Sum(h3dat)
+# h3_run <- executeOxcalScript(h3_sum)
+# h3_text <- readOxcalOutput(h3_run)
+# h3_result <- parseFullOxcalOutput(h3_text)
 
 ```
 
