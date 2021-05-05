@@ -1,69 +1,68 @@
-site,material,lab_code,c14_bp,error
-Hovland 5,"Hazel (Corylus), nutshell",Ua-45490,8775,52
-Hovland 4,Burnt bone,Ua-45500,8747,64
-Hovland 4,"Hazel (Corylus), nutshell",Ua-45499,8630,49
-Hovland 4,Birch (Betula),Ua-45493,8568,51
-Hovland 4,Birch (Betula),Ua-45494,8526,52
-Hovland 1,Hazel (Corylus),TRa-3410,8465,55
-Hovland 1,Aspen/willow (Populus/Salix),Ua-45675,8623,50
-Hovland 1,Birch resin (Betula) on microblade,AAR-16884,8582,33
-Hovland 3,Birch (Betula),Ua-45507,8609,54
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45515,8606,50
-Hovland 3,Birch (Betula),Ua-45509,8594,48
-Hovland 3,Rowan (Sorbus),Ua-45508,8591,50
-Hovland 3,Birch (Betula),Ua-45504,8584,49
-Hovland 3,Rowan (Sorbus),Ua-45514,8552,50
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45517,8540,51
-Hovland 3,Rowan (Sorbus),Ua-45505,8467,53
-Hovland 3,Birch (Betula),Ua-45511,8465,48
-Hovland 3,Rowan (Sorbus),Ua-45506,8458,48
-Hovland 3,"Hazel (Corylus), nutshell",Beta-325802,8450,40
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45516,8428,50
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45522,8398,49
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45520,8387,47
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45519,8383,47
-Hovland 3,Birch (Betula),Ua-45503,8376,51
-Hovland 3,Birch (Betula),Ua-45512,8348,47
-Hovland 3,"Hazel (Corylus), nutshell",Ua-45518,8291,48
-Torstvet,"Hazel (Corylus), nutshell",TRa-3406,8460,55
-Torstvet,"Hazel (Corylus), nutshell",TRa-3407,8425,55
-Prestemoen 1,"Hazel (Corylus), nutshell",Ua-45176,8671,45
-Prestemoen 1,Burnt bone,Ua-45177,8620,45
-Prestemoen 1,"Hazel (Corylus), nutshell",Ua-45178,8593,46
-Langangen Vestgård 1,Burnt bone,TRa-1994,7785,40
-Langangen Vestgård 1,Burnt bone,TRa-1995,7760,40
-Langangen Vestgård 1,Pine (Pinus),TRa-2243,7780,70
-Langangen Vestgård 1,Birch/rowan (Betula/Sorbus),TRa-4114,7870,45
-Langangen Vestgård 1,Hazel (Corylus),TRa-4115,7740,45
-Langangen Vestgård 1,Hazel (Corylus),TRa-4116,7800,45
-Langangen Vestgård 1,Pine (Pinus),TRa-4117,8030,55
-Langangen Vestgård 1,Willow (Salix),TRa-4118,8005,45
-Langangen Vestgård 1,Birch/hazel (Betula/Corylus),TRa-4119,7850,45
-Langangen Vestgård 1,Hazel (Corylus),TRa-4120,7875,45
-Langangen Vestgård 1,Birch/willow (Betula/Salix),TRa-4121,7945,45
-Langangen Vestgård 1,Burnt bone,TRa-4122,7795,40
-Langangen Vestgård 1,Burnt bone,TRa-4123,7745,35
-Vallermyrene 4,"Burnt bone, mammal",Ua-45169,6489,50
-Vallermyrene 4,"Burnt bone, mammal",Ua-45170,6381,37
-Vallermyrene 4,Pine (Pinus),Ua-45172,6197,40
-Vallermyrene 4,Pine (Pinus),Ua-45171,6067,41
-Vallermyrene 1,Pine (Pinus),Ua-45182,5770,35
-Vallermyrene 1,Pine (Pinus),Ua-45181,5748,35
-Vallermyrene 1,Birch (Betula),Ua-45180,5373,34
-Langangen Vestgård 3,Pine (Pinus),TRa-2246,5400,55
-Langangen Vestgård 3,Pine (Pinus),TRa-2247,5325,50
-Langangen Vestgård 3,Pine (Pinus),TRa-2248,5910,10
-Langangen Vestgård 3,Pine (Pinus),TRa-4126,5095,40
-Langangen Vestgård 3,Birch (Betula),TRa-2249,5325,45
-Langangen Vestgård 3,Birch (Betula),TRa-2250,5325,50
-Gunnarsrød 4,Birch (Betula),UBA-19159,6941,36
-Hegna vest 2,Pine (Pinus),Ua-50497,8708,38
-Hegna vest 1,Aspen/willow (Populus/Salix),Ua-50485,8788,34
-Hegna vest 1,Willow (Salix),Ua-51462,8732,40
-Hegna vest 1,Willow (Salix),Ua-51466,6816,36
-Hegna vest 3,Aspen/willow (Populus/Salix),Ua-51471,8679,39
-Stokke/Polland 8,Birch (Betula),Ua-51840,6215,35
-Hegna øst 2,Pine (Pinus),Ua-50501,6318,26
-Stokke/Polland 5,Pomoideae (Malinae),Ua-48257,6098,40
-Stokke/Polland 5,Hazel (Corylus),Ua-48258,6177,42
-Stokke/Polland 5,Alder (Alnus),Ua-50501,6196,40
+site,excavation_project,material,lab_code,c14_bp,error
+Hovland 5,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45490,8775,52
+Hovland 4,bommestad_sky,Burnt bone,Ua-45500,8747,64
+Hovland 4,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45499,8630,49
+Hovland 4,bommestad_sky,Birch (Betula),Ua-45493,8568,51
+Hovland 4,bommestad_sky,Birch (Betula),Ua-45494,8526,52
+Hovland 1,bommestad_sky,Hazel (Corylus),TRa-3410,8465,55
+Hovland 1,bommestad_sky,Aspen/willow (Populus/Salix),Ua-45675,8623,50
+Hovland 1,bommestad_sky,Birch resin (Betula) on microblade,AAR-16884,8582,33
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45507,8609,54
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45515,8606,50
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45509,8594,48
+Hovland 3,bommestad_sky,Rowan (Sorbus),Ua-45508,8591,50
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45504,8584,49
+Hovland 3,bommestad_sky,Rowan (Sorbus),Ua-45514,8552,50
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45517,8540,51
+Hovland 3,bommestad_sky,Rowan (Sorbus),Ua-45505,8467,53
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45511,8465,48
+Hovland 3,bommestad_sky,Rowan (Sorbus),Ua-45506,8458,48
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Beta-325802,8450,40
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45516,8428,50
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45522,8398,49
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45520,8387,47
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45519,8383,47
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45503,8376,51
+Hovland 3,bommestad_sky,Birch (Betula),Ua-45512,8348,47
+Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45518,8291,48
+Torstvet,bommestad_sky,"Hazel (Corylus), nutshell",TRa-3406,8460,55
+Torstvet,bommestad_sky,"Hazel (Corylus), nutshell",TRa-3407,8425,55
+Prestemoen 1,vestfoldbaneprosjektet,"Hazel (Corylus), nutshell",Ua-45176,8671,45
+Prestemoen 1,vestfoldbaneprosjektet,Burnt bone,Ua-45177,8620,45
+Prestemoen 1,vestfoldbaneprosjektet,"Hazel (Corylus), nutshell",Ua-45178,8593,46
+Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-1994,7785,40
+Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-1995,7760,40
+Langangen Vestgård 1,vestfoldbaneprosjektet,Pine (Pinus),TRa-2243,7780,70
+Langangen Vestgård 1,vestfoldbaneprosjektet,Birch/rowan (Betula/Sorbus),TRa-4114,7870,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Hazel (Corylus),TRa-4115,7740,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Hazel (Corylus),TRa-4116,7800,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Pine (Pinus),TRa-4117,8030,55
+Langangen Vestgård 1,vestfoldbaneprosjektet,Willow (Salix),TRa-4118,8005,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Birch/hazel (Betula/Corylus),TRa-4119,7850,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Hazel (Corylus),TRa-4120,7875,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Birch/willow (Betula/Salix),TRa-4121,7945,45
+Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-4122,7795,40
+Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-4123,7745,35
+Vallermyrene 4,vestfoldbaneprosjektet,"Burnt bone, mammal",Ua-45169,6489,50
+Vallermyrene 4,vestfoldbaneprosjektet,"Burnt bone, mammal",Ua-45170,6381,37
+Vallermyrene 4,vestfoldbaneprosjektet,Pine (Pinus),Ua-45172,6197,40
+Vallermyrene 4,vestfoldbaneprosjektet,Pine (Pinus),Ua-45171,6067,41
+Vallermyrene 1,vestfoldbaneprosjektet,Pine (Pinus),Ua-45182,5770,35
+Vallermyrene 1,vestfoldbaneprosjektet,Pine (Pinus),Ua-45181,5748,35
+Vallermyrene 1,vestfoldbaneprosjektet,Birch (Betula),Ua-45180,5373,34
+Langangen Vestgård 3,vestfoldbaneprosjektet,Pine (Pinus),TRa-2246,5400,55
+Langangen Vestgård 3,vestfoldbaneprosjektet,Pine (Pinus),TRa-2247,5325,50
+Langangen Vestgård 3,vestfoldbaneprosjektet,Pine (Pinus),TRa-2248,5910,10
+Langangen Vestgård 3,vestfoldbaneprosjektet,Pine (Pinus),TRa-4126,5095,40
+Langangen Vestgård 3,vestfoldbaneprosjektet,Birch (Betula),TRa-2249,5325,45
+Langangen Vestgård 3,vestfoldbaneprosjektet,Birch (Betula),TRa-2250,5325,50
+Gunnarsrød 4,vestfoldbaneprosjektet,Birch (Betula),UBA-19159,6941,36
+Hegna vest 2,rugtvedt_dordal,Pine (Pinus),Ua-50497,8708,38
+Hegna vest 1,rugtvedt_dordal,Aspen/willow (Populus/Salix),Ua-50485,8788,34
+Hegna vest 1,rugtvedt_dordal,Willow (Salix),Ua-51462,8732,40
+Hegna vest 3,rugtvedt_dordal,Aspen/willow (Populus/Salix),Ua-51471,8679,39
+Stokke/Polland 8,rugtvedt_dordal,Birch (Betula),Ua-51840,6215,35
+Hegna øst 2,rugtvedt_dordal,Pine (Pinus),Ua-50501,6318,26
+Stokke/Polland 5,rugtvedt_dordal,Pomoideae (Malinae),Ua-48257,6098,40
+Stokke/Polland 5,rugtvedt_dordal,Hazel (Corylus),Ua-48258,6177,42
+Stokke/Polland 5,rugtvedt_dordal,Alder (Alnus),Ua-50501,6196,40
