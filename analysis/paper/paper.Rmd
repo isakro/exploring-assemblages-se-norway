@@ -40,6 +40,7 @@ knitr::opts_chunk$set(
 ```{r libraries, eval = TRUE}
 library(tidyverse)
 library(GGally)
+library(ggridges)
 library(patchwork)
 library(gt)
 library(FactoMineR)
@@ -73,9 +74,9 @@ countries <- st_read(here::here('analysis/data/raw_data/naturalearth_countries.g
 
 # Introduction
 
-The analyses conducted here employs multivariate exploratory statistics using the entirety of the lithic assemblages associated with a larger number of Mesolithic sites located in south-eastern Norway. This is done to identify latent patterns and structure in the relationship between the assemblages, with the ultimate aim of identifying behaviourally induced variation in their composition across time and space. However, the composition of the assemblages can be expected to be determined by a multitude of factors [e.g. @dibble2017], ranging from the impact of natural formation processes, to various and intermixed behavioural aspects such as purpose, duration, frequency and group sizes at visits to the sites. The assemblages are also likely to be impacted by variation in lithic technology, artefact function, use-life and discard patterns, as well as access to raw materials and seasonality. Finally, analytical and methodological dimensions relating to survey, excavation and classification practices are also fundamental to how the assemblages are defined. Consequently, the analysis conducted here is done from an exploratory perspective, where all of these factors should be seen as potential contributors to any observed pattern.
+This study employs multivariate exploratory statistics to analyse the entirety of the lithic assemblages associated with a larger number of Mesolithic sites located in south-eastern Norway. This is done to identify latent patterns and structure in the relationship between the assemblages, with the ultimate aim of identifying behaviourally induced variation in their composition across time and space. However, the composition of the assemblages can be expected to be determined by a multitude of factors [e.g. @dibble2017], ranging from the impact of natural formation processes, to various and intermixed behavioural aspects such as purpose, duration, frequency and group sizes at visits to the sites. The assemblages are also likely to be impacted by variation in lithic technology, artefact function, use-life and discard patterns, as well as access to raw materials. Finally, analytical and methodological dimensions relating to survey, excavation and classification practices are also fundamental to how the assemblages are defined. Consequently, the analysis conducted here is done from an exploratory perspective, where all of these factors should be seen as potential contributors to any observed pattern.
 
-Even though each individual assemblage can have been impacted by an infinitude of effects that might skew an archaeological interpretation, this does not preclude the applicability of inductive analyses aimed at revealing overarching structure in the data, without imposing overly complex analytical frameworks that attempt to account for these particularities [@bevan2015]. Structure that can be revealed from considering all of the assemblages in aggregate can constitute a step in an iterative analytical chain that ultimately aims to tease apart such aspects from the multitude of factors that have shaped the composition of the assemblages, and should be of value to subsequent in-depth studies of any individual site. The most immediate danger of the approach outlined here is rather to be overly naive in the causal significance and cultural importance that is ascribed to any identified pattern. As such, the main aim of this analysis is to compare the results with findings reported in previous literature concerned with the Mesolithic in southern Norway and have the generation of new hypotheses as a possible outcome. To this end, the analysis follows two analytical avenues. The first involves an analysis of the assemblages that is based on the classification of the artefacts done for the original excavation reports. The second involves an analysis of the assemblages in light of the whole assemblage behaviour index, which has not seen application in this context before.
+However, even though each individual assemblage can have been impacted by an infinitude of effects that might skew an archaeological interpretation, this does not preclude the applicability of inductive analyses aimed at revealing overarching structure in the data, without imposing overly complex analytical frameworks that attempt to account for these particularities [@bevan2015]. Structure that can be revealed from considering all of the assemblages in aggregate can constitute a step in an iterative analytical chain that ultimately aims to tease apart such aspects from the multitude of factors that have shaped the composition of the assemblages, and should be of value to subsequent in-depth studies of any individual site. The most immediate danger of the approach outlined here is rather to be overly naive in the causal significance and cultural importance that is ascribed to any identified pattern. As such, the main aim of this analysis is to compare the results with findings reported in previous literature concerned with the Mesolithic in southern Norway and have the generation of new hypotheses as a possible outcome. To this end, the analysis follows two analytical avenues. The first involves an analysis of the assemblages that is based on the classification of the artefacts done for the original excavation reports. The second involves an analysis of the assemblages in light of the whole assemblage behaviour index, which has not seen application in this context before.
 
 ## Archaeological context and material
 
@@ -93,7 +94,7 @@ sites <- assemblages %>%
   filter(artefact_count > 100)
 ```
 
-```{r c14-modelling}
+```{r c14-modelling, cache = TRUE}
 # define function to model radiocarbon dates. Only assumption is that 
 # dates from a single site belong to a single group
 model_rcarb <- function(data){
@@ -123,7 +124,8 @@ model_rcarb <- function(data){
   # rmarkdown
   invisible(capture.output(oxcal_exec <- executeOxcalScript(oxcal_code)))
   oxcal_read <- readOxcalOutput(oxcal_exec)
-  # Note that parseOxcalOutput() defaults to only returning individual dates
+  # Note that parseOxcalOutput() defaults to only returning individual dates,
+  # specified with only.R_Date
   oxcal_data <- parseOxcalOutput(oxcal_read, only.R_Date = FALSE)
   
   # Assemble data frame to be returned
@@ -144,101 +146,12 @@ posteriors <- radiocarbon %>%
   
 # The data is returned as a list of lists that needs to be unpacked
 rcarb_data <- do.call(rbind, posteriors) 
-  group_by(site) %>%
-  mutate(meandate = mean(date_grid * -1)) %>% 
-  ungroup() %>% 
-  arrange(meandate)
-
-h3 <- radiocarbon %>% 
-  filter(site == "Vallermyrene 1" | site == "Stokke/Polland 5") 
-
-v1 <- model_rcarb(h3)
-
-h3dat <- R_Date(h3$lab_code, h3$c14_bp, h3$error)
-
-
-
-my_result_file <- executeOxcalScript(oxcal_code)
-my_result_text <- readOxcalOutput(my_result_file)
-my_result_data <- parseOxcalOutput(my_result_text, only.R_Date = FALSE)
-plot(my_result_data$`Vallermyrene 1`$posterior_probabilities$dates, my_result_data$`Vallermyrene 1`$posterior_probabilities$probabilities, type = "l")
-
-posterior <- data.frame(probabilities = my_result_data$`Vallermyrene 1`$posterior_probabilities$probabilities,
-                        date_grid = my_result_data$`Vallermyrene 1`$posterior_probabilities$dates,
-                        site = "Vallermyrene 1",
-                        excavation_project = "Vestfoldbaneprosjektet")
-
-ggplot() +
-  geom_line(aes(x = yrs, y = my_result_data$` Vallermyrene 1 `$posterior_probabilities$probabilities))
-
-
-yrs <- seq(11500, 5000, -500)
-plt1 <- ggplot(sites, aes(x = yrs)) +
-  geom_segment(aes(x = reported_start_bc, xend = reported_end_bc,
-                   yend = reorder(site, mean_date), y = reorder(site, mean_date),
-                   colour = excavation_project), size = 1.7) +
-  xlab("Cal. BC") +
-  scale_colour_manual(labels = c("E18 Bommestad-Sky", "E18 Brunlanes",
-                               "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet"),
-                     values = c("springgreen4", "royalblue2",
-                                "gold1", "firebrick3")) +
-  labs(title = "B", colour = "Excavation project") +
-  theme_classic() +
-  theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        legend.position = "bottom") +
-  guides(colour =  guide_legend(title.position = "top", title.hjust = 0.5)) +
-    scale_x_reverse() 
-
-
-
   
-ggplot(sites, aes(x = yrs)) +
-      ggridges::geom_ridgeline(data = rcarb_data, aes(x = date_grid * -1,
-                                                      y = fct_reorder(site, date_grid * -1, .fun = mean),
-                                      height = probabilities * 100,
-                                      fill = excavation_project)) +
-    geom_segment(aes(x = reported_start_bc, xend = reported_end_bc,
-                   yend = reorder(site, mean_date), y = reorder(site, mean_date),
-                   colour = excavation_project), size = 1.7) +
-  xlab("Cal. BC") +
-  scale_colour_manual(labels = c("E18 Bommestad-Sky", "E18 Brunlanes",
-                               "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet"),
-                     values = c("springgreen4", "royalblue2",
-                                "gold1", "firebrick3")) +
-  labs(title = "B", colour = "Excavation project") +
-  theme_classic() +
-  theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
-        legend.position = "bottom") +
-  guides(colour =  guide_legend(title.position = "top", title.hjust = 0.5)) +
-    scale_x_reverse() 
-
-
-    ggridges::geom_ridgeline(data = rcarb_data, aes(x = date_grid * -1,
-                                      y = fct_reorder(as.factor(site), date_grid * -1, .fun = mean),
-                                      height = probabilities * 100,
-                                      group = fct_reorder(as.factor(site), date_grid * -1, .fun = mean),
-                                      fill = excavation_project)) +
-  scale_fill_manual(labels = c("E18 Rugtvedt-Dørdal", 
-                                "Vestfoldbaneprosjektet", "E18 Bommestad-Sky"),
-                     values = c("springgreen4",
-                                "gold1", "firebrick3"),
-                    guide = FALSE) +
-
-pst <- get_posterior_probabilities(my_result_data)
-# h3_sum <- oxcal_Sum(h3dat)
-# h3_run <- executeOxcalScript(h3_sum)
-# h3_text <- readOxcalOutput(h3_run)
-# h3_result <- parseFullOxcalOutput(h3_text)
-
 ```
 
 The `r nrow(sites)` coastal sites chosen for analysis here have a relatively limited geographical distribution in south-eastern Norway \ref\@(fig:dist)A]. The sites were excavated as part of four larger excavation projects that all took place within the last 15 years [@solheim2013b; @jaksland2014a; @melvold2014b; @reitan2014l; @solheim2017b]. The sites included in the analysis consists of all Mesolithic sites excavated in conjunction with the projects that have assemblages holding more than 100 artefacts. The institution responsible for these excavations was the Museum of Cultural History in Oslo. This has led to a considerable overlap in the archaeological personnel involved, and comparable excavation practices across the excavations. Furthermore, with these projects, major efforts were made to standardise how lithic artefacts were to be classified at the museum. As a result, this should reduce the amount of artificial patterning in the data incurred by discrepancies in the employed systems for categorisation [e.g. @clark2006; @dibble2017]. In this setting, for example, bias could potentially follow from the fact that two of the projects have sites with relatively contemporaneous dates [@solheim2013b; @jaksland2014, see also \ref\@(fig:dist)B]. Any project-dependent classification practice could as a consequence lead to an exaggeration of chronological differences between the assemblages. While this is difficult to fully account for, I do believe that the relative contemporaneity of the excavation projects, as well as the overlap in excavation and classification practices should minimise the above-mentioned effects, making the data-set a good candidate for exploratory data analysis.
 
-```{r dist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. The date ranges follow those given in the original excavation reports", fig.height = 10, fig.width = 12}
+```{r dist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. Radiocarbon probability density functions are given as the posterior sum. Solid lines indicate that the site has been dated with reference to relative sea-level change and typological indicators. These follow the original reports.", fig.height = 11, fig.width = 12}
 # Create a bounding box around site points to limit the overview map
 sitbbox <- st_bbox(site_pts)
 sitbbox[1:2] <- sitbbox[1:2] - 600000
@@ -316,24 +229,39 @@ sitemap <-
   guides(fill = guide_legend(ncol = 2,
                              title.position = "top", title.hjust = 0.5))
 
-yrs <- seq(11500, 5000, -500)
-temp_dist <- ggplot(sites, aes(x = yrs, y = reorder(site, mean_date))) +
+# Combine radiocarbon data and reported (effectively shoreline/typology) dates,
+# removing the reported date if there are relevant 14C-dates.
+datedata <- full_join(sites, rcarb_data, by = "site") %>% 
+  mutate(reported_start_bc = ifelse(dating_method != "c14", reported_start_bc, NA),
+         reported_end_bc = ifelse(dating_method != "c14", reported_end_bc, NA))
+
+project_colors <- c("bommestad_sky" = "springgreen4",
+                  "brunlanes" = "royalblue2", 
+                  "rugtvedt_dordal" = "gold1",
+                  "vestfoldbaneprosjektet" = "firebrick3")
+
+# Assemble plot of date ranges
+temp_dist <- ggplot(datedata, aes(x = mean_date, y = reorder(site, mean_date))) +
   geom_segment(aes(x = reported_start_bc, xend = reported_end_bc,
-                   yend = reorder(site, mean_date),
-                   colour = excavation_project), size = 1.7) +
-  xlab("Cal. BC") +
+                   yend = site, colour = excavation_project.x,
+                   fill = excavation_project.x), size = 1.8) +
+  geom_ridgeline(aes(x = date_grid * -1, height = probabilities * 150,
+                     fill = excavation_project.y, 
+                     colour = excavation_project.x)) +
   scale_x_reverse() +
-  scale_colour_manual(labels = c("E18 Bommestad-Sky", "E18 Brunlanes",
-                               "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet"),
-                     values = c("springgreen4", "royalblue2",
-                                "gold1", "firebrick3")) +
-  labs(title = "B", colour = "Excavation project") +
+  scale_fill_manual(values = project_colors,
+                    labels = c("E18 Bommestad-Sky","E18 Brunlanes",
+                            "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet")) +
+  scale_colour_manual(values = project_colors) +
+  labs(title = "B", fill = "Excavation project") +
+  xlab("Cal. BC") +
   theme_classic() +
   theme(axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank(),
         legend.position = "bottom") +
-  guides(colour =  guide_legend(title.position = "top", title.hjust = 0.5))
+  guides(fill =  guide_legend(title.position = "top", title.hjust = 0.5),
+         colour = FALSE) 
 
 
 (overview + sitemap) /
@@ -346,11 +274,481 @@ A defining characteristic of the Norwegian Mesolithic is that a clear majority o
 
 The data analysed here is based on the classification of the `r nrow(sites)` site assemblages done for the original excavation reports, and consists of `r ncol(select(sites, core:flake_retouch_other))` variables representing different debitage and tool types. While the classification practices for the excavation projects were standardised to an extent, there are some instances where time was allocated to identify additional artefact sub-categories aimed at answering specific research questions. Some categories in the original reports have therefore been combined in the dataset. This for example pertains to the category narrow-blades, which is defined as blades of width between 8 and 12 mm. In the reports, this was only separated from (macro-)blades (width $\ge$ 12 mm) and micro-blades (width $\le$ 8 mm) for some of the sites. Narrow-blades were combined with the blade category here. Furthermore, the artefact data have here been divided into flint and non-flint materials. Flint does not occur indigenously in Norway, and is only available locally as nodules that have been transported and deposited by retreating and drifting ice [e.g. @berg-hansen1999]. This means that the distribution and quality of the flint has been impacted by a diverse set of factors relating to climatic and geographical factors such as, but not limited to, topographic variability, shoreline morphology and ocean currents [@eigeland2015, 46]. An in depth-analysis of the flint quality from sevens sites did result in the finding that the flint quality was relatively high, and consistently so across the sites. However, despite flint being treated as a unified category here, the cited study by was based on only seven sites located some km distance from the present study area, meaning that the results might not necessarily be transferable to the sites treated here [@eigeland2015, 45-53]. Furthermore, the various non-flint raw materials that have been lumped together here can have quite disparate properties, where fine-grained cryptocrystalline materials are often used as a substitute or supplement to flint, while other, coarser materials are usually associated with the production of axes and other macro tools. Given this differentiated use, these raw-material properties are expected to be reflected in the retained debitage and tool categories. An important benefit of combining all of the non-flint materials is that this reduces the dependency on whether or not these have been correctly and consistently categorised for the reports [cf. @frivoll2017]. While certainly a topic deserving of more attention, the general sentiment in the literature is that there would have been stable access to locally available non-flint raw-materials of good quality in south-eastern Norway [@eigeland2015, 370].
 
-The date ranges provided for the sites are taken from the original excavation reports, and are the result of a consideration of typological indicators, dating with reference to shoreline displacement, and radiocarbon dates where these are available. Employing these date-ranges was deemed sufficient, as the main purpose is to get at general tendencies in the material, and not fine-grained chronological developments.
+Where available radiocarbon dates associated with the sites have been subjected to bayesian modelling employing Oxcal through the oxcAAR package in R. The only constraint imposed in the model was that the dates from each site are assumed to belong to a group ---
 
-In a series of case studies from Northern Norway, @bølviken1982 were among a group of scholars often attributed the popularisaton of correspondence analysis (CA) in wider archaeologcal circles [@baxter1994]. In southern Norway, however, the use of multivariate statistics in Mesolithic research is to my knowledge limited to @solheim2013a use of CA to analyse the assemblage data from eight sites excavated in connection with a development-led project. As these sites, which are included in this study, have relatively contemporaneous dates, the Solheims analysis was mainly aimed at identifying potential variation in the
+title: "Exploring the composition of lithic assemblages in Mesolithic south-eastern Norway"
+
+author:
+
+-   Isak Roalkvam:
+
+email: isak.roalkvam\@iakh.uio.no
+
+institute: [UiO]
+
+correspondence: true
+
+institute:
+
+-   UiO: University of Oslo
+
+date: "\`r format(Sys.time(), '%d %B, %Y')\`"
+
+output:
+
+bookdown::html_document2:
+
+fig_caption: yes
+
+reference_docx: "../templates/template.docx" \# Insert path for the DOCX file
+
+pandoc_args:
+
+-   --lua-filter=../templates/scholarly-metadata.lua
+
+-   --lua-filter=../templates/author-info-blocks.lua
+
+-   --lua-filter=../templates/pagebreak.lua
+
+bibliography: references.bib
+
+csl: "../templates/journal-of-archaeological-science.csl" \# Insert path for the bib-style
+
+------------------------------------------------------------------------
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+
+<!-- The following code chunk defines some general settings how code chunks should behave. -->
+
+\`\`\`{r setup, echo = FALSE}
+
+knitr::opts_chunk\$set(
+
+collapse = TRUE,
+
+warning = FALSE,
+
+message = FALSE,
+
+echo = FALSE,
+
+comment = "\#\>",
+
+fig.width = 9,
+
+fig.path = "../figures/",
+
+dpi = 300
+
+)
+
+\`\`\`
+
+\`\`\`{r libraries, eval = TRUE}
+
+library(tidyverse)
+
+library(GGally)
+
+library(ggridges)
+
+library(patchwork)
+
+library(gt)
+
+library(FactoMineR)
+
+library(factoextra)
+
+library(sf)
+
+library(rnaturalearth)
+
+library(oxcAAR)
+
+quickSetupOxcal()
+
+\`\`\`
+
+\`\`\`{r get-functions, include = FALSE}
+
+source(here::here("analysis/script/plot_functions.R"), local = knitr::knit_global())
+
+\#setOxcalExecutablePath("/tmp/RtmpFVOcBJ")
+
+\`\`\`
+
+\`\`\`{r get-data, eval = TRUE, results = 'hide'}
+
+assemblages \<- read.csv(here::here('analysis/data/raw_data/assemblage_data.csv'))
+
+radiocarbon \<- read.csv(here::here('analysis/data/raw_data/radiocarbon_data.csv'))
+
+site_pts \<- st_read(here::here('analysis/data/raw_data/sites.gpkg'))
+
+\# ne_download() is currently failing
+
+\#countries \<- ne_download(scale = 10, type = 'countries', category = 'physical',
+
+\# returnclass = "sf")
+
+countries \<- st_read(here::here('analysis/data/raw_data/naturalearth_countries.gpkg'))
+
+\# gis \<- read.csv(here::here('../../site_data.csv'))
+
+\# gis\$askeladden_id \<- as.integer(str_replace_all(gis\$askeladden_id, c("-1" = "", "-0" = "", "-2" = "", "-3" = "", "-4" = "")))
+
+\# gisjoin \<- right_join(gis, sites, by = c("askeladden_id" = "askeladden_id"))
+
+\`\`\`
+
+\# Introduction
+
+The analyses conducted here employs multivariate exploratory statistics using the entirety of the lithic assemblages associated with a larger number of Mesolithic sites located in south-eastern Norway. This is done to identify latent patterns and structure in the relationship between the assemblages, with the ultimate aim of identifying behaviourally induced variation in their composition across time and space. However, the composition of the assemblages can be expected to be determined by a multitude of factors [e.g. \@dibble2017], ranging from the impact of natural formation processes, to various and intermixed behavioural aspects such as purpose, duration, frequency and group sizes at visits to the sites. The assemblages are also likely to be impacted by variation in lithic technology, artefact function, use-life and discard patterns, as well as access to raw materials and seasonality. Finally, analytical and methodological dimensions relating to survey, excavation and classification practices are also fundamental to how the assemblages are defined. Consequently, the analysis conducted here is done from an exploratory perspective, where all of these factors should be seen as potential contributors to any observed pattern.
+
+Even though each individual assemblage can have been impacted by an infinitude of effects that might skew an archaeological interpretation, this does not preclude the applicability of inductive analyses aimed at revealing overarching structure in the data, without imposing overly complex analytical frameworks that attempt to account for these particularities [\@bevan2015]. Structure that can be revealed from considering all of the assemblages in aggregate can constitute a step in an iterative analytical chain that ultimately aims to tease apart such aspects from the multitude of factors that have shaped the composition of the assemblages, and should be of value to subsequent in-depth studies of any individual site. The most immediate danger of the approach outlined here is rather to be overly naive in the causal significance and cultural importance that is ascribed to any identified pattern. As such, the main aim of this analysis is to compare the results with findings reported in previous literature concerned with the Mesolithic in southern Norway and have the generation of new hypotheses as a possible outcome. To this end, the analysis follows two analytical avenues. The first involves an analysis of the assemblages that is based on the classification of the artefacts done for the original excavation reports. The second involves an analysis of the assemblages in light of the whole assemblage behaviour index, which has not seen application in this context before.
+
+\#\# Archaeological context and material
+
+\`\`\`{r wrangling}
+
+sites \<- assemblages %\>%
+
+\# Find mean reported date for each site (to be used in the plots below)
+
+rowwise() %\>%
+
+mutate(mean_date = mean(c(reported_start_bc, reported_end_bc))) %\>%
+
+mutate(
+
+\# Find total artefact count and flint count for each site
+
+artefact_count = sum(c_across(core:flake_retouch_other)),
+
+flint_count = sum(c_across(core:flake_retouch)),
+
+nonflint_count = sum(c_across(axe_other:flake_retouch_other))) %\>%
+
+\# Exclude sites with less than 100 artefacts
+
+filter(artefact_count \> 100)
+
+\`\`\`
+
+\`\`\`{r c14-modelling, cache = TRUE}
+
+\# define function to model radiocarbon dates. Only assumption is that
+
+\# dates from a single site belong to a single group
+
+model_rcarb \<- function(data){
+
+\# Format individual dates for R_Date in Oxcal
+
+dates \<- R_Date(data[["lab_code"]], data[["c14_bp"]], data[["error"]])
+
+\# Manually compile rest of OxCal code
+
+oxcal_code \<- paste0('
+
+Plot()
+
+{
+
+Sequence()
+
+{
+
+Boundary("Start");
+
+Phase()
+
+{
+
+',
+
+dates,
+
+'
+
+Sum("Sum");
+
+};
+
+Boundary("End");
+
+};
+
+};')
+
+\# Run OxCal code - wrapped this in some functions to not print to
+
+\# rmarkdown
+
+invisible(capture.output(oxcal_exec \<- executeOxcalScript(oxcal_code)))
+
+oxcal_read \<- readOxcalOutput(oxcal_exec)
+
+\# Note that parseOxcalOutput() defaults to only returning individual dates,
+
+\# specified with only.R_Date
+
+oxcal_data \<- parseOxcalOutput(oxcal_read, only.R_Date = FALSE)
+
+\# Assemble data frame to be returned
+
+posterior \<- data.frame(
+
+probabilities = oxcal_data\$Sum\$posterior_probabilities\$probabilities,
+
+date_grid = oxcal_data\$Sum\$posterior_probabilities\$dates,
+
+site = data[["site"]][1],
+
+excavation_project = data[["excavation_project"]][1])
+
+\# Return data
+
+return(posterior)
+
+}
+
+\# Apply modelling function to the radiocarbon dates, grouped by site name
+
+posteriors \<- radiocarbon %\>%
+
+group_by(site) %\>%
+
+group_map(\~ model_rcarb(.), .keep = TRUE)
+
+\# The data is returned as a list of lists that needs to be unpacked
+
+rcarb_data \<- do.call(rbind, posteriors)
+
+\`\`\`
+
+The \`r nrow(sites)\` coastal sites chosen for analysis here have a relatively limited geographical distribution in south-eastern Norway \\ref\\\@(fig:dist)A]. The sites were excavated as part of four larger excavation projects that all took place within the last 15 years [\@solheim2013b; \@jaksland2014a; \@melvold2014b; \@reitan2014l; \@solheim2017b]. The sites included in the analysis consists of all Mesolithic sites excavated in conjunction with the projects that have assemblages holding more than 100 artefacts. The institution responsible for these excavations was the Museum of Cultural History in Oslo. This has led to a considerable overlap in the archaeological personnel involved, and comparable excavation practices across the excavations. Furthermore, with these projects, major efforts were made to standardise how lithic artefacts were to be classified at the museum. As a result, this should reduce the amount of artificial patterning in the data incurred by discrepancies in the employed systems for categorisation [e.g. \@clark2006; \@dibble2017]. In this setting, for example, bias could potentially follow from the fact that two of the projects have sites with relatively contemporaneous dates [\@solheim2013b; \@jaksland2014, see also \\ref\\\@(fig:dist)B]. Any project-dependent classification practice could as a consequence lead to an exaggeration of chronological differences between the assemblages. While this is difficult to fully account for, I do believe that the relative contemporaneity of the excavation projects, as well as the overlap in excavation and classification practices should minimise the above-mentioned effects, making the data-set a good candidate for exploratory data analysis.
+
+\`\`\`{r dist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. Radiocarbon probability density functions are given as the posterior sum. Solid lines indicate that the site has been dated with reference to relative sea-level change and typological indicators. These follow the original reports.", fig.height = 12, fig.width = 12}
+
+\# Create a bounding box around site points to limit the overview map
+
+sitbbox \<- st_bbox(site_pts)
+
+sitbbox[1:2] \<- sitbbox[1:2] - 600000
+
+sitbbox[3:4] \<- sitbbox[3:4] + 600000
+
+boundingpoly \<- st_as_sf(st_as_sfc(sitbbox))
+
+\# Reproject the bounding box to match world map, and crop the world map
+
+\# with the bounding box polygon
+
+bound_reproj \<- st_transform(boundingpoly, st_crs(countries))
+
+mapcountries \<- countries %\>%
+
+filter(st_intersects(., bound_reproj, sparse = FALSE))
+
+count_reproj \<- st_transform(mapcountries, st_crs(site_pts))
+
+\# Create bounding box around the sites, both for extent indicator on the
+
+\# overview map and to create basemap for the site overview.
+
+sitbbox2 \<- st_bbox(site_pts)
+
+sitbbox2[1:2] \<- sitbbox2[1:2] - 15000
+
+sitbbox2[3:4] \<- sitbbox2[3:4] + 15000
+
+boundingpoly2 \<- st_as_sf(st_as_sfc(sitbbox2))
+
+\# same as above, using the smaller bounding box
+
+bound_reproj2 \<- st_transform(boundingpoly2, st_crs(countries))
+
+mapcountries2 \<- countries %\>%
+
+filter(st_intersects(., bound_reproj2, sparse = FALSE))
+
+count_reproj2 \<- st_transform(mapcountries2, st_crs(site_pts))
+
+\# Assemble overview map
+
+overview \<-
+
+ggplot() +
+
+geom_sf(data = count_reproj, fill = "grey", colour = NA) +
+
+geom_sf(data = boundingpoly2,
+
+fill = NA, colour = "black", size = 1) +
+
+coord_sf(xlim = c(sitbbox[1], sitbbox[3]), ylim = c(sitbbox[2], sitbbox[4]),
+
+expand = FALSE) +
+
+labs(title = "A") +
+
+theme_bw() + theme(axis.title=element_blank(),
+
+axis.text.y = element_blank(),
+
+axis.text.x = element_blank(),
+
+rect = element_rect(),
+
+axis.ticks = element_blank(),
+
+panel.grid.major = element_blank())
+
+\# Combine spatial point data with assemblage data (holds excavation project
+
+\# for colouring points in the maps)
+
+sitejoin \<- right_join(site_pts, sites, by = c("LOKID" = "askeladden_id"))
+
+\# Assemble site map. anc defined first is used for placing the scalebar,
+
+\# which required some tweaking to get right.
+
+anc \<- as.numeric(c(sitbbox2\$ymin, sitbbox2\$xmax))
+
+sitemap \<-
+
+ggplot() +
+
+geom_sf(data = count_reproj2, fill = "grey", colour = NA) +
+
+geom_sf(data = sitejoin, aes(fill = excavation_project),
+
+size = 2.25, shape=21,
+
+colour = "black") +
+
+labs(fill = "Excavation project") +
+
+scale_fill_manual(labels = c("E18 Bommestad-Sky", "E18 Brunlanes",
+
+"E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet"),
+
+values = c("springgreen4", "royalblue2",
+
+"gold1", "firebrick3")) +
+
+ggsn::scalebar(data = site_pts, dist = 10, dist_unit = "km",
+
+transform = FALSE, st.size = 4, height = 0.05,
+
+border.size = 0.05, st.dist = 0.07,
+
+anchor = c(x = anc[2] - 8000, y = anc[1]) + 4000) +
+
+coord_sf(xlim = c(sitbbox2[1], sitbbox2[3]),
+
+ylim = c(sitbbox2[2], sitbbox2[4]),
+
+expand = FALSE) +
+
+theme_bw() + theme(axis.title=element_blank(),
+
+axis.text.y = element_blank(),
+
+axis.text.x = element_blank(),
+
+rect = element_rect(),
+
+axis.ticks = element_blank(),
+
+panel.grid.major = element_blank(),
+
+legend.position = "none") +
+
+guides(fill = guide_legend(ncol = 2,
+
+title.position = "top", title.hjust = 0.5))
+
+\# Combine radiocarbon data and reported (effectively shoreline/typology) dates,
+
+\# removing the reported date if there are relevant 14C-dates.
+
+datedata \<- full_join(sites, rcarb_data, by = "site") %\>%
+
+mutate(reported_start_bc = ifelse(dating_method != "c14", reported_start_bc, NA),
+
+reported_end_bc = ifelse(dating_method != "c14", reported_end_bc, NA))
+
+project_colors \<- c("bommestad_sky" = "springgreen4",
+
+"brunlanes" = "royalblue2",
+
+"rugtvedt_dordal" = "gold1",
+
+"vestfoldbaneprosjektet" = "firebrick3")
+
+\# Assemble plot of date ranges
+
+temp_dist \<- ggplot(datedata, aes(x = mean_date, y = reorder(site, mean_date))) +
+
+geom_segment(aes(x = reported_start_bc, xend = reported_end_bc,
+
+yend = site, colour = excavation_project.x,
+
+fill = excavation_project.x), size = 1.8) +
+
+geom_ridgeline(aes(x = date_grid \* -1, height = probabilities \* 150,
+
+fill = excavation_project.y,
+
+colour = excavation_project.x)) +
+
+scale_x\_reverse() +
+
+scale_fill_manual(values = project_colors,
+
+labels = c("E18 Bommestad-Sky","E18 Brunlanes",
+
+"E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet")) +
+
+scale_colour_manual(values = project_colors) +
+
+labs(title = "B", fill = "Excavation project") +
+
+xlab("Cal. BC") +
+
+theme_classic() +
+
+theme(axis.title.y=element_blank(),
+
+axis.text.y=element_blank(),
+
+axis.ticks.y=element_blank(),
+
+legend.position = "bottom") +
+
+guides(fill = guide_legend(title.position = "top", title.hjust = 0.5),
+
+colour = FALSE)
+
+(overview + sitemap) /
+
+(temp_dist + theme(plot.margin = unit(c(0,135,0,135), "pt")))
+
+\`\`\`
+
+A defining characteristic of the Norwegian Mesolithic is that a clear majority of the known sites are located in coastal areas [\@glørstad2010]. Furthermore, these coastal sites appear to predominantly have been located on or close to the contemporary shoreline when they were in use [\@breivik2018; \@solheim2020]. In south-eastern Norway, this pattern is combined with a continuous regression of the shoreline, following from isostatic rebound [e.g. \@sørensen1979; \@romundset2018]. The fairly rapid shoreline displacement means that the sites tend not to have retained their strategic or ecologically beneficial shore-bound location for long periods of time [cf. \@perreault2019, 47]. Consequently, the shore-bound settlement, combined with the rapid shoreline displacement has resulted in a relatively high degree of spatial separation of cumulative palimpsests, to follow the terminology of \@bailey2007, while shoreline displacement combined with shore-bound settlement allows for a relatively good chronological control of these accumulation events. In other parts of the world, a higher degree of spatial distribution means that while the physical separation of material can help delineate discrete events, this typically comes at the cost of loosing temporal resolution, as any stratigraphic relationship between the events is lost [\@bailey2007]. However, as the rate of isostatic rebound has varied throughout the Mesolithic in the region, and local topography and bathymetry will have impacted how rapidly a site lost its shore-bound location, this effect is not evenly distributed in time and space. In the earliest part of the Mesolithic, the displacement rate within the study area would have been around as much as 8.8 cm/year, falling to around 0.5 cm/year in the Late Mesolithic [\@sørensen2014]. Thus, while relative sea-level change appears to have reduced the degree of mixing that has occurred in the assemblages, this could vary depending on when and where they were in use, in turn potentially reducing the degree to which their composition can be directly compared --- a point that is returned to in the discussion of the results.
+
+Where available, radiocarbon dates associated with the sites have been subjected to bayesian modelling employing OxCal through the oxcAAR package in R. The only constraint imposed in the models was that the dates from each site are assumed to belong to the same group employing the Phase function from OxCal. The posterior distributions were then summed for each site. Radiocarbon dates considered irrelevant or erroneous in the original reports were disregarded. Where relevant radiocarbon dates are not available, the date ranges provided for the sites are taken from the original excavation reports. These are the result of a consideration of typological indicators as well as shoreline displacement and local topography.
+
+The assemblage data analysed here is based on the classification of the \`r nrow(sites)\` site assemblages done for the original excavation reports, and consists of \`r ncol(select(sites, core:flake_retouch_other))\` variables representing different debitage and tool types. While the classification practices for the excavation projects were standardised to an extent, there are some instances where time was allocated to identify additional artefact sub-categories aimed at answering specific research questions. Some categories in the original reports have therefore been combined in the dataset. This for example pertains to the category narrow-blades, which is defined as blades of width between 8 and 12 mm. In the reports, this was only separated from (macro-)blades (width \$\\ge\$ 12 mm) and micro-blades (width \$\\le\$ 8 mm) for some of the sites. Narrow-blades were combined with the blade category here. Furthermore, the artefact data have here been divided into flint and non-flint materials. Flint does not occur indigenously in Norway, and is only available locally as nodules that have been transported and deposited by retreating and drifting ice [e.g. \@berg-hansen1999]. This means that the distribution and quality of the flint has been impacted by a diverse set of factors relating to climatic and geographical factors such as, but not limited to, topographic variability, shoreline morphology and ocean currents [\@eigeland2015, 46]. An in depth-analysis of the flint quality from sevens sites did result in the finding that the flint quality was relatively high, and consistently so across the sites. However, despite flint being treated as a unified category here, the cited study by was based on only seven sites located some km distance from the present study area, meaning that the results might not necessarily be transferable to the sites treated here [\@eigeland2015, 45-53]. Furthermore, the various non-flint raw materials that have been lumped together here can have quite disparate properties, where fine-grained cryptocrystalline materials are often used as a substitute or supplement to flint, while other, coarser materials are usually associated with the production of axes and other macro tools. Given this differentiated use, these raw-material properties are expected to be reflected in the retained debitage and tool categories. An important benefit of combining all of the non-flint materials is that this reduces the dependency on whether or not these have been correctly and consistently categorised for the reports [cf. \@frivoll2017]. While certainly a topic deserving of more attention, the general sentiment in the literature is that there would have been stable access to locally available non-flint raw-materials of good quality in south-eastern Norway [\@eigeland2015, 370].
 
 Previous studies of lithic artefacts in Norway have typically had a focus on chronological trends associated with formal tool types [e.g. @helskog1976; @reitan2016], involved refit-studies of the entirety of individual assemblages [@skar1986], or been concerned with technological processes associated with certain sub-categories of the site inventories, such as blades or axes [e.g. @damlien2016; @solheim2020]. Some studies have involved in-depth analyses of handful of sites in terms of intrasite spatial organisation [@nærøy2018], and technological organisation [@eigeland2015; @mansrud2016;]. There are also some more comprehensive evaluations of a larger number of entire lithic assemblages to get at potential site types and associated mobility patterns [@breivik2016; @viken2018c; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear, and these studies draw their conclusions based on an arguably over-constraining predefined trichotomy of site types. Each site could have had complex life histories and been associated with a wide range of tasks that in sum make up the assemblages. Finally, only a single study concerned with eight Middle-Mesolithic assemblages --- assemblages that are also treated here --- has employed a multivariate quantitative framework to help structure such a treatment [@solheim2013]. In sum, therefore, previous studies are typically either limited to a small number of sites, to a subset of the inventories, or to more subjectively and narratively driven methods.
+
+In a series of case studies from Northern Norway, @bølviken1982 were among a group of scholars often attributed the popularisaton of correspondence analysis (CA) in wider archaeologcal circles [@baxter1994]. In southern Norway, however, the use of multivariate statistics in Mesolithic research is to my knowledge limited to @solheim2013a use of CA to analyse the assemblage data from eight sites excavated in connection with a development-led project. As these sites, which are included in this study, have relatively contemporaneous dates, the Solheims analysis was mainly aimed at identifying potential variation in the
 
 There have been a few studies that have conducted comprehensive analyses of artefact inventories and site features to get at variation in Mesolithic site types [@viken2018; @breivik2020]. As Binford originally clarified, a point that has also been retiterated by several authors since; these categories are best understood as extremes on a continuous scale.
 
@@ -360,7 +758,7 @@ The first part of the analysis conducted here involves employing the method of c
 
 However, the fact that for the most part we lack even a most basic understanding of what any individual lithic object has been used for does have major implications that the above-outlined analysis does not take properly into account, and renders it difficult to align any identified patterns with specific behavioural dimensions [@dibble2017]. For example, a vast amount of artefacts defined as debitage are likely to have fulfilled the function of tools, and both debitage and formal tool types could have had various different purposes and had a multitude of shapes throughout their use-life. While use-wear analysis could potentially offer a way to identify what artefacts were used for towards the end of their use-life, these kinds of analyses are extremely time-consuming and are therefore typically only conducted on a smaller number of artefacts that have already been selected for analysis based on their shape [e.g. @solheim2018]. Thus, while these analyses can potentially get at in-group variation pertaining to the end-state of a group of artefacts, they do not tell us whether or not their classification as a unified group is meaningful in the first place [@dibble2017]. As a consequence, the second part of the analysis employs a suite of measures developed for the classification of lithic assemblages developed with these inferential limitations in mind [see @clark2017, and below]. The logic behind these measures are founded on an understanding of technology as being organised along a continuum ranging between curated and expedient [@binford1979]. An expedient technological organisation pertains to the situational production of tools to meet immediate needs, with little investment of time and resources in modification and rejuvination, resulting in high rates of tool replacement. Curated technological organisation, on the other hand, has been defined as related to manufacture and maintenance of tools in anticipation of future use, the transport of these artefacts between places of use, and the modification and rejuvenation of artefacts for different and changing situations [@binford1979]. Although precisely how it is measured may vary, the empirical correspondent to a curated technological organisation is therefore typically defined by high degrees of retouch, as this is commonly seen as a means of realising the potential utility of a tool or extending its use-life by the repeated rejuvination and modification of edges [e.g. @bamforth1986; @dibble1995; @shott2005]. The continuum between curated and expedient technology has in turn been related to land-use and mobility strategies, as well as raw-material quality and availability [e.g. @parry1987; @kuhn1992; @andrefsky1994; @smith2015; @clark2017].
 
-While the definition of curation, its archaeological correlates, and behavioural implications have been widely discussed [e.g. @bamforth1986, @shott1996], following not least from the ambiguous definition first put forward by @binford1979, some concrete operationalisation of the terms have been suggested. Through a series of studies Barton and collegues [e.g. -@barton1999; @barton2014; @clark2017] have shown that the relationship between lithic volumetric density and relative frequency of retouched artefacts provide consistent results across a wide range of chronological and cultural context. This measure is taken to reflect degree of curation associated with the assemblages, which in turn is mainly to follow from variation in mobility patterns associated with the sites [@barton2014]. Higher degree of mobility would mean a higher dependency on the artefacts and the material people could bring with them, and dimensions such as weight, reliabilty, repairability, and the degree to which artefacts could be manipulated to fulfill a wide range of tasks are therefore assumed to have been factors of concern. From this it follows that the empirical expectation for short-term camps is a curated technological organisation with higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017]. More time spent in a single location, on the other hand, is in this model assumed to lead to better control of raw-material availability and to allow for its accumulation. This should in turn lead to an expedient technological organisation with reduced necessity for the conservation of lithics and extensive use of retouch. The empirical expectation for lower degree of mobility is therefore relatively high density of lithics and a low relative frequency of retouched artefacts. A further empirical expectation of an expendient tehcnological organisation is a higher number of cores and unretouched flakes and blades [@clark2017].
+While the definition of curation, its archaeological correlates, and behavioural implications have been widely discussed [e.g. @bamforth1986, @shott1996], following not least from the ambiguous definition first put forward by @binford1979, some concrete operationalisation of the terms have been suggested. Through a series of studies Barton and collegues [e.g. -@barton1999; @barton2014; @clark2017] have shown that the relationship between lithic volumetric density and relative frequency of retouched artefacts provide consistent results across a wide range of chronological and cultural context. This measure is taken to reflect degree of curation associated with the assemblages, which in turn is mainly to follow from variation in mobility patterns associated with the sites [@barton2014]. Higher degree of mobility would mean a higher dependency on the artefacts and the material people could bring with them, and dimensions such as weight, reliabilty, repairability, and the degree to which artefacts could be manipulated to fulfill a wide range of tasks are therefore assumed to have been factors of concern. From this it follows that the empirical expectation for short-term camps is a curated technological organisation with higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017]. More time spent in a single location, on the other hand, is in this model assumed to lead to better control of raw-material availability and to allow for its accumulation. This should in turn lead to an expedient technological organisation with reduced necessity for the conservation of lithics and extensive use of retouch. The empirical expectation for lower degree of mobility is therefore relatively high density of lithics and a low relative frequency of retouched artefacts. A further empirical expectation of an expendient tehcnological organisation is as a consequence also a higher number of cores and unretouched flakes and blades [@clark2017].
 
 This is the main measure employed here. Some additional variables suggested by @Bicho2020 to be related to mobility patterns are subsequently also explored using principal components analysis (PCA), following the continuous operationalisations of these measures [cf. @baxter1994, 100].
 
@@ -481,7 +879,7 @@ secondary_lithics <- c(secondary_flint, "axe_other", "axe_debitage_other",
 
 lithics2 <- sites %>% 
   select(-n, -beach_flint_flint_nodule, -hammerstone, -excavation_project,
-         -reported_start_bc, -reported_end_bc, -askeladden_id) %>% 
+          -askeladden_id) %>% 
   # The reason for not using .keep below is for the option to 
   #retain artefact_count
   mutate(chip_freq =  sum(chip, chip_other) / artefact_count,
@@ -502,7 +900,7 @@ lithics2 <- sites %>%
          lithic_dens = artefact_count / excavated_m3) %>%
   select(-blanks_lithics, -secondary_lithics, -excavated_m3, -artefact_count,
          -flint_count, -nonflint_count, -core, -core_fragment, -chip, 
-         -chip_other, -core_other, -core_fragment_other, -dating_method) %>% 
+         -chip_other, -core_other, -core_fragment_other) %>% 
   column_to_rownames("site")
 
 
@@ -529,7 +927,6 @@ wabicor <- cor(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
 wabicorflint <- cor(log10(flint2$flint_dens), log10(flint2$secondary_freq))
 ```
 
-
 ```{r cor-plot, fig.cap = "Correlation plot showing transformation of skewed variables for the PCA, and the linear correlation between these", fig.height = 9.5, fig.width = 10}
 # Transform the skewed variables - sqrt() is used where there are zero values,
 # and seems to provide an adequate result.
@@ -545,7 +942,7 @@ lithicstr <- lithics2 %>%
     "chip_freq", "core_freq^(1/3)" 
   )
 
-corr_plot(lithicstr)
+corr_plot(select(lithicstr, -reported_start_bc, -reported_end_bc, -dating_method))
 ```
 
 ```{r pca-analysis, fig.cap = "PCA using variables related. Note that details on the transformation of the variables has been left out of the plot for clarity.", fig.height = 7, fig.width = 10}
@@ -561,7 +958,8 @@ lithicspca <- lithicstr %>%
   )
 
 
-pcalithics <- PCA(select(lithicspca, -mean_date),
+pcalithics <- PCA(select(lithicspca, -reported_start_bc, -dating_method,
+                         -reported_end_bc, -mean_date),
                   scale.unit = TRUE, graph = FALSE)
 fviz_pca(pcalithics, geom.ind = "point", fill.ind = lithicspca$mean_date / 1000, 
           repel = TRUE, col.var = "black", pointshape = 21,  pointsize = 2.9,
@@ -661,6 +1059,7 @@ w1 | w2
 ```{r index}
 # Create curation index
 minmax <- lithics2 %>% 
+   rownames_to_column(var = "site") %>% 
   mutate(dens =  ((lithic_dens - min(lithic_dens)) / (max(lithic_dens) - min(lithic_dens))),
          secondary = ((secondary_freq - min(secondary_freq)) / (max(secondary_freq) - min(secondary_freq))))
 
@@ -678,6 +1077,44 @@ w3 <- ggplot(indexdata, aes(x = mean_date, y = index)) +
   theme_classic() 
 w3
 ```
+
+```{r aoristic}
+aordata <- full_join(indexdata, rcarb_data, by = "site") 
+
+# Defined function to draw sample from either 14C probability distribution,
+# or uniform typological/displacement-inferred date range.
+sample_date <- function(site){
+  
+  # Extract all rows pertaining to site of interest
+  # site <- as.data.frame(filter(data, site == sitename))
+  
+  # If the dating method is 14C, draw a sample using the associate posterior
+  # probability distribution
+  if(site["dating_method"][1,] == "c14"){
+    samplingframe <- list(x = site[["date_grid"]], y = site[["probabilities"]])
+    sdate <- with(samplingframe, sample(x, size = 1, prob = y))
+  # If not draw a random year from the reported date range (uniform probability)
+  } else {
+    sdate <- sample(as.integer(site["reported_start_bc"]*-1):as.integer(site["reported_end_bc"]*-1), 1)
+  }
+  # Return sampled date
+  return(sdate)
+}
+
+# Create loop to draw samples
+nsamp = 10
+
+for (i in 1:nsamp){
+  tst <- aordata %>% 
+    group_by(site) %>% 
+    group_map(~ sample_date(.), .keep = TRUE) %>% 
+    do.call(rbind, .)
+}
+
+
+
+```
+
 # Discussion
 
 The results of the CA does appear to align reasonably well with previous research that has been based on more informal analyses of artefact types, indicating that the employed artefact categories are capturing some behaviorally meaningful patterning that changes over time. However, as several authors have pointed out in relation to the application of CA for seriation purposes, 'time is not the only dimension'. The developments evident here do also most certainly correspond to more pervasive cultural change than a purely typo-chronological development of artefact morphology, highlighted perhaps most clearly by the influence of the later Mesolithic axe production sites. Unpicking and aligning the signficance of these chronological patterns with any specific behavioural dimensions using the CA results is, however, another task entirely. This follows most clearly from the fact that for the most part we lack even a most basic understanding of what any individual lithic object has been used for, leaving the behavioural significance of the employed units of analysis unclear (see section, above).
