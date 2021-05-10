@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  26 MAR 2021 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  9 MAY 2021 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,40 +853,58 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen144
 \Gin@req@width=\dimen145
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen146
+\captionmargin@=\dimen147
+\captionwidth=\dimen148
+\caption@tempdima=\dimen149
+\caption@indent=\dimen150
+\caption@parindent=\dimen151
+\caption@hangindent=\dimen152
 )
+\c@ContinuedFloat=\count128
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+))
 \cslhangindent=\skip57
 \csllabelwidth=\skip58
 No file paper.aux.
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 104.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 100.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 104.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 100.
+LaTeX Info: Redefining \microtypecontext on input line 104.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -901,16 +919,16 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count128
-\scratchdimen=\dimen146
+\scratchcounter=\count129
+\scratchdimen=\dimen153
 \scratchbox=\box33
-\nofMPsegments=\count129
-\nofMParguments=\count130
+\nofMPsegments=\count130
+\nofMParguments=\count131
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count131
-\MPscratchDim=\dimen147
-\MPnumerator=\count132
-\makeMPintoPDFobject=\count133
+\MPscratchCnt=\count132
+\MPscratchDim=\dimen154
+\MPnumerator=\count133
+\makeMPintoPDFobject=\count134
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -928,17 +946,17 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 104.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count134
+\c@section@level=\count135
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -973,39 +991,41 @@ LaTeX Info: Redefining \nameref on input line 100.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 102.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 106.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 102.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 106.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 102
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 106
 .
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 102
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 106
 .
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 102.
+(Font)              <12> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 102.
+(Font)              <8> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 102.
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+(Font)              <6> on input line 106.
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1015,56 +1035,104 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 \openout3 = `paper.toc'.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 107.
+(Font)              <10> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 107.
+(Font)              <7> on input line 111.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 107.
-<../figures/cor-1.pdf, id=6, 710.655pt x 478.78876pt>
-File: ../figures/cor-1.pdf Graphic file (type pdf)
-<use ../figures/cor-1.pdf>
-Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 114.
-(pdftex.def)             Requested size: 469.77112pt x 316.49834pt.
-<../figures/cor-2.pdf, id=7, 716.6775pt x 478.78876pt>
-File: ../figures/cor-2.pdf Graphic file (type pdf)
-<use ../figures/cor-2.pdf>
-Package pdftex.def Info: ../figures/cor-2.pdf  used on input line 114.
-(pdftex.def)             Requested size: 469.76074pt x 313.83176pt.
+(Font)              <5> on input line 111.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 115.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Warning: Reference `@' on page 1 undefined on input line 129.
+
+
+LaTeX Warning: Reference `@' on page 1 undefined on input line 129.
+
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \vbox (7.80273pt too high) has occurred while \output is active []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<../figures/dist-1.pdf, id=22, 585.18625pt x 733.74126pt>
+File: ../figures/dist-1.pdf Graphic file (type pdf)
+<use ../figures/dist-1.pdf>
+Package pdftex.def Info: ../figures/dist-1.pdf  used on input line 133.
+(pdftex.def)             Requested size: 469.77475pt x 589.03148pt.
+[2] [3 <../figures/dist-1.pdf>] [4] [5]
+<../figures/cor-1.pdf, id=52, 633.36626pt x 919.435pt>
+File: ../figures/cor-1.pdf Graphic file (type pdf)
+<use ../figures/cor-1.pdf>
+Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 174.
+(pdftex.def)             Requested size: 448.07924pt x 650.46051pt.
 
-[3 <../figures/cor-1.pdf> <../figures/cor-2.pdf>]
-
-LaTeX Warning: Reference `fig:cor' on page 4 undefined on input line 116.
+LaTeX Warning: Float too large for page by 22.0305pt on input line 176.
 
 
-LaTeX Warning: Reference `fig:cor' on page 4 undefined on input line 116.
+LaTeX Warning: Reference `fig:cor' on page 6 undefined on input line 178.
 
-<../figures/pca-analysis-1.pdf, id=45, 710.655pt x 496.85625pt>
+
+LaTeX Warning: Reference `fig:cor' on page 6 undefined on input line 178.
+
+
+LaTeX Warning: Reference `fig:cor' on page 6 undefined on input line 180.
+
+[6] [7 <../figures/cor-1.pdf>]
+<../figures/cor-plot-1.pdf, id=75, 712.6625pt x 676.5275pt>
+File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
+<use ../figures/cor-plot-1.pdf>
+Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 197.
+(pdftex.def)             Requested size: 469.74974pt x 445.93143pt.
+<../figures/pca-analysis-1.pdf, id=76, 716.6775pt x 470.75874pt>
 File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
 <use ../figures/pca-analysis-1.pdf>
-Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 120.
+Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 201.
 
-(pdftex.def)             Requested size: 469.77112pt x 328.44167pt.
+(pdftex.def)             Requested size: 469.76074pt x 308.56833pt.
 
-LaTeX Warning: Reference `fig:pca-analysis' on page 4 undefined on input line 1
-24.
+LaTeX Warning: Reference `fig:pca-analysis' on page 8 undefined on input line 2
+02.
 
-[4 <../figures/pca-analysis-1.pdf>]
+[8] [9 <../figures/cor-plot-1.pdf>]
+Underfull \vbox (badness 10000) detected at line 216
+ []
+
+<../figures/var_contrib-1.pdf, id=95, 633.36626pt x 193.72375pt>
+File: ../figures/var_contrib-1.pdf Graphic file (type pdf)
+<use ../figures/var_contrib-1.pdf>
+Package pdftex.def Info: ../figures/var_contrib-1.pdf  used on input line 220.
+(pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
+
+LaTeX Warning: Reference `fig:wabi' on page 10 undefined on input line 224.
+
+
+LaTeX Warning: Reference `fig:wabi' on page 10 undefined on input line 224.
+
+[10 <../figures/pca-analysis-1.pdf>]
+<../figures/wabi-1.pdf, id=109, 699.61375pt x 341.275pt>
+File: ../figures/wabi-1.pdf Graphic file (type pdf)
+<use ../figures/wabi-1.pdf>
+Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 230.
+(pdftex.def)             Requested size: 469.76361pt x 229.15297pt.
+<../figures/simage-1.pdf, id=110, 644.4075pt x 316.18124pt>
+File: ../figures/simage-1.pdf Graphic file (type pdf)
+<use ../figures/simage-1.pdf>
+Package pdftex.def Info: ../figures/simage-1.pdf  used on input line 234.
+(pdftex.def)             Requested size: 469.77443pt x 230.49678pt.
+[11 <../figures/var_contrib-1.pdf> <../figures/simage-1.pdf>] [12 <../figures/w
+abi-1.pdf>] [13]
 ! Undefined control sequence.
 \GenericError  ...                                
                                                     #4  \errhelp \@err@     ...
-l.134 ...s://doi.org/10.1007/978-3-030-27403-0₂}
+l.292 ...s://doi.org/10.1007/978-3-030-27403-0₂}
                                                    
 Here is how much of TeX's memory you used:
- 13480 strings out of 492982
- 192664 string characters out of 6134896
- 298129 words of memory out of 5000000
- 16811 multiletter control sequences out of 15000+600000
- 53775 words of font info for 67 fonts, out of 8000000 for 9000
+ 14724 strings out of 492982
+ 214654 string characters out of 6134896
+ 326168 words of memory out of 5000000
+ 17935 multiletter control sequences out of 15000+600000
+ 60163 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,10n,38p,899b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,39p,2834b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
