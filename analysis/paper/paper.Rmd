@@ -276,17 +276,17 @@ A defining characteristic of the Norwegian Mesolithic is that a clear majority o
 
 The data analysed here is based on the classification of the `r nrow(sites)` site assemblages done for the original excavation reports, and consists of `r ncol(select(sites, core:flake_retouch_other))` variables representing different debitage and tool types. While the classification practices for the excavation projects were standardised to an extent, there are some instances where time was allocated to identify additional artefact sub-categories aimed at answering specific research questions. Some categories in the original reports have therefore been combined in the dataset. This for example pertains to the category narrow-blades, which is defined as blades of width between 8 and 12 mm. In the reports, this was only separated from (macro-)blades (width $\ge$ 12 mm) and micro-blades (width $\le$ 8 mm) for some of the sites. Narrow-blades were combined with the blade category here. Furthermore, the artefact data have here been divided into flint and non-flint materials. Flint does not occur indigenously in Norway, and is only available locally as nodules that have been transported and deposited by retreating and drifting ice [e.g. @berg-hansen1999]. This means that the distribution and quality of the flint has been impacted by a diverse set of factors relating to climatic and geographical factors such as, but not limited to, topographic variability, shoreline morphology and ocean currents [@eigeland2015, 46]. An in depth-analysis of the flint quality from sevens sites did result in the finding that the flint quality was relatively high, and consistently so across the sites. However, despite flint being treated as a unified category here, the cited study by was based on only seven sites located some km distance from the present study area, meaning that the results might not necessarily be transferable to the sites treated here [@eigeland2015, 45-53]. Furthermore, the various non-flint raw materials that have been lumped together here can have quite disparate properties, where fine-grained cryptocrystalline materials are often used as a substitute or supplement to flint, while other, coarser materials are usually associated with the production of axes and other macro tools. Given this differentiated use, these raw-material properties are expected to be reflected in the retained debitage and tool categories. An important benefit of combining all of the non-flint materials is that this reduces the dependency on whether or not these have been correctly and consistently categorised for the reports [cf. @frivoll2017]. While certainly a topic deserving of more attention, the general sentiment in the literature is that there would have been stable access to locally available non-flint raw-materials of good quality in south-eastern Norway [@eigeland2015, 370].
 
-Previous studies of lithic artefacts in Norway have typically had a focus on chronological trends associated with formal tool types [e.g. @helskog1976; @reitan2016], involved refit-studies of the entirety of individual assemblages [@skar1986], or been concerned with technological processes associated with certain sub-categories of the site inventories, such as blades or axes [e.g. @damlien2016; @berg-hansen2017; @solheim2020]. Some studies have involved in-depth analyses of handful of sites in terms of intrasite spatial organisation [@nærøy2018], and technological organisation [@eigeland2015; @mansrud2016;]. There are also some more comprehensive evaluations of a larger number of sites with associated lithic assemblages to get at potential site types and related mobility patterns [@breivik2016; @viken2018c; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear, and these studies draw their conclusions based on an arguably over-constraining predefined trichotomy of different site types. Finally, only a single study concerned with eight Middle-Mesolithic sites has employed a multivariate quantitative framework to help structure such a treatment [@solheim2013a]. These sites are also included here. In sum, therefore, previous studies are typically either limited to a small number of sites, to a subset of the inventories, or to more subjectively and narratively driven methods that makes it difficult, if not impossible, to consistently structure and balance the comparison of a larger number of sites with associated assemblages holding lithic artefacts numbering in the thousands.
+Previous studies of lithic artefacts in Norway have typically had a focus on chronological trends associated with formal tool types [e.g. @helskog1976; @reitan2016], involved refit-studies of the entirety of individual assemblages [@skar1986], or been concerned with technological processes associated with certain sub-categories of the site inventories, such as blades or axes [e.g. @damlien2016; @berg-hansen2017; @solheim2020]. Some studies have involved in-depth analyses of handful of sites in terms of intrasite spatial organisation [@nærøy2018], and technological organisation [@eigeland2015; @mansrud2016;]. There are also some more comprehensive evaluations of a larger number of sites with associated lithic assemblages to get at potential site types and related mobility patterns [@breivik2016; @viken2018 ; @breivik2020]. However, the narratively driven analyses of these data makes the weighting of different variables unclear, and these studies draw their conclusions based on an arguably over-constraining predefined trichotomy of different site types. Finally, only a single study concerned with eight Middle-Mesolithic sites has employed a multivariate quantitative framework to help structure such a treatment [@solheim2013a]. These sites are also included here. In sum, therefore, previous studies are typically either limited to a small number of sites, to a subset of the inventories, or to more subjectively and narratively driven methods that makes it difficult, if not impossible, to consistently balance and structure the comparison of a larger number of sites with associated assemblages holding lithic artefacts numbering in the thousands.
 
 ## Methodology
 
-As the title of the paper suggest, the data has been analysed from an exploratory perspective, meaning that a wide range of methods has been applied. Only parts of this process can sensibly be reported here. The data and R script used for the analysis is freely available as a research compendium following @marwick , allowing readers to explore the data and the analytical choices made [cf. @Marwick2017]. However, this kind of data dredging does arguably not constitute a good foundation for the pursuit of causal relationships, as this process is most certainly impacted by and selectively reported upon, following my own biases. It can, however, result in the identification of interesting relationships that can be subjected to more rigorous testing using different data and approaches in subsequent studies.
+As the title of the paper suggest, the data has been analysed from an exploratory perspective, meaning that a wide range of methods has been applied, and various combinations and transformations of variables has been explored. Only parts of this process can sensibly be reported. However, this kind of data dredging does arguably not constitute a good foundation for the pursuit of causal relationships, as this process is most certainly selectively reported upon and heavily impacted by my own biases. It can, however, result in the identification of interesting relationships that can be subjected to more rigorous testing using different data and approaches in subsequent studies. Furthermore, the employed data and R script is freely available as a research compendium following @marwick, allowing readers to explore and scrutinise the data and the final analytical choices made [cf. @Marwick2017].
 
 The first part of the analysis conducted involves employing the method of correspondence analysis (CA), using the lithic count data as classified for the original excavation reports. The purpose of this exercise is to evaluate the degree to which the composition of the assemblages align with patterns that have been suggested by earlier studies that have employed more informally driven methods. This consequently assumes that the artefact categories employed in Norwegian Stone Age archaeology are, at least to a certain extent, behaviorally meaningful. However, the approach taken is also partially informed by the so-called Frison effect [@jelinek1976], which pertains to the fact that lithics studied by archaeologists can have had long and complex use-lives in which they took on a multitude of different shapes before they were ultimately discarded. Several scholars have built on this to argue that morphological variation in retouched lithics cannot be assumed to predominantly be the result of the intention of the original knapper to reach some desired end-product, but rather that what is commonly categorised as discrete types of artefacts by archaeologists can instead in large part be related to variable degrees of modification through use and rejuvenation [e.g. @barton1991; @dibble1995]. Consequently, several artefact categories have here been collapased for the CA. This for example pertains to tool types such as scrapers, burins, drills, knives and otherwise indeterminate artefacts with retouch. That these categories are internally consistent and categorically exclusive in terms of fulfilled purpose is at best a dubious proposition, in turn potentially rendering their contribution as discrete analytic units misleading. These have all been combined into the single category "small flint tools". (A full overview of the aggregated variables and their constituent parts is provided in the supplementary material). While aggregating artefact categories in this manner could potentially subsume important variation, it does also reduce the possibility that any conclusions are not simply the result of employing erroneous units of analysis. An underlying assumption is therefore that the retained categories represent artefact categories that have fulfilled different purposes or are related to different technological processes. While ultimately intuitive in nature, it does seem reasonable to assume that for example large non-flint stone tools such as axes, adzes, chisels, clubs and hatches, here categorised as non-flint macro tools, have fulfilled different purposes than the previously mentioned small flint tools.
 
 However, for the most part we lack even a most basic understanding of what any individual lithic object has been used for [@dibble2017]. This has major implications that the above-outlined analysis does not take properly into account, rendering it difficult to align any identified pattern with specific behavioural dimensions. For example, a vast amount of artefacts defined as debitage are likely to have fulfilled the function of tools, and both debitage and formal tool types could have had various different purposes and had a multitude of shapes throughout their use-life. While use-wear analysis could potentially offer a way to identify what artefacts were used for towards the end of their use-life, these kinds of analyses are extremely time-consuming and are therefore typically only conducted on a smaller number of artefacts that have already been selected for analysis based on their shape [e.g. @solheim2018]. Thus, while these analyses can potentially get at in-group variation pertaining to the end-state of a group of artefacts, they do not tell us whether or not their classification as a unified group is meaningful in the first place [@dibble2017]. As a consequence, the second part of the analysis employs a suite of measures developed for the classification of lithic assemblages developed with these inferential limitations in mind [see @clark2017, and below]. The logic behind these measures are founded on an understanding of technology as being organised along a continuum ranging between curated and expedient [@binford1979]. An expedient technological organisation pertains to the situational production of tools to meet immediate needs, with little investment of time and resources in modification and rejuvination, resulting in high rates of tool replacement. Curated technological organisation, on the other hand, has been defined as related to manufacture and maintenance of tools in anticipation of future use, the transport of these artefacts between places of use, and the modification and rejuvenation of artefacts for different and changing situations [@binford1979].
 
-However, following not least from the ambiguous definition first put forward by @binford1979, the theoretical definition of curation, its archaeological correlates, and behavioural implications have been widely discussed, and no single definition has ever been reached [e.g. @bamforth1986; @shott1996; @surovell2009, 9--13]. The continuum between curated and expedient technology has for example been related to dimensions such as land-use and mobility strategies, as well as raw-material quality and availability [e.g. @parry1987; @kuhn1992; @andrefsky1994; @smith2015; @clark2017]. Still, that the distinction can offer a useful analytical framework if clearly operationalised seems more or less agreed upon, and some dimensions of the concept are generally accepted. For example, although precisely how it is measured may vary, the empirical correspondent to a curated technological organisation is typically defined by high degrees of retouch, as this is commonly seen as a means of realising the potential utility of a tool --- or extending its use-life --- by the repeated rejuvenation and modification of edges [e.g. @bamforth1986; @dibble1995; @shott2005]. Furthermore, one concrete operationalisation of the terms have been forwarded by Barton and collegues [e.g. -@barton1999; @barton2014; @clark2017], who through a series of studies have shown that the relationship between volumetric density of lithics and relative frequency of retouched artefacts in lithic assemblages provide consistent results across a wide range of chronological and cultural context, and is a measure taken to reflect degree of curation. This is in turn mainly to follow from the accumulated nature of the land-use and mobility patterns associated with the sites [@barton2014]. In this model, higher degree of mobility would mean a higher dependency on the artefacts and the material people could bring with them, and dimensions such as weight, reliabilty, repairability, and the degree to which artefacts could be manipulated to fulfill a wide range of tasks are therefore assumed to have been factors of concern. From this it follows that the empirical expectation for short-term camps is a curated technological organisation with higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017]. More time spent in a single location, on the other hand, is assumed to lead to better control of raw-material availability and to allow for its accumulation. This should in turn lead to an expedient technological organisation with reduced necessity for the conservation of lithics and extensive use of retouch. The empirical expectation for lower degree of mobility is therefore relatively high density of lithics, a low relative frequency of retouched artefacts, as well as a higher number of cores and unretouched flakes and blades [@clark2017].
+However, following not least from the ambiguous definition first put forward by @binford1979, the theoretical definition of curation, its archaeological correlates, and behavioural implications have been widely discussed, and no single definition has ever been reached [e.g. @bamforth1986; @shott1996; @surovell2009, 9--13]. The continuum between curated and expedient technology has for example been related to dimensions such as land-use and mobility strategies, as well as raw-material quality and availability [e.g. @parry1987; @kuhn1992; @andrefsky1994; @smith2015; @clark2017]. Still, that the distinction can offer a useful analytical point of departure if clearly and explicitly operationalised seems more or less agreed upon, and some dimensions of the concept are generally accepted. For example, although precisely how it is measured may vary, the empirical correspondent to a curated technological organisation is typically defined by high degrees of retouch, as this is commonly seen as a means of realising the potential utility of a tool --- or extending its use-life --- by the repeated rejuvenation and modification of edges [e.g. @bamforth1986; @dibble1995; @shott2005]. Furthermore, one concrete operationalisation of the terms have been forwarded by Barton and collegues [e.g. -@barton1999; @barton2014; @clark2017], who through a series of studies have shown that the relationship between volumetric density of lithics and relative frequency of retouched artefacts in lithic assemblages provide consistent results across a wide range of chronological and cultural context, and is a measure taken to reflect degree of curation. This is in turn mainly to follow from the accumulated nature of land-use and mobility patterns associated with the sites [@barton2014]. In this model, higher degree of mobility would mean a higher dependency on the artefacts and the material people could bring with them, and dimensions such as weight, reliabilty, repairability, and the degree to which artefacts could be manipulated to fulfill a wide range of tasks are therefore assumed to have been factors of concern. From this it follows that the empirical expectation for short-term camps is a curated technological organisation with higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017]. More time spent in a single location, on the other hand, is assumed to lead to better control of raw-material availability and to allow for its accumulation. This should in turn lead to an expedient technological organisation with reduced necessity for the conservation of lithics and extensive use of retouch. The empirical expectation for lower degree of mobility is therefore relatively high density of lithics, a low relative frequency of retouched artefacts, as well as a higher number of cores and unretouched flakes and blades [@clark2017].
 
 These are the main measure employed here. However, as these measures are argued to predominantly be determined by mobility patterns, some additional variables suggested by @Bicho2020 to be related to mobility patterns are also explored. This is done using principal components analysis (PCA), following the continuous operationalisations of these measures [cf. @baxter1994, 100].
 
@@ -495,15 +495,6 @@ fviz_pca(pcalithics, geom.ind = "point", fill.ind = lithicspca$mean_date / 1000,
 
 Figure \@ref(fig:pca-analysis) displays a principle components analysis using variations of the continuous measures for mobility patterns as operationalised by @clark2017 and @Bicho2020. There is a general temporal transition from older to younger sites along the second dimension of the plot, which is mainly defined by a negative correlation between the variables volumetric density of lithics and relative frequency of secondarily worked lithics, as well as relative frequency of cores. Almost orthogonal to this is the negative correlation between relative frequency of chips and blanks. While there is perhaps a slight tendency for blanks to be more associated with younger sites, and chips with older sites, this relationship does in large part appear to be temporally determined. The investigation performed by @Bicho2020 indicated that in their data the relative frequency of chips, cores, and blanks might be more sensitive to mobility patterns. However, they also found that the relationship between volumetric density of lithics and the frequency of retouched artefacts gave a reasonable estimation of mobility, which, combined with the fact that the relative frequency of cores align with the expectation from the @clark2017 model, would indicate that this relationship is capturing the dimensions of interest here. If the relationship between frequency of secondarily worked artefacts and volumetric density of lithics is accepted as a proxy for curation, and in turn related to land-use and mobility patterns, these findings would be in line with previous research into the Mesolithic of Norway, indicating that earlier sites are associated with higher degree of mobility than sites from later phases. To explore this proposition further, these two variables are subjected to more detailed scrutiny below.
 
-```{r eigenvalues, fig.cap = "Table showing the eigenvalues of the components."}
-# Create a table showing the eigenvalues of the components
-round(as_tibble(get_eig(pcalithics)), 2) %>% 
-  rename("Eigenvalue" = eigenvalue, "Variance (%)" = variance.percent, 
-         "Cumulative variance (%)" = cumulative.variance.percent) %>% 
-  rownames_to_column(var = "Component") %>% 
-gt(rowname_col = "row", auto_align = FALSE)
-```
-
 ```{r var_contrib, fig.cap = "Contribution of variables to components.", fig.height = 3}
 # The plots below investigates the contribution of the variables to the
 # components. The code has in large part been taken from 
@@ -561,7 +552,8 @@ w1 <- ggplot(lithics2, aes(lithic_dens, secondary_freq * 100,
   scale_x_log10() +
   theme_classic()
 
-w2 <- ggplot(flint2, aes(flint_dens, secondary_freq * 100, 
+w2 <- 
+  ggplot(flint2, aes(flint_dens, secondary_freq * 100, 
                      fill = mean_date / 1000)) + 
   geom_point(shape = 21, size = 3) +
   geom_smooth(method = "lm", col = "black", se = FALSE) +
@@ -575,7 +567,6 @@ w2 <- ggplot(flint2, aes(flint_dens, secondary_freq * 100,
   theme_classic()
 
 
-
 w1 | w2
 ```
 
@@ -586,9 +577,21 @@ minmax <- lithics2 %>%
   mutate(dens =  ((lithic_dens - min(lithic_dens)) / (max(lithic_dens) - min(lithic_dens))),
          secondary = ((secondary_freq - min(secondary_freq)) / (max(secondary_freq) - min(secondary_freq))))
 
+minmaxflint <- flint2 %>% 
+   rownames_to_column(var = "site") %>% 
+  mutate(dens =  ((flint_dens - min(flint_dens)) / (max(flint_dens) - min(flint_dens))),
+         secondary = ((secondary_freq - min(secondary_freq)) / (max(secondary_freq) - min(secondary_freq))))
+
 indexdata <- minmax %>% 
   rowwise() %>% 
   mutate(index = mean(c(dens * -1, secondary)))
+
+indexdataflint <- minmaxflint %>% 
+  rowwise() %>% 
+  mutate(index_flint = mean(c(dens * -1, secondary)))
+
+
+indexdata$index_flint <- indexdataflint$index_flint
 
 # Curation index plot simply using mean site age (not used)
 w3 <- ggplot(indexdata, aes(x = mean_date, y = index)) + 
@@ -602,10 +605,22 @@ w3 <- ggplot(indexdata, aes(x = mean_date, y = index)) +
   ggrepel::geom_label_repel(aes(label = site),box.padding   = 0.35, 
                   point.padding = 0.5,
                   segment.color = 'grey50') 
+
+w4 <- ggplot(indexdata, aes(x = mean_date, y = index_flint)) + 
+  geom_point() +
+  labs(title = "C",
+       x = "Mean date cal. BCE",
+       y = "Curation index") +
+  scale_x_reverse() + 
+  geom_smooth(method = "loess", col = "red") +
+  theme_classic()  + 
+  ggrepel::geom_label_repel(aes(label = site),box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50') 
 #w3
 ```
 
-```{r simage, cache = TRUE, fig.cap = "Temporal variation in the curation index. The temporal uncertainty is handled by means of a simulation approach, where the site ages are drawn from their associated probability distributions given in Figure 1B. A LOESS curve has been fit to the distribution for each of the 1000 simulation runs."}
+```{r simage, cache = TRUE, fig.cap = "Temporal variation in the curation index. The temporal uncertainty is handled by means of a simulation approach, where the site ages are drawn from their associated probability distributions given in Figure 1B. A LOESS curve has been fit to the distribution for each of the 1000 simulation runs. Each simulation is plotted with some transparency. Sites mentioned in the text are coloured.", fig.height = 10, fig.width = 12}
 
 agedata <- full_join(indexdata, rcarb_data, by = "site") 
 
@@ -634,12 +649,15 @@ nsim <- 1000
 # Create data frame to hold simulation results.
 results <- data.frame(matrix(NA, ncol = nsim, nrow = nrow(sites))) 
 # Insert the curation index value for each site
-results[,"index"] <- agedata %>% 
+index_values <- agedata %>% 
   group_by(site) %>% 
   slice(1) %>% 
   ungroup() %>% 
-  select(index) %>% 
+  select(index, index_flint) %>% 
   c()
+
+results[,"index"] <- index_values$index
+results[,"index_flint"] <- index_values$index_flint
 
 # Simulation loop
 for (i in 1:nsim){
@@ -661,23 +679,74 @@ resultslong <- results %>%
     values_to = "age"
   )
 
-# Call to plot, grouping loess fits by simulation runs
-ggplot(resultslong, aes(x = age, y = index)) + 
-  geom_smooth(aes(group = sim), method = "loess", fill = "grey", col = "black", alpha = 0.05, se = TRUE) +
-  geom_point(size = 0.5, alpha = 0.005) +
-  xlab("Cal. BCE") +
-  ylab("Curation index") +
-  theme_classic()
+# Create column to hold whether site is to be coloured specifically in the plots
+# (pertains to sites discussed in the text)
+sitelabs <- c("Hovland 3", "Langangen Vestgård 1", "Hegna vest 4",
+              "Vallermyrene 4", "Gunnarsrød 6b", "Prestemoen 1")
 
+resultslong <- resultslong %>% 
+  mutate(site_col = ifelse(site %in% sitelabs, site, "other"))
+
+# Call to plot, grouping loess fits by simulation runs
+i1 <- ggplot(resultslong, aes(x = age, y = index, colour = site_col)) + 
+  geom_smooth(aes(group = sim), method = "loess", fill = "grey", col = "black",
+              alpha = 0.05, se = TRUE) +
+  geom_point(size = 0.5, alpha = 0.01) +
+  scale_color_manual(name = NULL, breaks = c("Langangen Vestgård 1", 
+                                             "Hegna vest 4","Gunnarsrød 6b",
+                                             "Prestemoen 1",  "Hovland 3",
+                                             "Vallermyrene 4"),
+                    values = c("Langangen Vestgård 1" = "red",
+                               "Hegna vest 4" = "blue",
+                               "Gunnarsrød 6b" = "violet",
+                               "Prestemoen 1" = "darkorange",
+                               "Hovland 3" = "green",
+                               "Vallermyrene 4"  = "cyan1", 
+                               "other" = "black"),
+                     guide = guide_legend(override.aes = list(size = 3,
+                                                              alpha = 1))) +
+  scale_x_continuous(breaks = c(seq(-9000,-4000, 1000))) +
+  labs(title = "A", x = "Cal. BCE", y = "Curation index (all lithics)") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+i2 <- ggplot(resultslong, aes(x = age, y = index_flint, colour = site_col)) + 
+  geom_smooth(aes(group = sim), method = "loess", fill = "grey", col = "black",
+              alpha = 0.05, se = TRUE) +
+  geom_point(size = 0.5, alpha = 0.01) +
+  scale_color_manual(name = NULL, breaks = c("Langangen Vestgård 1", 
+                                             "Hegna vest 4","Gunnarsrød 6b",
+                                             "Prestemoen 1",  "Hovland 3",
+                                             "Vallermyrene 4"),
+                    values = c("Langangen Vestgård 1" = "red",
+                               "Hegna vest 4" = "blue",
+                               "Gunnarsrød 6b" = "violet",
+                               "Prestemoen 1" = "darkorange",
+                               "Hovland 3" = "green",
+                               "Vallermyrene 4"  = "cyan1", 
+                               "other" = "black"),
+                     guide = guide_legend(override.aes = list(size = 3,
+                                                              alpha = 1))) +
+  scale_x_continuous(breaks = c(seq(-9000,-4000, 1000))) +
+  labs(title = "A", x = "Cal. BCE", y = "Curation index (flint)") +
+  theme_classic() +
+  theme(legend.position = "bottom")
+
+  i1 /
+  i2
 ```
 
 # Discussion
 
 The results of the CA does appear to align reasonably well with previous research that has been based on more informal analyses of artefact types, indicating that the employed artefact categories are capturing some behaviorally meaningful patterning that changes over time. However, as several authors have pointed out in relation to the application of CA for seriation purposes, 'time is not the only dimension'. The developments evident here do also most certainly correspond to more pervasive cultural change than a purely typo-chronological development of artefact morphology, highlighted perhaps most clearly by the influence of the later Mesolithic axe production sites. Unpicking and aligning the significance of these chronological patterns with any specific behavioural dimensions using the CA results is, however, another task entirely. This follows most clearly from the fact that for the most part we do not know what individual lithic objects in the assemblages has been used for, leaving the behavioural significance of the employed units of analysis unclear.
 
-Assuming for now that the curation index captures degree of mobility, the present data indicates two major modes with a generally higher degree of mobility until some time before 8000 BCE. This then drops and stabilises from around 7000 BCE for the rest of the Mesolithic. The variation in degree of curation, which, as a note, is at it highest between c. 8000 and 7000 BCE, could indicate that the sites were associated with a more varied mobility pattern after around 8000 BCE. The five sites that have values on the curation index below -0.25, could in this perspective have predominantly functioned as base camps within a logistic settlement pattern. That these assemblages reflect stays of a longer duration was suggested for all five sites in the original reports, although on different and differing grounds than the curation measures employed here. Another case worth commenting on is sites such as Langangen Vestgård 1, which on the grounds of a large number of artefacts and the possibile presence of a dwelling structure was argued to reflect a more stable site location in the original report. However, the site could reflect the aggregation of stays which predominantly have been of shorter duration, while the possible dwelling structure, if taken as an indication of lower mobility, could represent a remnant from one or a few longer stays that constitute a smaller fraction of the use-life of the site as a whole. It is also interesting to note that some of the chronological patterns indicated in the CA does not appear to be related to the curation measures. This for example pertains to the apparent importance of the axe production sites. It has recently been suggested that the end of the Mesolithic sees a drop in population numbers and a subsequent increase in mobility as migrating populations arrived from southern Scandinavia. Whether the apparent absence of this pattern in the present data is a result of a strained sample size or a weaker or non-existent signal from any changes in mobility patterns in the later Mesolithic remains an open question. As it stands, however, the main hypothesis generated by the present data would be that settlement patterns in the earliest parts of the Mesolithic were characterised by relatively high degrees of mobility, which then drop before leveling off at around 7000 BCE and remain relatively stable throughout the rest of the period. Given the parallel increase in variation this would seem to correlate well with a transition from a residential to a logistical settlement system.
+Assuming for now that the curation index captures degree of mobility, the present data indicates two major modes with a generally higher degree of mobility until some time before 8000 BCE. This then drops and stabilises from around 7000 BCE for the rest of the Mesolithic. This pattern is evident in both the flint data and when all lithics are treated in aggregate. The variation in degree of curation when all lithics are considered could indicate that the sites were associated with a more varied mobility pattern after around 8000 BCE. The five sites that have values on the curation index below c. -0.25 could in this perspective have predominantly functioned as base camps within a logistic settlement pattern. That these assemblages reflect stays of a longer duration was suggested for all five sites in the original reports [@solheim2013; @carrasco2014; @eigeland2014b; @persson2014; @eigeland2017], with the exception of for Vallermyrene 4, which was argued to be a specialised axe production site, not necessarily associated with lower degrees of mobility. This highlights a possible issue pertaining to raw-material variability, as the coarse non-flint material used for the production of axes generally results in a relatively large amount of waste per produced tool, possibly skewing the curation index when compared to assemblages dominated by flint. However, even if this renders it more problematic to directly align the values on the curation index with a continuum between a residental and logistic settlement system, the variation on the index after around 8000 BCE is still evident. Another case worth commenting on is Langangen Vestgård 1, which, on the grounds of a large number of artefacts and the possibile presence of a dwelling structure was argued to reflect a more stable site location in the original report [@melvold2014]. However, the relatively high value on the curation index could mean that Langangen Vestgård 1 reflects the aggregation of stays which predominantly have been of a relatively shorter duration, while the possible dwelling structure, if taken as an indication of lower mobility, could represent a remnant from one or a few longer stays that constitute a smaller fraction of the use-life of the site as a whole.
 
-As for the measures associated with curation and mobility patterns, relative frequency of secondarily worked lithics and volumentric density of lithics correspond most clearly to patterns previously proposed in the literature. However, as these were identified by employing PCA and identifying what variables most clearly correspond to a temporal dimension, there is a clear danger of circular reasoning here. Having established that these measures appears to capture a behavioural dimension of interest, this can, however, now be tested more rigorously by employing site data from a wider region. these results do speak to the cross-cultural and cross-temporal applicability of the measure, and consequently the potential it holds for comparative studies. The findings indicated by the WABI, as well as by the negative correlation between relative frequency of primarily and secondarily worked lithics, do align more clearly with previous suggestions concerning the overall mobility patterns in Mesolithic Norway. However, the question then becomes: What is the significance of the negatively correlated variables of relative frequency of cores and chips? Given that these are more or less orthogonal to the WABI variables on the first and second component, this would indicate that if one of these variable pairs is taken to reflect the scale between expedient and curated technologies, it should follow that the other variable pair is not correlated with these. As the entire temporal range of the sites is spread out between the extremes of the chip and core variables, one possibility is that these are indicative of site types that are temporally ubiquitous.
+While it is possible the is to consider these patterns at a population level. From this perspective it seems clear that there is a marked drop in curation from just before 8000 BCE, which stabilises around 7000 BCE. This would correspond well with chronological where the end of the Early Mesolithic, or flake axe phase, is set to last until c. 8200 BCE. The following phase linked to the production of microliths is in this framework set to last to around 7000 BCE, signifying the start of the production of the non-flint ground-pecked or round butted adzes. Later chronological transitions suggested at c. 5600 and c. 4500 BCE, are not reflected in fluctuations in the curation index. While this can be traced in the CA with the reduced importance of the non-flint categories, this could indicate that these changes are not related mobility patterns.
+
+It is also interesting to note that some of the chronological patterns indicated in the CA does not appear to be related to the curation measures. This for example pertains to the apparent importance of the axe production sites. It has recently been suggested that the end of the Mesolithic sees a drop in population numbers and a subsequent increase in mobility as migrating populations arrived from southern Scandinavia. It is an open question whether the apparent absence of this pattern in the present data is a result of a strained sample size, or a weaker or non-existent signal from any changes in mobility patterns in the later Mesolithic. As it stands, however, the main hypothesis generated by the present data would be that settlement patterns in the earliest parts of the Mesolithic were characterised by relatively high degrees of mobility, which then drop before leveling off at around 7000 BCE and remain relatively stable throughout the rest of the period. Even though the relative increase in Given the parallel increase in variation this would seem to correlate well with a transition from a residential to a logistical settlement system.
+
+As for the measures associated with curation and mobility patterns, relative frequency of secondarily worked lithics and volumentric density of lithics correspond most clearly to patterns previously proposed in the literature. However, as these were identified by employing PCA and identifying what variables most clearly correspond to a temporal dimension, there is a danger of circular reasoning. Having established that these measures appears to capture a behavioural dimension of interest, this can, however, now be tested more rigorously by employing site data from a wider region. these results do speak to the cross-cultural and cross-temporal applicability of the measure, and consequently the potential it holds for comparative studies. The findings indicated by the WABI, as well as by the negative correlation between relative frequency of primarily and secondarily worked lithics, do align more clearly with previous suggestions concerning the overall mobility patterns in Mesolithic Norway. However, the question then becomes: What is the significance of the negatively correlated variables of relative frequency of cores and chips? Given that these are more or less orthogonal to the WABI variables on the first and second component, this would indicate that if one of these variable pairs is taken to reflect the scale between expedient and curated technologies, it should follow that the other variable pair is not correlated with these. As the entire temporal range of the sites is spread out between the extremes of the chip and core variables, one possibility is that these are indicative of site types that are temporally ubiquitous.
 
 This is arguably more established than the variables included bysimilarities between the variable plots of @Bicho2020 and the variables indicated in is striking. This pertains to the negative correlation between core and chip frequency, and the negative correlation between primary and secondarily worked lithics. This last
 
