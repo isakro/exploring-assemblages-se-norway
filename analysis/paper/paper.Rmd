@@ -91,7 +91,10 @@ sites <- assemblages %>%
     flint_count = sum(c_across(core:flake_retouch)),
     nonflint_count = sum(c_across(axe_other:flake_retouch_other))) %>%
   # Exclude sites with less than 100 artefacts
-  filter(artefact_count > 100)
+  filter(artefact_count > 100) %>% 
+  arrange(mean_date) %>% 
+  rownames_to_column(var = "no")
+  
 ```
 
 ```{r c14-modelling, cache = TRUE}
@@ -241,24 +244,24 @@ project_colors <- c("bommestad_sky" = "springgreen4",
                   "vestfoldbaneprosjektet" = "firebrick3")
 
 # Assemble plot of date ranges
-temp_dist <- ggplot(datedata, aes(x = mean_date, y = reorder(site, mean_date))) +
+temp_dist <- ggplot(datedata, aes(x = -mean_date, y = reorder(no, -as.numeric(no)))) +
   geom_segment(aes(x = reported_start_bc, xend = reported_end_bc,
-                   yend = site, colour = excavation_project.x,
+                   yend = no, colour = excavation_project.x,
                    fill = excavation_project.x), size = 1.8) +
-  geom_ridgeline(aes(x = date_grid * -1, height = probabilities * 150,
+  geom_ridgeline(aes(x = date_grid, height = probabilities * 150,
                      fill = excavation_project.y, 
                      colour = excavation_project.x)) +
-  scale_x_reverse() +
   scale_fill_manual(values = project_colors,
                     labels = c("E18 Bommestad-Sky","E18 Brunlanes",
                             "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet")) +
-  scale_colour_manual(values = project_colors) +
+  scale_colour_manual(values = project_colors,
+                    labels = c("E18 Bommestad-Sky","E18 Brunlanes",
+                            "E18 Rugtvedt-Dørdal", "Vestfoldbaneprosjektet")) +
   labs(title = "B", fill = "Excavation project") +
   xlab("Cal. BCE") +
   theme_classic() +
-  theme(axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
         legend.position = "bottom") +
   guides(fill =  guide_legend(title.position = "top", title.hjust = 0.5),
          colour = FALSE) 
@@ -311,41 +314,43 @@ lithics <- sites %>%
       flake_retouch_other,
     .keep = "unused") %>%
   # Make site names the rownames
-  column_to_rownames(var = "site") %>% 
+  column_to_rownames(var = "n") %>% 
   # Deselect a few of the columns not be used
-  select(-n, -excavation_project, -excavated_m3, -dating_method)
+  select(-excavation_project, -excavated_m3, -dating_method)
+
+flint <- lithics %>% select(!(ends_with("other")))
 ```
 
 ```{r co_data}
 # Perform correspondence analysis on the data. 'mean_age' is meant for colouring
 # so is excluded here
-calithics <- CA(select(lithics, -mean_date, -artefact_count, -flint_count, 
+calithics <- CA(sqrt(select(lithics, -site, -mean_date, -artefact_count, -flint_count, 
                        -nonflint_count, -reported_start_bc, -reported_end_bc,
-                       -askeladden_id),
+                       -askeladden_id)),
                 graph = FALSE)
 
-# Retrieve eigenvalues
+# Retrieve eigenvalues (for the text)
 eigval <- get_eigenvalue(calithics)
 explained_cumul_dim2 <- eigval[2,3]
 
-# Find date to hold the central tendency date
+# Find date to hold the central tendency date (for colouring row plot)
 centdate <- (sum(range(lithics$mean_date)) / 2) / 1000
 ```
 
 # Results
 
-Figure \@ref(fig:cor) displays the CA using the lithic count data. The general impression from the plots is that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot (Figure \@ref(fig:cor)A), combined with the fact that the two first dimensions of the CA accounts for as much as `r round(explained_cumul_dim2, 2)` % of the inertia or variance in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. Although fewer in number, the sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension as the more numerous older sites.
+Figure \@ref(fig:cor) displays the CA using the lithic count data. The square root has been taken of the data before running the analysis to reduce the impact of extreme values that were making the main cluster of sites in the bottom right of \@ref(fig:cor)A difficult to discern [cf. @lockyear2000]. The general impression from the plots is that a chronological dimension is associated with the patterning in the data. This is indicated by the general transition across the colour scale in the row plot (Figure \@ref(fig:cor)A), combined with the fact that the two first dimensions of the CA accounts for as much as `r round(explained_cumul_dim2, 2)` % of the inertia or variance in the data. The earliest sites tend to be located in the upper right corner of plot A, with increasingly younger sites towards the bottom along the second dimension. Although fewer in number, the sites from the later parts of the Mesolithic are drawn out along the first dimension of the plot, and are not as impacted by the second dimension as the more numerous older sites.
 
-The column plot (Figure \@ref(fig:cor)B) reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as flint macro tools and associated debitage. It is also interesting that these sites to larger extent are characerised by core fragments, both in flint and non-flint materials, than cores themselves. The non-flint material on the earliest, or among the earliest sites, appears to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites. The single red point in the upper right quadrant of the row plot is Nedre Hobekk 2, which represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite and smoky quartz for the production of axes is present at other sites as well, but is evidently not as prominent a part of these assemblages. It should also be noted that the later Mesolithic sites that are also suppressing this pattern somewhat. In sum, the findings are in large part in line with previous research [e.g. @bang-andersen2003], although perhaps highlighting the relative importance of non-flint materials in south-eastern which, while also present, is typically not as marked in other parts of southern Norway [@breivik2018, 184]
+The column plot (Figure \@ref(fig:cor)B) reveals that the earliest sites are characterised by the flint artefact categories microburins, projectiles, as well as flint macro tools and associated debitage. It is also interesting that these sites to larger extent are characterised by core fragments, both in flint and non-flint materials, than cores themselves. The non-flint material on the earliest, or among the earliest sites, appears to be centered around the production of projectiles, as both the projectiles themselves and non-flint blades are important constituents of the assemblages at these sites. The single yellow point in the upper right quadrant of the row plot is Nedre Hobekk 2, which represents a somewhat curious case in that its assemblage is dominated by axe production in metarhyolite. The use of metarhyolite and smoky quartz for the production of axes is present at other sites as well, but is evidently not as prominent a part of these assemblages. In sum, the findings for the earliest sites are in large part in line with previous research [e.g. @bang-andersen2003], although perhaps highlighting the relative importance of non-flint materials in south-eastern which, while also present, is typically not as marked in other parts of southern Norway [@breivik2018, 184]
 
-The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages and non-flint projectiles. The outer end of the first dimensions is dominated by later Mesolithic sites associated with axe production in non-flint materials, but the later sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these latsites. Although the sample size is quite strained and the discussion of finer chronological points might not be warranted, the first dimension does appear to be of of less importance for the absolute latest sites, as indicated by their location to the left of the plot. This could indicate that specialised axe production sites disappear towards the end of the Mesolithic, a notion that would be in line with previous research [e.g. @eigeland2015, 370, @glørstad2011].
+The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages and non-flint projectiles. The outer end of the first dimensions is dominated by later Mesolithic sites associated with axe production in non-flint materials, but the later sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among these sites. Although the sample size is quite strained and the discussion of finer chronological points might not be warranted, the first dimension does appear to be of of less importance for the absolute latest sites, as indicated by their location to the left of the plot. This could indicate that specialised axe production sites disappear towards the end of the Mesolithic, a notion that would be in line with previous research [e.g. @eigeland2015, 370, @glørstad2011].
 
 ```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10, eval = FALSE}
 # Plot with site names tags (probably most immediately relevant for an audience 
 # familiar with the sites)
 fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
-  scale_fill_gradient2(name = "ka BP", low="yellow", mid="orange", 
+  scale_fill_gradient2(name = "Mean age BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
   theme(legend.position = "bottom") 
 ```
@@ -354,14 +359,15 @@ fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title
 # Plot without site names tags
 plt1 <- fviz_ca_row(calithics, geom = "point", col.row = "black", fill = lithics$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
-  scale_fill_gradient2(name = "ka BP", low="yellow", mid="orange", 
+  scale_fill_gradient2(name = "Mean age BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
   theme(legend.position = "bottom") 
 #guide(fill = guide_legend(reverse = TRUE)) # Reverses the legend but makes it
                                             # discrete
 
 # Plot variables
-plt2 <- fviz_ca_col(calithics, col.col = "black", repel = TRUE, title = "B") 
+plt2 <- fviz_ca_col(calithics, col.col = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE, title = "B") 
 
 plt1 /
 plt2
@@ -370,7 +376,7 @@ plt2
 
 # 
 
-Reducing the number of such inferential leaps by aggregating artefact groups could potentially subsume important variation, but it does also reduce the possibility that the conclusions of any analysis is not simply the result of the employed units of analysis, and an overly naive trust in the fact that these units reflect any behaviourally meaningful categories. This realisation has led to a wide range of outside Scandinavian Mesolithic research, meaning a range of empirical measures associated with various mobility patterns are available.
+Reducing the number of such inferential leaps by aggregating artefact groups could potentially subsume important variation, but it does also reduce the possibility that the conclusions of an analysis is not simply the result of the employed units of analysis, and an overly naive trust in the fact that these units reflect any behaviourally meaningful categories. This realisation has led to a wide range of outside Scandinavian Mesolithic research, meaning a range of empirical measures associated with various mobility patterns are available.
 
 It has, however, been suggested that access to raw-materials can be a more important decider for assemblage composition than mobility patterns , and that variable workability of these materials will impact factors such as the relative frequency of tools to debitage in the assemblages [e.g. @andrefsky1994; @manninen2014]. In addition to attempts at accounting for this analytically (see below), the limited geographical distribution of the sites should alleviate the issue somewhat, as the overall availability of raw materials could be expected to be more comparable through time than if a wider region was under consideration.
 
@@ -396,7 +402,7 @@ secondary_flint <- c("axe_debitage", "axe", "chisel", "microlith",
 
 secondary_lithics <- c(secondary_flint, "axe_other", "axe_debitage_other",
                        "chisel_other", "club_hatchet_other", 
-                       "grinding_slab_stone", "projectile_point_other", 
+                       "grinding_slab_stone", "projectile_other", 
                        "knife_other", "scraper_other", "drill_other", 
                        "microblade_retouch_other", "blade_retouch_other",
                        "fragment_retouch_other", "flake_retouch_other")
@@ -416,7 +422,7 @@ lithics2 <- sites %>%
                 knife, burin, drill, blade_retouch, microblade_retouch, 
                 chip_retouch, fragment_retouch, flake_retouch, axe_other,
                 axe_debitage_other, chisel_other, club_hatchet_other, 
-                grinding_slab_stone, projectile_point_other, knife_other,
+                grinding_slab_stone, projectile_other, knife_other,
                 scraper_other, drill_other, microblade_retouch_other, 
                 blade_retouch_other, fragment_retouch_other,
                 flake_retouch_other) / artefact_count,
@@ -465,11 +471,10 @@ denscorflint <- cor(wabiflint$mean_date, wabiflint$flint_dens)
 # and seems to provide an adequate result.
 lithicstr <- lithics2 %>%
   # Transform skewed variables and reorder
-  mutate("Mean date cal. BCE*-1" = mean_date * -1,
           "log10(lithic_dens)" = log10(lithic_dens),
          "log10(secondary_freq)" = log10(secondary_freq),
          "core_freq^(1/3)" = core_freq^(1/3), .keep = "unused") %>% 
-  relocate("Mean date cal. BCE*-1",
+  relocate("mean_date",
     "log10(lithic_dens)", "blanks_freq", "log10(secondary_freq)",
     "chip_freq", "core_freq^(1/3)" 
   )
@@ -483,8 +488,8 @@ corr_plot(select(lithicstr, -reported_start_bc, -reported_end_bc, -dating_method
 # Rename the transformed variables again to avoid clutter in the plot. 
 # Specify in figure caption that the transformed variables are used 
 lithicspca <- lithicstr %>% 
-  mutate(mean_date =  `Mean date cal. BCE*-1` * -1, .keep = "unused") %>% 
   rename(
+   mean_date = "Mean date cal. BCE",
    lithic_dens = "log10(lithic_dens)",
    secondary_freq = "log10(secondary_freq)",
    core_freq = "core_freq^(1/3)"
@@ -608,7 +613,6 @@ w3 <- ggplot(indexdata, aes(x = mean_date, y = index)) +
   labs(title = "C",
        x = "Mean date cal. BCE",
        y = "Curation index") +
-  scale_x_reverse() + 
   geom_smooth(method = "loess", col = "red") +
   theme_classic()  + 
   ggrepel::geom_label_repel(aes(label = site),box.padding   = 0.35, 
@@ -620,7 +624,6 @@ w4 <- ggplot(indexdata, aes(x = mean_date, y = index_flint)) +
   labs(title = "C",
        x = "Mean date cal. BCE",
        y = "Curation index") +
-  scale_x_reverse() + 
   geom_smooth(method = "loess", col = "red") +
   theme_classic()  + 
   ggrepel::geom_label_repel(aes(label = site),box.padding   = 0.35, 
