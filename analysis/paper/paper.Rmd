@@ -890,7 +890,7 @@ my_color <- 'd3.scaleOrdinal() .domain([none"]) .range(["white"])'
 sn <- sankeyNetwork(Links = links, Nodes = nodes,
               Source = "IDsource", Target = "IDtarget",
               NodeID = "name", Value = "value",
-              sinksRight=TRUE, nodeWidth = 0, fontSize = 10)
+              sinksRight=TRUE, nodeWidth = 0, fontSize = 14)
 
 htmlwidgets::saveWidget(sn, here::here('analysis/figures/sn1.html'))
 webshot::webshot(here::here('analysis/figures/sn1.html'), here::here('analysis/figures/sn1.pdf'), delay = 0.2)
