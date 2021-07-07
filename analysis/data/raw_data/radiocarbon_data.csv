@@ -6,7 +6,7 @@ Hovland 4,bommestad_sky,Birch (Betula),Ua-45493,8568,51
 Hovland 4,bommestad_sky,Birch (Betula),Ua-45494,8526,52
 Hovland 1,bommestad_sky,Hazel (Corylus),TRa-3410,8465,55
 Hovland 1,bommestad_sky,Aspen/willow (Populus/Salix),Ua-45675,8623,50
-Hovland 1,bommestad_sky,Birch resin (Betula) on microblade,AAR-16884,8582,33
+Hovland 1,bommestad_sky,"Birch (Betula), resin",AAR-16884,8582,33
 Hovland 3,bommestad_sky,Birch (Betula),Ua-45507,8609,54
 Hovland 3,bommestad_sky,"Hazel (Corylus), nutshell",Ua-45515,8606,50
 Hovland 3,bommestad_sky,Birch (Betula),Ua-45509,8594,48
@@ -43,8 +43,8 @@ Langangen Vestgård 1,vestfoldbaneprosjektet,Hazel (Corylus),TRa-4120,7875,45
 Langangen Vestgård 1,vestfoldbaneprosjektet,Birch/willow (Betula/Salix),TRa-4121,7945,45
 Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-4122,7795,40
 Langangen Vestgård 1,vestfoldbaneprosjektet,Burnt bone,TRa-4123,7745,35
-Vallermyrene 4,vestfoldbaneprosjektet,"Burnt bone, mammal",Ua-45169,6489,50
-Vallermyrene 4,vestfoldbaneprosjektet,"Burnt bone, mammal",Ua-45170,6381,37
+Vallermyrene 4,vestfoldbaneprosjektet,Burnt bone,Ua-45169,6489,50
+Vallermyrene 4,vestfoldbaneprosjektet,Burnt bone,Ua-45170,6381,37
 Vallermyrene 4,vestfoldbaneprosjektet,Pine (Pinus),Ua-45172,6197,40
 Vallermyrene 4,vestfoldbaneprosjektet,Pine (Pinus),Ua-45171,6067,41
 Vallermyrene 1,vestfoldbaneprosjektet,Pine (Pinus),Ua-45182,5770,35

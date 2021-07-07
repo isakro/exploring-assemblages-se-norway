@@ -55,7 +55,6 @@ library(gt)
 library(FactoMineR)
 library(factoextra)
 library(networkD3)
-library(webshot)
 library(sf)
 library(rnaturalearth)
 library(oxcAAR)
@@ -327,7 +326,7 @@ However, following not least from the ambiguous definition first put forward by 
 
 Furthermore, one concrete operationalisation of the terms have been forwarded by @barton1998 and collegues [e.g. @barton2013; @barton1999; @riel-salvatore2004; @riel-salvatore2007; @barton2011; @barton2014; @clark2017; @villaverde1998], who through a series of studies have shown that the relationship between volumetric density of lithics and relative frequency of retouched artefacts in lithic assemblages have a consistent negative relationship across a wide range of chronological and cultural context, ranging from Pleistocene and Holocene assemblages in Europe and Asia, to assemblages associated with both Neanderthals and modern humans [@barton2011; @riel-salvatore2008]. This relationship is taken to reflect degree of curation, and is in turn mainly to follow from the accumulated nature of land-use and mobility patterns associated with the assemblages [@barton2014]. In this model, higher degree of mobility would mean a higher dependency on the artefacts and the material people could bring with them, and dimensions such as weight, reliability, repairability, and the degree to which artefacts could be manipulated to fulfil a wide range of tasks are therefore assumed to have been factors of concern. From this it follows that the empirical expectation for short-term camps is a curated technological organisation with higher relative frequency of retouched artefacts, and a lower overall density of lithics [@clark2017]. More time spent in a single location, on the other hand, is assumed to lead to better control of raw-material availability and to allow for its accumulation. This should in turn lead to a more expedient technological organisation with reduced necessity for the conservation of lithics and extensive use of retouch. The empirical expectation for lower degree of mobility is therefore relatively high density of lithics, a low relative frequency of retouched artefacts, as well as a higher number of cores and unretouched flakes and blades. These variables and underlying logic constitute what has been termed the whole assemblage behavioural index [WABI, @clark2017], and is the main framework adopted here.
 
-However, as these measures are argued to predominantly be determined by land-use and mobility patterns, relative frequency of chips and relative frequency of non-flint material are also included in the analysis as these measures have also been linked to mobility patterns and is of central importance in Norwegian Stone Age archaeology [e.g. @breivik2016a; @reitan2016; @Bicho2020; @kitchel2021] --- the use of local non-flint material has been taken to indicate reduced mobility and increased familiarity with local surroundings [@jaksland2001, 112; @glørstad2010, 181]. In sum, the variables employed in the analysis are relative frequency of secondarily worked lithics (RFSL), defined as the number of retouched or ground lithics divided by the assemblage total; volumetric density of lithics (VDL), defined as number of artefacts per excavated m³; relative frequency of chips, defined as the proportion of artefacts with size \< 0.1 cm; relative frequency of cores, simply the proportion of all artefacts classified as cores in the original reports; relative frequency blanks, here defined as the proportion of all artefacts classified as flakes, blades, micro-blades or fragments; and finally relative frequency of non-flint material. Following @Bicho2020, the analysis is done using principal components analysis (PCA), leading to a shift in focus from the relative composition emphasised by the CA, to having more weight placed on patterning in the most abundant occurrences [@baxter1994, 71--77, 103].
+However, as these measures are argued to predominantly be determined by land-use and mobility patterns, relative frequency of chips and relative frequency of non-flint material are also included in the analysis as these measures have also been linked to mobility patterns and is of central importance in Norwegian Stone Age archaeology [e.g. @Bicho2020; @breivik2016a; @reitan2016; @kitchel2021] --- the use of local non-flint material has been taken to indicate reduced mobility and increased familiarity with local surroundings [@jaksland2001, 112; @glørstad2010, 181]. In sum, the variables employed in the analysis are relative frequency of secondarily worked lithics (RFSL), defined as the number of retouched or ground lithics divided by the assemblage total; volumetric density of lithics (VDL), defined as number of artefacts per excavated m³; relative frequency of chips, defined as the proportion of artefacts with size \< 0.1 cm; relative frequency of cores, simply the proportion of all artefacts classified as cores in the original reports; relative frequency blanks, here defined as the proportion of all artefacts classified as flakes, blades, micro-blades or fragments; and finally relative frequency of non-flint material. Following @Bicho2020, the analysis is done using principal components analysis (PCA), leading to a shift in focus from the relative composition emphasised by the CA, to having more weight placed on patterning in the most abundant occurrences [@baxter1994, 71--77, 103].
 
 A note should also be made on the fact that a few variables that are sometimes invoked for the classification of sites in terms of associated mobility patterns are omitted here [e.g. @Bicho2020; @breivik2016a]. For the assemblage data itself this especially pertains to diversity in tool-types [see also @canessa2021], which has been omitted in light of the previously mentioned Frison effect. Some site specific aspects such as number of features has also been disregarded as taphonomic loss is likely to have led to a chronological bias in their preservation. Similarly, the number of activity areas, effectively number of artefact clusters, however defined, has also been disregarded. This follows most notably from the fact that the impact of post-depositional processes at Stone Age sites in Norway is arguably understudied [@jørgensen2017]. This pertains for example to the impact of bio-turbation in the form of three-throws, which can have a detrimental effect on the original distribution of artefacts, and which can be expected to have been relatively frequent on several of the sites treated here [@jørgensen2017; @darmark2018e].
 
@@ -382,7 +381,7 @@ The column plot (Figure \@ref(fig:cor)B) reveals that the earliest sites are cha
 
 The first dimension, which is pulling some of the later sites towards the right of the plot, is mainly defined by macro tools and associated debitage in non-flint materials that are negatively correlated with more flint dominated assemblages. Sites with high values on the first dimensions are later Mesolithic sites associated with axe production in non-flint materials, but the later sites occur along the entire dimension, indicating that while these axe production sites are a feature of the later Mesolithic, there is marked variation among the sites. Although the sample size is quite strained and the discussion of finer chronological points might not be warranted, the first dimension does appear to be of of less importance for the absolute latest sites, as indicated by their location to the left of the plot. This could indicate that specialised axe production sites disappear towards the end of the Mesolithic, a notion that would be in line with previous research [e.g. @eigeland2015, 370; @glørstad2011; @reitan2016].
 
-As most of the variation in the data is accounted for by the dominating non-flint material in later assemblages, this suppresses and makes it difficult to discern patterns in the flint data. A second CA was therefore run excluding the non-flint material (Figure \@ref(fig:flintcor)). While not as substantial, there is clear temporal patterning in the flint data as well. This is most marked for the very earliest sites which are pulled away from the main cluster, as projectiles, microburins, macro tools, debitage from their production, and flakes characterises these sites. Slightly younger sites appear more impacted by core fragments and blades. The temporal transition in the main cluster is not as marked, but clearly present, and is driven by a larger proportion of blades, flakes and small tools in the earliest assemblages of the cluster, which is opposed to chips, fragments and partly micro-blades. Apart from the impact of core fragments, which is not always highlighted, this must be considered very much in agreement with previous research [e.g. @solheim2017c, with references]. A marked presence of core fragments has, however, previously been noted as one of several similarities between Early Mesolithic Norwegian sites and Late Palaeolithic sites from continental Europe [@fuglestvedt2007]. Overall, the comparatively limited impact of the flint material can possibly be the result of the aggregation of categories that leads to an suppression of otherwise temporally distinct patterns, and there are certainly technological nuances in the flint material that is temporally contingent but not recorded during a regular classification of the material [e.g. @eigeland2015; @fuglestvedt2007; @damlien2016; @solheim2020]. However, while the former pertains to the analytical trade-off between robustness and sensitivity, the latter is likely to be true for the non-flint material as well [@eigeland2007]. The overall pattern does speak to the impact the properties of the raw-material has for the general composition of the assemblages [cf. @manninen2014].
+As most of the variation in the data is accounted for by the dominating non-flint material in later assemblages, this suppresses and makes it difficult to discern patterns in the flint data. A second CA was therefore run excluding the non-flint material (Figure \@ref(fig:flintcor)). While not as substantial, there is clear temporal patterning in the flint data as well. This is most marked for the very earliest sites which are pulled away from the main cluster, as projectiles, microburins, macro tools, debitage from their production, and flakes characterises these sites. Slightly younger sites appear more impacted by core fragments and blades. The temporal transition in the main cluster is not as marked, but clearly present, and is driven by a larger proportion of blades, flakes and small tools in the earliest assemblages of the cluster, which is opposed to chips, fragments and partly micro-blades. Apart from the impact of core fragments, which is not always highlighted, this must be considered very much in agreement with previous research [e.g. @solheim2017c, with references]. A marked presence of core fragments has, however, previously been noted as one of several similarities between Early Mesolithic Norwegian sites and Late Palaeolithic sites from continental Europe [@fuglestvedt2007]. Overall, the comparatively limited impact of the flint material can possibly be the result of the aggregation of categories that leads to an suppression of otherwise temporally distinct patterns, and there are certainly technological nuances in the flint material that is temporally contingent but not recorded during a regular classification of the material [e.g. @damlien2016; @eigeland2015; @fuglestvedt2007; @solheim2020]. However, while the former pertains to the analytical trade-off between robustness and sensitivity, the latter is likely to be true for the non-flint material as well [@eigeland2007]. The overall pattern does speak to the impact the properties of the raw-material has for the general composition of the assemblages [cf. @manninen2014].
 
 ```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10, eval = FALSE}
 # Plot with site names tags (probably most immediately relevant for an audience 
@@ -849,6 +848,7 @@ The temporal trends associated with the curation index corresponds surprisingly 
 # Supplementary material A. Radiocarbon dates.
 
 ```{r supp1, cache = FALSE}
+# Supplementary table of radiocarbon dates
 radiocarbon %>% 
   select(-excavation_project) %>% 
   gt() %>% 
@@ -864,18 +864,33 @@ radiocarbon %>%
 # Supplementary material B. Aggregation of variables for the correspondence analysis.
 
 ```{r supp2, cache = FALSE}
-links <- data.frame(value = 1, categories = names(sites %>% select(core:flake_retouch_other))) %>% 
-  mutate(new_categories = ifelse(categories %in% c("microlith", "tanged_point", "transverse_point", 
-                                   "single_edged_point", "hognipen_point", "projectile_undefined"), "projectile",
-                          ifelse(categories %in% c("scraper", "knife", "burin", "drill", "blade_retouch",  
-                                                     "microblade_retouch", "chip_retouch", "fragment_retouch", 
-                                                   "flake_retouch"), "small_tool",
-                                 ifelse(categories %in% c("axe", "chisel"), "macro_tool", 
-                                 ifelse(categories %in% c("axe_other", "chisel_other", "club_hatchet_other"), "macro_tool_other", 
-                                 ifelse(categories %in% c("knife_other", "scraper_other", "drill_other", 
-                                                            "microblade_retouch_other", "blade_retouch_other", "fragment_retouch_other",
-                                                            "flake_retouch_other"), "small_tool_other", paste0(categories, " ")))))))
+# Most of the code for assembling the Sankey plot has been taken directly from 
+# various walkthroughs at https://www.r-graph-gallery.com
 
+# Create two columns: old and new variable names
+links <- data.frame(value = 1,
+        categories = names(sites %>% select(core:flake_retouch_other))) %>% 
+  mutate(new_categories = ifelse(categories %in% c("microlith", "tanged_point",
+                                 "transverse_point", "single_edged_point", 
+                                 "hognipen_point", "projectile_undefined"), 
+                                 "projectile",
+                          ifelse(categories %in% c("scraper", "knife", "burin",
+                                 "drill", "blade_retouch", "microblade_retouch",
+                                 "chip_retouch", "fragment_retouch", 
+                                 "flake_retouch"), "small_tool",
+                          ifelse(categories %in% c("axe", "chisel"),
+                                 "macro_tool", 
+                          ifelse(categories %in% c("axe_other", "chisel_other",
+                                 "club_hatchet_other"), "macro_tool_other", 
+                          ifelse(categories %in% c("knife_other", 
+                                 "scraper_other", "drill_other", 
+                                 "microblade_retouch_other", 
+                                 "blade_retouch_other", 
+                                 "fragment_retouch_other",
+                                 "flake_retouch_other"), "small_tool_other",
+                                 paste0(categories, " ")))))))
+
+# Set up nodes and links for the plot
 nodes <- data.frame(
   name=c(as.character(links$categories), 
          as.character(links$new_categories)) %>% unique()
@@ -884,16 +899,26 @@ nodes <- data.frame(
 links$IDsource <- match(links$categories, nodes$name)-1 
 links$IDtarget <- match(links$new_categories, nodes$name)-1 
 nodes$group <- as.factor(c("none"))
+links$group <- as.factor(links$new_categories)
 
-my_color <- 'd3.scaleOrdinal() .domain([none"]) .range(["white"])'
+# Specify colours for the plot (this can be assembled using a combination of 
+# e.g. unique(links$new_connection), rep() and paste(), but I couldn't be 
+# bothered so I just copy+pasted and set it up manually).
+my_colour <-'d3.scaleOrdinal() .domain(["core", "core_fragment", "blade", "microblade", "chip", "fragment", "flake", "axe_debitage", "macro_tool", "projectile", "microburin", "small_tool", "beach_flint_flint_nodule", "macro_tool_other", "axe_debitage_other", "grinding_slab_stone", "projectile_other", "small_tool_other", "hammerstone", "flake_other", "fragment_other", "chip_other", "blade_other", "microblade_other", "core_other", "core_fragment_other,"]) .range(["lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "#ff8086", "#79d49f", "lightgrey", "#8eb8fa", "lightgrey", "#a88c7d", "lightgrey", "lightgrey", "lightgrey", "#ffee8c",  "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey", "lightgrey"])'
 
+
+# Create plot
 sn <- sankeyNetwork(Links = links, Nodes = nodes,
               Source = "IDsource", Target = "IDtarget",
-              NodeID = "name", Value = "value",
-              sinksRight=TRUE, nodeWidth = 0, fontSize = 14)
+              NodeID = "name", Value = "value", colourScale = my_colour,
+              sinksRight = FALSE, LinkGroup = "new_categories", 
+              NodeGroup="group", nodeWidth = 12, nodePadding = 7, fontSize = 10)
 
+# This has to be saved as html widget and then retrieved as a pdf or png using
+# webshot.
 htmlwidgets::saveWidget(sn, here::here('analysis/figures/sn1.html'))
-webshot::webshot(here::here('analysis/figures/sn1.html'), here::here('analysis/figures/sn1.pdf'), delay = 0.2)
+webshot::webshot(here::here('analysis/figures/sn1.html'), 
+                 here::here('analysis/figures/sn1.pdf'), delay = 0.2)
 ```
 
 \newpage

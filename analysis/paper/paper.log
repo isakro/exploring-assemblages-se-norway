@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  6 JUL 2021 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  8 JUL 2021 01:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1127,28 +1127,23 @@ Underfull \vbox (badness 10000) detected at line 689
  []
 
 [26]
-<../figures/supp2-1.pdf, id=439, 945.5325pt x 701.62125pt>
+<../figures/supp2-1.pdf, id=439, 611.28375pt x 703.62875pt>
 File: ../figures/supp2-1.pdf Graphic file (type pdf)
 <use ../figures/supp2-1.pdf>
 Package pdftex.def Info: ../figures/supp2-1.pdf  used on input line 743.
-(pdftex.def)             Requested size: 469.76414pt x 348.58293pt.
-[27 <../figures/supp2-1.pdf>]
+(pdftex.def)             Requested size: 469.74788pt x 540.71143pt.
+[27] [28 <../figures/supp2-1.pdf>]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 752.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [28] [29]
-Overfull \hbox (118.24327pt too wide) in paragraph at lines 912--912
-[]\T1/lmtt/m/n/10 #> Head:     [f39ccf5] 2021-07-06: Changes after getting feed
-back from Ingrid. Also added supplementary material[] 
- []
-
+) [29] [30]
 
 Package caption Warning: Unused \captionsetup[table] on input line 665.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 914.
-[30]
+[31]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 914.
 (./paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 914.
@@ -1156,8 +1151,8 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 914.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 914.
  ) 
 Here is how much of TeX's memory you used:
- 15203 strings out of 492982
- 222422 string characters out of 6134896
+ 15204 strings out of 492982
+ 222429 string characters out of 6134896
  344683 words of memory out of 5000000
  18224 multiletter control sequences out of 15000+600000
  75160 words of font info for 126 fonts, out of 8000000 for 9000
@@ -1174,10 +1169,10 @@ type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr
 c/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mtt10.pfb>
-Output written on paper.pdf (30 pages, 5758205 bytes).
+Output written on paper.pdf (31 pages, 5851051 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 504 compressed objects within 6 object streams
- 175 named destinations out of 1000 (max. 500000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
+ 176 named destinations out of 1000 (max. 500000)
  16510 words of extra memory for PDF output out of 17280 (max. 10000000)
 
