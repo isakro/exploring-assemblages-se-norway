@@ -1,5 +1,5 @@
 Package: exploring-assemblages-se-norway
-Title: Research compendium for the paper "Exploring the composition of lithic assembalges in Mesolithic south-eastern Norway"
+Title: Research compendium for the paper "Exploring the Composition of Lithic Assemblages in Mesolithic South-Eastern Norway"
 Version: 1.0
 Authors@R:
     person(given = "Isak",
@@ -28,6 +28,9 @@ Imports: bookdown,
     ggsn (>= 0.5.0),
     oxcAAR (>= 1.1.0),
     rnaturalearth (>= 0.1.0),
-    sf (>= 0.9-8)
+    sf (>= 0.9-8),
+    htmlwidgets (>= 1.5.3),
+    networkD3 (>= 0.4),
+    webshot (>= 0.5.2)
 Suggests: devtools,
     git2r
