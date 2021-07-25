@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  25 JUL 2021 14:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  26 JUL 2021 00:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1138,11 +1138,11 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 757.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [29] [30]
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 917
-.
-(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+Overfull \hbox (60.49344pt too wide) in paragraph at lines 917--917
+[]\T1/lmtt/m/n/10 #> Head:     [972d781] 2021-07-25: Reworking structure and at
+tempting to number sites in overview map[] 
+ []
+
 
 Package caption Warning: Unused \captionsetup[table] on input line 670.
 See the caption package documentation for explanation.
@@ -1156,15 +1156,15 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 919.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 919.
  ) 
 Here is how much of TeX's memory you used:
- 15245 strings out of 492982
- 223123 string characters out of 6134896
+ 15208 strings out of 492982
+ 222516 string characters out of 6134896
  344744 words of memory out of 5000000
- 18259 multiletter control sequences out of 15000+600000
- 75424 words of font info for 127 fonts, out of 8000000 for 9000
+ 18226 multiletter control sequences out of 15000+600000
+ 75119 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,49p,3013b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/shar
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/shar
 e/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12
@@ -1174,10 +1174,10 @@ type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr
 c/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mtt10.pfb>
-Output written on paper.pdf (31 pages, 5852634 bytes).
+Output written on paper.pdf (31 pages, 5852058 bytes).
 PDF statistics:
- 901 PDF objects out of 1000 (max. 8388607)
- 665 compressed objects within 7 object streams
+ 899 PDF objects out of 1000 (max. 8388607)
+ 663 compressed objects within 7 object streams
  178 named destinations out of 1000 (max. 500000)
  16518 words of extra memory for PDF output out of 17280 (max. 10000000)
 
