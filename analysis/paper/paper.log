@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  29 JUL 2021 13:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  30 JUL 2021 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,20 +853,37 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen144
 \Gin@req@width=\dimen145
+) (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count128
+\output=\toks26
+\linenoprevgraf=\count129
+\linenumbersep=\dimen146
+\linenumberwidth=\dimen147
+\c@linenumber=\count130
+\c@pagewiselinenumber=\count131
+\c@LN@truepage=\count132
+\c@internallinenumber=\count133
+\c@internallinenumbers=\count134
+\quotelinenumbersep=\dimen148
+\bframerule=\dimen149
+\bframesep=\dimen150
+\bframebox=\box33
+LaTeX Info: Redefining \\ on input line 3056.
 ) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen146
-\captionmargin@=\dimen147
-\captionwidth=\dimen148
-\caption@tempdima=\dimen149
-\caption@indent=\dimen150
-\caption@parindent=\dimen151
-\caption@hangindent=\dimen152
+\captionmargin=\dimen151
+\captionmargin@=\dimen152
+\captionwidth=\dimen153
+\caption@tempdima=\dimen154
+\caption@indent=\dimen155
+\caption@parindent=\dimen156
+\caption@hangindent=\dimen157
 )
-\c@ContinuedFloat=\count128
+\c@ContinuedFloat=\count135
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -877,34 +894,34 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 107.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 107.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 105.
+LaTeX Info: Redefining \microtypecontext on input line 107.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -919,17 +936,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
-\scratchdimen=\dimen153
-\scratchbox=\box33
-\nofMPsegments=\count130
-\nofMParguments=\count131
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count132
-\MPscratchDim=\dimen154
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count136
+\scratchdimen=\dimen158
+\scratchbox=\box34
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen159
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -945,18 +962,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 105.
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 107.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count135
+\c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
-LaTeX Info: Redefining \nameref on input line 105.
+LaTeX Info: Redefining \ref on input line 107.
+LaTeX Info: Redefining \pageref on input line 107.
+LaTeX Info: Redefining \nameref on input line 107.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -993,68 +1010,73 @@ LaTeX Info: Redefining \nameref on input line 105.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 107.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 109.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 109.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 107.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 109.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 107
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 109
 .
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 107
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 109
 .
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 107.
+(Font)              <12> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 107.
+(Font)              <8> on input line 109.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 107.
-LaTeX Font Info:    Try loading font information for U+msa on input line 107.
+(Font)              <6> on input line 109.
+LaTeX Font Info:    Try loading font information for U+msa on input line 109.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 107.
+LaTeX Font Info:    Try loading font information for U+msb on input line 109.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 111.
+(Font)              <10> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 111.
+(Font)              <7> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 111.
+(Font)              <5> on input line 113.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../figures/dist-1.pdf, id=21, 587.19376pt x 839.135pt>
+<../figures/dist-1.pdf, id=22, 587.19376pt x 839.135pt>
 File: ../figures/dist-1.pdf Graphic file (type pdf)
 <use ../figures/dist-1.pdf>
-Package pdftex.def Info: ../figures/dist-1.pdf  used on input line 131.
+Package pdftex.def Info: ../figures/dist-1.pdf  used on input line 133.
 (pdftex.def)             Requested size: 455.14214pt x 650.42532pt.
 
-LaTeX Warning: Float too large for page by 57.99532pt on input line 133.
+LaTeX Warning: Float too large for page by 57.99532pt on input line 135.
 
 [2] [3 <../figures/dist-1.pdf>] [4] [5] [6]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 232.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 234.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7] [8]
-<../figures/cor-1.pdf, id=77, 633.36626pt x 911.405pt>
+) [7]
+<../figures/cor-1.pdf, id=69, 633.36626pt x 911.405pt>
 File: ../figures/cor-1.pdf Graphic file (type pdf)
 <use ../figures/cor-1.pdf>
 Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 249.
@@ -1062,7 +1084,7 @@ Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 249.
 
 LaTeX Warning: Float too large for page by 22.00974pt on input line 251.
 
-<../figures/flintcor-1.pdf, id=78, 633.36626pt x 911.405pt>
+<../figures/flintcor-1.pdf, id=70, 633.36626pt x 911.405pt>
 File: ../figures/flintcor-1.pdf Graphic file (type pdf)
 <use ../figures/flintcor-1.pdf>
 Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 255.
@@ -1070,36 +1092,36 @@ Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 255.
 
 LaTeX Warning: Float too large for page by 22.00974pt on input line 257.
 
-<../figures/cor-plot-1.pdf, id=83, 712.6625pt x 676.5275pt>
+[8] [9 <../figures/cor-1.pdf>] [10 <../figures/flintcor-1.pdf>]
+<../figures/cor-plot-1.pdf, id=111, 712.6625pt x 676.5275pt>
 File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
 <use ../figures/cor-plot-1.pdf>
 Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 265.
 (pdftex.def)             Requested size: 469.74974pt x 445.93143pt.
-<../figures/pca-analysis-1.pdf, id=84, 644.4075pt x 543.02875pt>
+<../figures/pca-analysis-1.pdf, id=112, 644.4075pt x 543.02875pt>
 File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
 <use ../figures/pca-analysis-1.pdf>
 Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 271.
 
 (pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
-<../figures/var-contrib-1.pdf, id=85, 633.36626pt x 193.72375pt>
+<../figures/var-contrib-1.pdf, id=113, 633.36626pt x 193.72375pt>
 File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
 <use ../figures/var-contrib-1.pdf>
 Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 277.
 (pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
-<../figures/wabi-1.pdf, id=88, 705.63625pt x 333.245pt>
+<../figures/wabi-1.pdf, id=116, 705.63625pt x 333.245pt>
 File: ../figures/wabi-1.pdf Graphic file (type pdf)
 <use ../figures/wabi-1.pdf>
 Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 285.
 (pdftex.def)             Requested size: 469.75903pt x 221.8492pt.
-[9] [10 <../figures/cor-1.pdf>] [11 <../figures/flintcor-1.pdf>] [12 <../figure
-s/cor-plot-1.pdf>] [13 <../figures/pca-analysis-1.pdf> <../figures/var-contrib-
-1.pdf>]
-<../figures/simplot-1.pdf, id=160, 847.165pt x 985.6825pt>
+<../figures/simplot-1.pdf, id=120, 847.165pt x 985.6825pt>
 File: ../figures/simplot-1.pdf Graphic file (type pdf)
 <use ../figures/simplot-1.pdf>
 Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 293.
 (pdftex.def)             Requested size: 469.75555pt x 546.56393pt.
-[14 <../figures/wabi-1.pdf>] [15 <../figures/simplot-1.pdf>] [16] [17]
+[11] [12 <../figures/cor-plot-1.pdf>] [13 <../figures/pca-analysis-1.pdf> <../f
+igures/var-contrib-1.pdf>] [14 <../figures/wabi-1.pdf>] [15 <../figures/simplot
+-1.pdf>] [16] [17]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 330--334
 [] []
  []
@@ -1150,22 +1172,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--354
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 355--359
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 355--359
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 360--363
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 355--358
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--363
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 359--363
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--363
 
  []
 
@@ -1180,6 +1202,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--368
  []
 
 
+Underfull \hbox (badness 6691) in paragraph at lines 372--372
+[]\T1/lmr/m/n/10 (+20) The for-ma-tion of lithic as-sem-blages. \T1/lmr/m/it/10
+ (+20) Jour-nal of Ar-chae-o-log-i-cal Sci-ence \T1/lmr/m/n/10 (+20) 46:334--35
+2.
+ []
+
+
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 369--373
 [] []
  []
@@ -1187,13 +1216,6 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 369--373
 
 Underfull \hbox (badness 10000) in paragraph at lines 369--373
 
- []
-
-
-Underfull \hbox (badness 6691) in paragraph at lines 377--377
-[]\T1/lmr/m/n/10 (+20) The for-ma-tion of lithic as-sem-blages. \T1/lmr/m/it/10
- (+20) Jour-nal of Ar-chae-o-log-i-cal Sci-ence \T1/lmr/m/n/10 (+20) 46:334--35
-2.
  []
 
 
@@ -1246,23 +1268,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--398
 
  []
 
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 399--403
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--403
-
- []
-
 [18]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 404--407
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 399--402
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--407
+Underfull \hbox (badness 10000) in paragraph at lines 399--402
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 403--407
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--407
 
  []
 
@@ -1297,42 +1319,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--422
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 423--427
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 423--426
+[][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--426
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 427--430
+[][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--430
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 431--434
+[][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--434
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 435--439
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--427
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 428--431
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--431
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 432--435
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--435
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 436--439
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--439
 
  []
 
@@ -1347,22 +1369,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 440--444
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 445--449
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 450--453
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 445--448
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--453
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 449--453
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 449--453
 
  []
 
@@ -1396,6 +1418,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 464--468
 
  []
 
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 472--472
+[]\T1/lmr/m/n/10 (+20) Bayesian Anal-y-sis of Ra-dio-car-bon Dates. \T1/lmr/m/i
+t/10 (+20) Ra-dio-car-bon \T1/lmr/m/n/10 (+20) 51(1):337--360.
+ []
+
 
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 469--473
 [] []
@@ -1406,29 +1434,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--473
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
-[]\T1/lmr/m/n/10 (+20) Bayesian Anal-y-sis of Ra-dio-car-bon Dates. \T1/lmr/m/i
-t/10 (+20) Ra-dio-car-bon \T1/lmr/m/n/10 (+20) 51(1):337--360.
- []
 
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 474--478
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--478
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 479--482
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 474--477
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--482
+Underfull \hbox (badness 10000) in paragraph at lines 474--477
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 478--482
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--482
 
  []
 
@@ -1512,7 +1534,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 518--522
 
  []
 
-
+[20]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 523--527
 [] []
  []
@@ -1532,43 +1554,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 528--532
 
  []
 
-[20]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 533--537
-[] []
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 533--537
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 538--541
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 533--536
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--541
+Underfull \hbox (badness 10000) in paragraph at lines 533--536
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 542--546
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 537--541
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--546
+Underfull \hbox (badness 10000) in paragraph at lines 537--541
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 547--550
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 542--545
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--550
+Underfull \hbox (badness 10000) in paragraph at lines 542--545
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 546--550
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--550
 
  []
 
@@ -1613,46 +1635,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 566--570
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 571--575
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 571--575
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 576--579
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 571--574
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--579
+Underfull \hbox (badness 10000) in paragraph at lines 571--574
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 580--584
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 575--579
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--584
+Underfull \hbox (badness 10000) in paragraph at lines 575--579
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 585--588
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 580--583
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--588
+Underfull \hbox (badness 10000) in paragraph at lines 580--583
 
  []
 
 
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 584--588
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--588
+
+ []
+
+[21]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 589--593
 [] []
  []
@@ -1672,7 +1694,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 594--598
 
  []
 
-[21]
+
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 599--603
 [] []
  []
@@ -1782,7 +1804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 649--653
 
  []
 
-
+[22]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 654--658
 [] []
  []
@@ -1812,7 +1834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 664--668
 
  []
 
-[22]
+
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 669--673
 [] []
  []
@@ -1912,7 +1934,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 714--718
 
  []
 
-
+[23]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 719--723
 [] []
  []
@@ -1932,7 +1954,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 724--728
 
  []
 
-[23]
+
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 729--733
 [] []
  []
@@ -1953,29 +1975,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 734--738
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 739--743
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 739--743
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 744--747
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 739--742
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--747
+Underfull \hbox (badness 10000) in paragraph at lines 739--742
 
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 751--751
+Underfull \hbox (badness 2181) in paragraph at lines 746--746
 []\T1/lmr/m/n/10 (+20) Standing at the gates of Eu-rope: Hu-man be-hav-ior and 
 bio-geog-ra-phy in the South-ern
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 743--747
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--747
+
  []
 
 
@@ -2019,32 +2041,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 763--767
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 768--772
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 768--771
+[][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--771
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 772--775
+[][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--775
+
+ []
+
+[24]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 776--780
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--772
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 773--776
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 773--776
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 777--780
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 777--780
+Underfull \hbox (badness 10000) in paragraph at lines 776--780
 
  []
 
@@ -2088,7 +2110,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 796--800
 
  []
 
-[24]
+
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 801--805
 [] []
  []
@@ -2148,65 +2170,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 826--830
 
  []
 
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 831--835
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 831--835
-
- []
-
 [25]
-Underfull \vbox (badness 10000) detected at line 867
+Underfull \vbox (badness 10000) detected at line 862
  []
 
 [26]
-<../figures/supp2-1.pdf, id=399, 611.28375pt x 703.62875pt>
+<../figures/supp2-1.pdf, id=397, 611.28375pt x 703.62875pt>
 File: ../figures/supp2-1.pdf Graphic file (type pdf)
 <use ../figures/supp2-1.pdf>
-Package pdftex.def Info: ../figures/supp2-1.pdf  used on input line 921.
+Package pdftex.def Info: ../figures/supp2-1.pdf  used on input line 916.
 (pdftex.def)             Requested size: 469.74788pt x 540.71143pt.
-[27] [28 <../figures/supp2-1.pdf>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 930.
+[27]
 
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [29] [30]
-
-Package caption Warning: Unused \captionsetup[table] on input line 843.
+Package caption Warning: Unused \captionsetup[table] on input line 838.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1092.
-[31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1092.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 918.
+[28 <../figures/supp2-1.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 918.
 (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1092.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1092.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1092.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 918.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 918.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 918.
  ) 
 Here is how much of TeX's memory you used:
- 14978 strings out of 492982
- 218845 string characters out of 6134896
- 337457 words of memory out of 5000000
- 17995 multiletter control sequences out of 15000+600000
- 70626 words of font info for 134 fonts, out of 8000000 for 9000
+ 15178 strings out of 492982
+ 221967 string characters out of 6134896
+ 340695 words of memory out of 5000000
+ 18185 multiletter control sequences out of 15000+600000
+ 73844 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,49p,2137b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,49p,2137b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmtt10.pfb>
-Output written on paper.pdf (31 pages, 5841105 bytes).
+ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmss8.pfb>
+Output written on paper.pdf (28 pages, 5805329 bytes).
 PDF statistics:
- 848 PDF objects out of 1000 (max. 8388607)
- 614 compressed objects within 7 object streams
- 169 named destinations out of 1000 (max. 500000)
- 16518 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 821 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
+ 163 named destinations out of 1000 (max. 500000)
+ 16510 words of extra memory for PDF output out of 17280 (max. 10000000)
 
