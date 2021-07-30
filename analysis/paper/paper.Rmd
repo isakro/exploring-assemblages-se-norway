@@ -163,6 +163,31 @@ rcarb_data <- do.call(rbind, posteriors)
 ```
 
 The Early Mesolithic, or Flake Axe Phase, is defined as lasting from c. 9200--8200 BCE [@reitan2016] and is set to start with the first recorded human presence in Norway. Previous research has typically proposed that the Early Mesolithic is characterised by a relatively high degree of mobility, and low variation in site types and associated mobility patterns [e.g. @bjerck2008; @breivik2016; @fuglestvedt2012; but see @viken2018c]. Around the transition to the subsequent Middle Mesolithic or Microlith Phase at c. 8200 BCE, pervasive changes in blade and axe technology occur [@damlien2016; @eymundsson2018; @solheim2020], which in turn has been associated with changes in population genomics and related migration events hailing from the Eurasian steppes [@günther2018; @manninen2021]. The Microlith Phase is defined as lasting until around 7000 BCE, which is followed by the Pecked Adze Phase, characterised by a more dominating presence of non-flint macro tools and associated production waste in the assemblages [@reitan2016]. The next typological transition at c. 5600 BCE signifies the onset of the Nøstvet Adze Phase. While previously defined as having a slightly longer duration, the Nøstvet Phase has traditionally been seen as representing the onset of more varied settlement systems and stable mobility patterns [e.g. @jaksland2001; @lindblom1984]. In recent years it has been suggested that the transition to a decrease in mobility and more varied land-use patterns can be traced back to the Middle Mesolithic [@solheim2016]. The subsequent Transverse Arrowhead Phase (c. 4500--3900 BCE) is characterised by a dramatic decrease in axe finds, and the introduction of new flint projectiles [@reitan2016]. It has recently been suggested that a dispersal of people from southern Scandinavia into southern Norway takes place in this period [@eigeland2015, 379; @nielsen2021], which could follow after a preceding population decline at c. 4300 BCE [@nielsen2021].
+```{r tab1}
+period <- c('Early Mesolithic, "Fosna Phase"', 'Middle Mesolithic, "Tørkop Phase"', 'Late Mesolithic, "Nøstvet Phase"', 'Late Mesolithic, "Kjeøy Phase"',
+            'Flake Axe Phase', 'Microlith Phase', 'Pecked Adze Phase', 'Nøstvet Adze Phase', 'Transverse Arrowhead Phase')
+duration <- c("9500–8250 BCE", "8250–6350 BCE", "6350–4650 BCE", "4650–3800 BCE", "9200–8200 BCE", "8200–7000 BCE", "7000–5600 BCE", "5600–4500 BCE", "4500–3900 BCE")
+
+df <- data.frame(period, duration)
+
+gt(df) %>% 
+  tab_row_group(
+    label = "Glørstad (2004)",
+    rows = 1:4
+  ) %>% 
+  tab_row_group(
+    label = "Reitan (2016)",
+    rows = 5:9
+  ) %>% 
+  tab_header(
+    title = "Table 1. Chronological frameworks. Glørstad's (2004) divison of phases reflects the traditional and more established frameworks, to which Reitan (2016) has recently suggested considerable changes."
+  ) %>% 
+  tab_options(column_labels.hidden = TRUE,
+              row_group.font.weight = "bold", 
+              heading.title.font.size = 13,
+              heading.align = "left")
+
+```
 
 ```{r dist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. Radiocarbon age determinations are given as the sum of the posterior density esimates. Solid lines indicate that the site has been dated with reference to relative sea-level change and typological indicators. These follow the original reports.", fig.height = 13, fig.width = 12}
 # Create a bounding box around site points to limit the overview map
@@ -283,7 +308,7 @@ temp_dist <- ggplot(datedata, aes(x = -mean_date, y = reorder(no, -as.numeric(no
 
 ```
 
-```{r ldist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. Radiocarbon age determintations are given as the sum of the posterior density esimates. Solid lines indicate that the site has been dated with reference to relative sea-level change and typological indicators. These follow the original reports. Site numbering follow that given in Table 1.", fig.height = 9, fig.width = 12, eval = FALSE}
+```{r ldist, fig.cap = "A) Spatial and B) temporal distribution of the sites chosen for analysis. Radiocarbon age determintations are given as the sum of the posterior density esimates. Solid lines indicate that the site has been dated with reference to relative sea-level change and typological indicators. These follow the original reports. Site numbering follow that given in Table 2.", fig.height = 9, fig.width = 12, eval = FALSE}
 temp_dist
 ```
 
@@ -293,7 +318,7 @@ The `r nrow(sites)` coastal sites chosen for analysis here have a relatively lim
 
 The lithic data analysed is based on the classification of the site assemblages done for the original excavation reports, and consists of `r ncol(select(sites, core:flake_retouch_other))` variables representing different debitage and tool types. The artefact data have been divided into flint and non-flint materials. Flint does not outcrop naturally in southern Norway, and is only available locally as nodules that have been transported and deposited by retreating and drifting ice [e.g. @berg-hansen1999]. This means that the distribution and quality of flint has been impacted by a diverse set of climatic and geographical factors [@eigeland2015, 46]. Thus, while flint is treated as a unified category here, the variability in quality could have been substantial. Furthermore, the various non-flint raw materials that have been lumped together have quite disparate properties, where fine-grained cryptocrystalline materials are often used as a substitute or supplement to flint, while other, coarser materials are usually associated with the production of axes and other macro tools. Given this differentiated use, these raw-material properties are expected to be reflected in the retained debitage and tool categories. An important benefit of combining all of the non-flint materials is that this reduces the dependency on whether or not these have been correctly and consistently categorised for the reports [cf. @frivoll2017]. Finally, while factors such as landscape changes through shoreline displacement can have led to variable raw-material availability at the analysed sites, their relatively constrained geographical distribution hopefully counteracts some non-behavioural sources of variation.
 
-```{r tab1}
+```{r tab2}
 
 sites %>% 
   mutate(strt_bce = reported_start_bc * -1, 
@@ -308,7 +333,7 @@ sites %>%
     end_bce = "Reported end (BCE)",
   ) %>% 
   tab_header(
-    title = "Table 1. Analysed sites."
+    title = "Table 2. Analysed sites."
   ) %>% 
   tab_options(heading.title.font.size = 13, heading.align = "left")
 ```
@@ -653,7 +678,7 @@ w2 <-
 w1 | w2
 ```
 
-To get more directly at this temporal trend, a curation index based on VDL and RFSL was devised by first performing a min-max normalisation of the two variables, scaling them to take on values between 0 and 1. The values for artefact density was then made negative to reflect its relationship with degree of curation. The mean was then found for each site on these two normalised values. To account for the temporal uncertainty associated with the dating of the sites, a simulation-based approach was also adopted [e.g. @baxter2016; @crema2012; @orton2017]. A LOESS curve was fit to the curation index and site age for each simulation run, where the age of each site was drawn as a single year from their respective date ranges as provided in Figure \@ref(fig:dist). For sites with radiocarbon age determinations the dates were drawn from the summed posterior density estimates, while ages for sites dated with reference to relative sea-level change and typology were drawn uniformly from the associated date range. This simulation was repeated 1000 times (Figure \@ref(fig:simplot)A). Disregarding the edge-effects at either end of the plot, the general tendency is a relatively high degree of curation among the earlier sites, followed by a marked drop around 8000 BCE. This has stabilised by around 7000 BCE and remains stable for the rest of the Mesolithic. The variation in degree of curation is also markedly higher after 8000 BCE. Figure \@ref(fig:simplot)B displays the result of running the same procedure on the flint data. The general pattern follows the same trajectory, but the result for some individual sites is noticeably different.
+To get more directly at this temporal trend, a curation index based on VDL and RFSL was devised by first performing a min-max normalisation of the two variables, scaling them to take on values between 0 and 1. The values for artefact density was then made negative to reflect its relationship with degree of curation. The mean was then found for each site on these two normalised values. To account for the temporal uncertainty associated with the dating of the sites, a simulation-based approach was also adopted [e.g. @crema2012; @orton2017]. A LOESS curve was fit to the curation index and site age for each simulation run, where the age of each site was drawn as a single year from their respective date ranges as provided in Figure \@ref(fig:dist). For sites with radiocarbon age determinations the dates were drawn from the summed posterior density estimates, while ages for sites dated with reference to relative sea-level change and typology were drawn uniformly from the associated date range. This simulation was repeated 1000 times (Figure \@ref(fig:simplot)A). Disregarding the edge-effects at either end of the plot, the general tendency is a relatively high degree of curation among the earlier sites, followed by a marked drop around 8000 BCE. This has stabilised by around 7000 BCE and remains stable for the rest of the Mesolithic. The variation in degree of curation is also markedly higher after 8000 BCE. Figure \@ref(fig:simplot)B displays the result of running the same procedure on the flint data. The general pattern follows the same trajectory, but the result for some individual sites is noticeably different.
 
 ```{r index}
 # Create curation index
