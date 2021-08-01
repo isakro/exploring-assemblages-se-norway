@@ -51,7 +51,8 @@ library(tidyverse)
 library(GGally)
 library(ggridges)
 library(patchwork)
-library(gt)
+library(knitr)
+library(kableExtra)
 library(FactoMineR)
 library(factoextra)
 library(networkD3)
@@ -163,29 +164,22 @@ rcarb_data <- do.call(rbind, posteriors)
 ```
 
 The Early Mesolithic, or Flake Axe Phase, is defined as lasting from c. 9200--8200 BCE [@reitan2016] and is set to start with the first recorded human presence in Norway. Previous research has typically proposed that the Early Mesolithic is characterised by a relatively high degree of mobility, and low variation in site types and associated mobility patterns [e.g. @bjerck2008; @breivik2016; @fuglestvedt2012; but see @viken2018c]. Around the transition to the subsequent Middle Mesolithic or Microlith Phase at c. 8200 BCE, pervasive changes in blade and axe technology occur [@damlien2016; @eymundsson2018; @solheim2020], which in turn has been associated with changes in population genomics and related migration events hailing from the Eurasian steppes [@günther2018; @manninen2021]. The Microlith Phase is defined as lasting until around 7000 BCE, which is followed by the Pecked Adze Phase, characterised by a more dominating presence of non-flint macro tools and associated production waste in the assemblages [@reitan2016]. The next typological transition at c. 5600 BCE signifies the onset of the Nøstvet Adze Phase. While previously defined as having a slightly longer duration, the Nøstvet Phase has traditionally been seen as representing the onset of more varied settlement systems and stable mobility patterns [e.g. @jaksland2001; @lindblom1984]. In recent years it has been suggested that the transition to a decrease in mobility and more varied land-use patterns can be traced back to the Middle Mesolithic [@solheim2016]. The subsequent Transverse Arrowhead Phase (c. 4500--3900 BCE) is characterised by a dramatic decrease in axe finds, and the introduction of new flint projectiles [@reitan2016]. It has recently been suggested that a dispersal of people from southern Scandinavia into southern Norway takes place in this period [@eigeland2015, 379; @nielsen2021], which could follow after a preceding population decline at c. 4300 BCE [@nielsen2021].
+
 ```{r tab1}
-period <- c('Early Mesolithic, "Fosna Phase"', 'Middle Mesolithic, "Tørkop Phase"', 'Late Mesolithic, "Nøstvet Phase"', 'Late Mesolithic, "Kjeøy Phase"',
+
+# Table 1. Overfiew of chronological framework.
+Period <- c('Early Mesolithic, Fosna Phase', 'Middle Mesolithic, Tørkop Phase', 'Late Mesolithic, Nøstvet Phase', 'Late Mesolithic, Kjeøy Phase',
             'Flake Axe Phase', 'Microlith Phase', 'Pecked Adze Phase', 'Nøstvet Adze Phase', 'Transverse Arrowhead Phase')
-duration <- c("9500–8250 BCE", "8250–6350 BCE", "6350–4650 BCE", "4650–3800 BCE", "9200–8200 BCE", "8200–7000 BCE", "7000–5600 BCE", "5600–4500 BCE", "4500–3900 BCE")
+Duration <- c("9500–8200 BCE", "8200–6300 BCE", "6300–4600 BCE", "4600–3800 BCE", "9200–8200 BCE", "8200–7000 BCE", "7000–5600 BCE", "5600–4500 BCE", "4500–3900 BCE")
+framework <- c(rep("Glørstad (2010)", 4), rep("Reitan (2016)", 5))
 
-df <- data.frame(period, duration)
+df <- data.frame(Period, Duration, framework)
 
-gt(df) %>% 
-  tab_row_group(
-    label = "Glørstad (2004)",
-    rows = 1:4
-  ) %>% 
-  tab_row_group(
-    label = "Reitan (2016)",
-    rows = 5:9
-  ) %>% 
-  tab_header(
-    title = "Table 1. Chronological frameworks. Glørstad's (2004) divison of phases reflects the traditional and more established frameworks, to which Reitan (2016) has recently suggested considerable changes."
-  ) %>% 
-  tab_options(column_labels.hidden = TRUE,
-              row_group.font.weight = "bold", 
-              heading.title.font.size = 13,
-              heading.align = "left")
+
+kable(select(df, -framework), booktabs = TRUE, 
+      caption = "Chronological framework. Glørstad's (2010) divison of phases reflects the more established framework, to which Reitan (2016) has recently suggested considerable changes.", 
+      col.names = NULL) %>% 
+pack_rows(index = c("Glørstad (2004)" = 4, "Reitan (2016)" = 5))
 
 ```
 
@@ -302,7 +296,7 @@ temp_dist <- ggplot(datedata, aes(x = -mean_date, y = reorder(no, -as.numeric(no
   guides(fill =  guide_legend(title.position = "top", title.hjust = 0.5),
          colour = FALSE) 
 
-
+# Call to plot (using patchwork)
 (overview + sitemap) /
 (temp_dist + theme(plot.margin = unit(c(0,135,0,135), "pt"))) 
 
@@ -319,23 +313,18 @@ The `r nrow(sites)` coastal sites chosen for analysis here have a relatively lim
 The lithic data analysed is based on the classification of the site assemblages done for the original excavation reports, and consists of `r ncol(select(sites, core:flake_retouch_other))` variables representing different debitage and tool types. The artefact data have been divided into flint and non-flint materials. Flint does not outcrop naturally in southern Norway, and is only available locally as nodules that have been transported and deposited by retreating and drifting ice [e.g. @berg-hansen1999]. This means that the distribution and quality of flint has been impacted by a diverse set of climatic and geographical factors [@eigeland2015, 46]. Thus, while flint is treated as a unified category here, the variability in quality could have been substantial. Furthermore, the various non-flint raw materials that have been lumped together have quite disparate properties, where fine-grained cryptocrystalline materials are often used as a substitute or supplement to flint, while other, coarser materials are usually associated with the production of axes and other macro tools. Given this differentiated use, these raw-material properties are expected to be reflected in the retained debitage and tool categories. An important benefit of combining all of the non-flint materials is that this reduces the dependency on whether or not these have been correctly and consistently categorised for the reports [cf. @frivoll2017]. Finally, while factors such as landscape changes through shoreline displacement can have led to variable raw-material availability at the analysed sites, their relatively constrained geographical distribution hopefully counteracts some non-behavioural sources of variation.
 
 ```{r tab2}
-
+# Table 2. Names of analysed sites, dating method used, and reported site age.
 sites %>% 
   mutate(strt_bce = reported_start_bc * -1, 
          end_bce = reported_end_bc * -1,
          dating_method = ifelse(dating_method == "shore_typo", "Shoreline/typology", "Radiocarbon")) %>% 
   select(no, site, dating_method, strt_bce, end_bce) %>% 
-  gt() %>% 
-    cols_label(
-    site = "Site name",
-    dating_method = "Dating method",
-    strt_bce = "Reported start (BCE)",
-    end_bce = "Reported end (BCE)",
-  ) %>% 
-  tab_header(
-    title = "Table 2. Analysed sites."
-  ) %>% 
-  tab_options(heading.title.font.size = 13, heading.align = "left")
+  kable(caption = "Analysed sites.", col.names = c("no",
+                    "Site name",
+                    "Dating method",
+                    "Reported start (BCE)",
+                    "Reported end (BCE)"),
+        booktabs = TRUE, linesep = c(""))
 ```
 
 # The analysis of lithic assemblages
@@ -421,7 +410,8 @@ As most of the variation in the data is accounted for by the dominating non-flin
 ```{r cor1, fig.cap = "Correspondence analysis using artefact count data.", fig.height = 8, fig.width = 10, eval = FALSE}
 # Plot with site names tags (probably most immediately relevant for an audience 
 # familiar with the sites)
-fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+fviz_ca_row(calithics, col.row = "black",
+            fill = lithics$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
@@ -430,7 +420,8 @@ fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title
 
 ```{r cor, fig.cap = "Correspondence analysis using the artefact count data. A) Row plot, B) Column plot.", fig.height = 13}
 # Plot sites
-plt1 <- fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+plt1 <- fviz_ca_row(calithics, col.row = "black",
+                    fill = lithics$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
@@ -438,12 +429,14 @@ plt1 <- fviz_ca_row(calithics, col.row = "black", fill = lithics$mean_date / 100
 
 # Plot variables
 plt2 <- fviz_ca_col(calithics, col.col = "contrib",
-             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE, title = "B") +
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
+             title = "B") +
   labs(colour = "Contribution to total inertia") +
   theme(legend.position = "bottom") 
 
 # Plot sites for the flint data
-plt3 <- fviz_ca_row(caflint, col.row = "black", fill = lithics$mean_date / 1000, title = "A",
+plt3 <- fviz_ca_row(caflint, col.row = "black", fill = lithics$mean_date / 1000,
+                    title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
@@ -454,7 +447,8 @@ plt3 <- fviz_ca_row(caflint, col.row = "black", fill = lithics$mean_date / 1000,
 
 # Variables for the flint data
 plt4 <- fviz_ca_col(caflint, col.col = "contrib",
-             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE, title = "B") +
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
+             title = "B") +
   labs(colour = "Contribution to total inertia") +
   theme(legend.position = "bottom") 
 
@@ -498,12 +492,12 @@ secondary_lithics <- c(secondary_flint, "axe_other", "axe_debitage_other",
 lithics2 <- sites %>% 
   select(-beach_flint_flint_nodule, -hammerstone, -excavation_project,
           -askeladden_id) %>% 
-  # The reason for not using .keep below is for the option to 
-  #retain artefact_count
+  # The reason for not using .keep below is to 
+  # retain artefact_count
   mutate(chip_freq =  sum(chip, chip_other) / artefact_count,
          core_freq = sum(core, core_other) / artefact_count,
          blanks_freq = sum(blade, microblade, flake, flake_other, fragment,
-                           fragment_other, blade_other,  microblade_other) / artefact_count,
+            fragment_other, blade_other,  microblade_other) / artefact_count,
          secondary_freq =  sum(axe_debitage, axe, chisel, 
                 microlith, tanged_point, transverse_point, single_edged_point,
                 hognipen_point, projectile_undefined, microburin, scraper, 
@@ -541,16 +535,18 @@ flint2 <- sites %>%
          -core_fragment, -chip, dating_method) %>% 
   column_to_rownames("no")
 
+# VDL and RFSL for all lithics
 wabicor <- cor(log10(lithics2$lithic_dens), log10(lithics2$secondary_freq))
 
 # Langangen Vestgård 2 does not have any retouched flint
 wabiflint <- filter(flint2, secondary_freq > 0)
 wabicorflint <- cor(log10(wabiflint$flint_dens), log10(wabiflint$secondary_freq))
 
-# Correlation with mean site date
+# Correlation with mean site date, all lithics
 secfreqcor <- cor(lithics2$mean_date, lithics2$secondary_freq)
 denscor <- cor(lithics2$mean_date, lithics2$lithic_dens)
 
+# Correlation with mean site date, flint
 secfreqcorflint <- cor(wabiflint$mean_date, wabiflint$secondary_freq)
 denscorflint <- cor(wabiflint$mean_date, wabiflint$flint_dens)
 
@@ -576,10 +572,8 @@ corr_plot(select(lithicstr, -reported_start_bc, -reported_end_bc, -dating_method
 ```
 
 ```{r pca-analysis, fig.cap = "PCA using variables that have been related to mobility patterns. Note that details on the transformation of the variables has been left out of the plot for clarity, but follow those given in Figure 4.", fig.height = 8}
-# fig.width = 10
-
 # Rename the transformed variables again to avoid clutter in the plot. 
-# Specify in figure caption that the transformed variables are used 
+# Specify in figure caption that the transformed variables are used.
 lithicspca <- lithicstr %>% 
   rename(
    lithic_dens = "log10(lithic_dens)",
@@ -886,16 +880,11 @@ The temporal trends associated with the curation index corresponds surprisingly 
 
 ```{r supp1, cache = FALSE}
 # Supplementary table of radiocarbon dates
-radiocarbon %>% 
-  select(-excavation_project) %>% 
-  gt() %>% 
-    cols_label(
-    site = "Site name",
-    material = "Material",
-    lab_code = "Lab code",
-    c14_bp = "C14-age",
-    error = "Error"
-  )
+
+select(radiocarbon, -excavation_project) %>% 
+  kable(booktabs = TRUE, longtable = TRUE,
+      col.names = c("Site name", "Material", "Lab code", "C14-age", "Error"),
+      linesep = c(""))
 ```
 
 # Supplementary material B. Aggregation of variables for the correspondence analysis.
