@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  1 AUG 2021 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  1 AUG 2021 21:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1166,7 +1166,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 268.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [8]
-<../figures/cor-1.pdf, id=78, 633.36626pt x 911.405pt>
+<../figures/cor-1.pdf, id=79, 633.36626pt x 911.405pt>
 File: ../figures/cor-1.pdf Graphic file (type pdf)
 <use ../figures/cor-1.pdf>
 Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 283.
@@ -1174,7 +1174,7 @@ Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 283.
 
 LaTeX Warning: Float too large for page by 24.50974pt on input line 285.
 
-<../figures/flintcor-1.pdf, id=79, 633.36626pt x 911.405pt>
+<../figures/flintcor-1.pdf, id=80, 633.36626pt x 911.405pt>
 File: ../figures/flintcor-1.pdf Graphic file (type pdf)
 <use ../figures/flintcor-1.pdf>
 Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 289.
@@ -1182,23 +1182,23 @@ Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 289.
 
 LaTeX Warning: Float too large for page by 24.50974pt on input line 291.
 
-<../figures/cor-plot-1.pdf, id=84, 712.6625pt x 676.5275pt>
+<../figures/cor-plot-1.pdf, id=85, 712.6625pt x 676.5275pt>
 File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
 <use ../figures/cor-plot-1.pdf>
 Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 299.
 (pdftex.def)             Requested size: 469.74974pt x 445.93143pt.
-<../figures/pca-analysis-1.pdf, id=85, 644.4075pt x 543.02875pt>
+<../figures/pca-analysis-1.pdf, id=86, 644.4075pt x 543.02875pt>
 File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
 <use ../figures/pca-analysis-1.pdf>
 Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 305.
 
 (pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
-<../figures/var-contrib-1.pdf, id=86, 633.36626pt x 193.72375pt>
+<../figures/var-contrib-1.pdf, id=87, 633.36626pt x 193.72375pt>
 File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
 <use ../figures/var-contrib-1.pdf>
 Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 311.
 (pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
-<../figures/wabi-1.pdf, id=89, 705.63625pt x 333.245pt>
+<../figures/wabi-1.pdf, id=90, 705.63625pt x 333.245pt>
 File: ../figures/wabi-1.pdf Graphic file (type pdf)
 <use ../figures/wabi-1.pdf>
 Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 319.
@@ -1234,7 +1234,7 @@ l.324
                                                   \fi \fi 
 l.324 
        <../figures/pca-analysis-1.pdf> <../figures/var-contrib-1.pdf>]
-<../figures/simplot-1.pdf, id=161, 847.165pt x 985.6825pt>
+<../figures/simplot-1.pdf, id=162, 847.165pt x 985.6825pt>
 File: ../figures/simplot-1.pdf Graphic file (type pdf)
 <use ../figures/simplot-1.pdf>
 Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 327.
@@ -2295,7 +2295,7 @@ Underfull \vbox (badness 10000) detected at line 890
  []
 
 [26]
-<../figures/supp2-1.pdf, id=397, 611.28375pt x 703.62875pt>
+<../figures/supp2-1.pdf, id=398, 611.28375pt x 703.62875pt>
 File: ../figures/supp2-1.pdf Graphic file (type pdf)
 <use ../figures/supp2-1.pdf>
 Package pdftex.def Info: ../figures/supp2-1.pdf  used on input line 944.
@@ -2326,10 +2326,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (28 pages, 5827525 bytes).
+Output written on paper.pdf (28 pages, 5827394 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
+ 825 PDF objects out of 1000 (max. 8388607)
+ 595 compressed objects within 6 object streams
  163 named destinations out of 1000 (max. 500000)
  16510 words of extra memory for PDF output out of 17280 (max. 10000000)
 
