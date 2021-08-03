@@ -6,14 +6,13 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/isakro/dialpastrepository/master?urlpath=rstudio)
 
 <!-- This repository contains the data and code for the paper: -->
-<!-- > Authors, (YYYY). *Exploring the composition of lithic assemblages in Mesolithic
-south-eastern Norway*. Name of journal/book -->
+<!-- > Authors, (YYYY). *Exploring the Composition of Lithic Assemblages in Mesolithic South-Eastern Norway*. Name of journal/book -->
 <!-- > <https://doi.org/xxx/xxx> -->
 
 Pre-print is online here:
 
-> Roalkvam, Isak (2021). *Exploring the composition of lithic
-> assemblages in Mesolithic south-eastern Norway*. Accessed 01 Aug 2021.
+> Roalkvam, Isak (2021). *Exploring the Composition of Lithic
+> Assemblages in Mesolithic South-Eastern Norway*. Accessed 03 Aug 2021.
 > Online at <https://doi.org/xxx/xxx>
 
 ### How to cite
@@ -21,8 +20,8 @@ Pre-print is online here:
 Please cite this compendium as:
 
 > Roalkvam, Isak (2021). *Compendium of R code and data for Exploring
-> the composition of lithic assemblages in Mesolithic south-eastern
-> Norway*. Accessed 01 Aug 2021. Online at <https://doi.org/xxx/xxx>
+> the Composition of Lithic Assemblages in Mesolithic South-Eastern
+> Norway*. Accessed 03 Aug 2021. Online at <https://doi.org/xxx/xxx>
 
 ## Contents
 

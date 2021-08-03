@@ -14,8 +14,7 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 # Please put your title here to include it in the file below.
-Title <- "Exploring the composition of lithic assemblages in Mesolithic
-south-eastern Norway"
+Title <- "Exploring the Composition of Lithic Assemblages in Mesolithic South-Eastern Norway"
 ```
 
 # exploring-assemblages-se-norway

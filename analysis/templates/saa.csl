@@ -64,13 +64,6 @@
       </if>
     </choose>
   </macro>
-  <macro name="anon">
-    <choose>
-      <if variable="author editor translator" match="none">
-        <text term="anonymous" form="short" text-case="capitalize-first" strip-periods="true"/>
-      </if>
-    </choose>
-  </macro>
   <macro name="recipient">
     <choose>
       <if type="personal_communication">
@@ -98,7 +91,6 @@
         <names variable="translator"/>
       </substitute>
     </names>
-    <text macro="anon"/>
     <text macro="recipient"/>
   </macro>
   <macro name="contributors-short">
@@ -109,7 +101,6 @@
         <names variable="translator"/>
       </substitute>
     </names>
-    <text macro="anon"/>
   </macro>
   <macro name="interviewer">
     <names variable="interviewer" delimiter=", ">
