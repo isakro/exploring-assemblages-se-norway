@@ -7,7 +7,7 @@ author:
   - Isak Roalkvam:
       email: isak.roalkvam@iakh.uio.no
       institute: [UiO]
-      correspondence: true
+      correspondence: false
 institute:
   - UiO: University of Oslo, Department of Archaeology, History and Conservation
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -27,8 +27,15 @@ abstract: |
 
   
 keywords: |
-  Mesolithic Scandinavia; Multivariate Statistics; Mobility; Whole Assemblage Behavioural Indicators
+  Mesolithic Scandinavia; Multivariate statistics; Mobility strategies; Whole Assemblage Behavioural Indicators
 ---
+## Highlights {-}
+
+* Multivariate exploratory analysis of Mesolithic assemblages in south-eastern Norway
+* Explores relevance of artefact categories established in Norwegian archaeology 
+* Explores variables associated with mobility patterns in lithic assemblage studies
+* Draws on the Whole Assemblage Behavioural Indicators (WABI)
+* Relevance for Mesolithic Norway supports the notion that WABI are widely applicable
 
 Keywords: `r rmarkdown::metadata$keywords`
 
@@ -866,9 +873,12 @@ The temporal trends associated with the curation index corresponds surprisingly 
 
 \newpage
 
-# References
+# Declaration of interest {-}
 
-<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+The author has no conflicts of interest to declare.
+
+# References {-}
+
 
 ::: {#refs}
 :::
