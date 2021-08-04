@@ -9,7 +9,7 @@ author:
       institute: [UiO]
       correspondence: false
 institute:
-  - UiO: University of Oslo, Department of Archaeology, History and Conservation
+  - UiO: University of Oslo, Department of Archaeology, Conservation and History
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::pdf_document2:
