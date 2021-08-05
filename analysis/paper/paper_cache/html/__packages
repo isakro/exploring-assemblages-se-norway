@@ -17,3 +17,6 @@ factoextra
 sf
 rnaturalearth
 oxcAAR
+knitr
+kableExtra
+networkD3

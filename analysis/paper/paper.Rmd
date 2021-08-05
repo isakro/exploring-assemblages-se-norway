@@ -841,7 +841,7 @@ i2 <- ggplot(resultslong, aes(x = age, y = index_flint, colour = site_col)) +
   labs(title = "B", x = "Cal. BCE", y = "Curation index (Flint)") +
   theme_classic() +
   theme(legend.position = "bottom",
-        text=element_text(size=16))
+        text = element_text(size=16))
 
   i1 /
   i2
