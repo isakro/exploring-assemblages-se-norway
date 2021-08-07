@@ -12,8 +12,8 @@
 Pre-print is online here:
 
 > Roalkvam, Isak (2021). *Exploring the Composition of Lithic
-> Assemblages in Mesolithic South-Eastern Norway*. Accessed 03 Aug 2021.
-> Online at <https://doi.org/xxx/xxx>
+> Assemblages in Mesolithic South-Eastern Norway*. Accessed 07 Aug 2021.
+> Online at <https://doi.org/10.31235/osf.io/cqaps>
 
 ### How to cite
 
@@ -21,7 +21,8 @@ Please cite this compendium as:
 
 > Roalkvam, Isak (2021). *Compendium of R code and data for Exploring
 > the Composition of Lithic Assemblages in Mesolithic South-Eastern
-> Norway*. Accessed 03 Aug 2021. Online at <https://doi.org/xxx/xxx>
+> Norway*. Accessed 07 Aug 2021. Online at
+> <https://doi.org/10.17605/osf.io/ehjfc>
 
 ## Contents
 

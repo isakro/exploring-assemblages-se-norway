@@ -30,7 +30,7 @@ Pre-print is online here:
 
 >  Roalkvam, Isak (2021). *`r Title`*. Accessed
 > `r format(Sys.Date(), "%d %b %Y")`. Online at
-> <https://doi.org/xxx/xxx>
+> <https://doi.org/10.31235/osf.io/cqaps>
 
 ### How to cite
 
@@ -38,7 +38,7 @@ Please cite this compendium as:
 
 > Roalkvam, Isak (`r format(Sys.Date(), "%Y")`). *Compendium of R code and
 > data for `r Title`*. Accessed `r format(Sys.Date(), "%d %b %Y")`.
-> Online at <https://doi.org/xxx/xxx>
+> Online at <https://doi.org/10.17605/osf.io/ehjfc>
 
 ## Contents
 
