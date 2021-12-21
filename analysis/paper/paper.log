@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  4 AUG 2021 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  15 DEC 2021 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -117,11 +117,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
@@ -654,6 +652,9 @@ Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
@@ -661,7 +662,9 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+)) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -853,7 +856,11 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen144
 \Gin@req@width=\dimen145
-) (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+)
+\cslhangindent=\skip57
+\csllabelwidth=\skip58
+\cslentryspacingunit=\skip59
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count128
 \output=\toks26
@@ -872,9 +879,9 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 LaTeX Info: Redefining \\ on input line 3056.
 ) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip57
+\multirow@colwidth=\skip60
 \multirow@cntb=\count135
-\multirow@dima=\skip58
+\multirow@dima=\skip61
 \bigstrutjot=\dimen151
 ) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen152
@@ -893,7 +900,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks30
-\minrowclearance=\skip59
+\minrowclearance=\skip62
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
@@ -930,7 +937,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@arstrutbox=\box39
 \tabu@hleads=\box40
 \tabu@vleads=\box41
-\tabu@cellskip=\skip60
+\tabu@cellskip=\skip63
 ) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box42
@@ -941,11 +948,11 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip61
+\TPTL@width=\skip64
 ) (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box43
 \UL@hyphenbox=\box44
-\UL@skip=\skip62
+\UL@skip=\skip65
 \UL@hook=\toks33
 \UL@height=\dimen165
 \UL@pe=\count145
@@ -958,40 +965,37 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen168
 \c@nlinenum=\count146
 \TeXr@lab=\toks34
-)
-\cslhangindent=\skip63
-\csllabelwidth=\skip64
-(./paper.aux)
+) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 120.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 116.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 120.
+LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 120.
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 116.
+LaTeX Info: Redefining \microtypecontext on input line 120.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -1033,7 +1037,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 120.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1041,9 +1045,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count153
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 120.
+LaTeX Info: Redefining \pageref on input line 120.
+LaTeX Info: Redefining \nameref on input line 120.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1078,1271 +1082,1353 @@ LaTeX Info: Redefining \nameref on input line 116.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 118.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 122.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 118.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 122.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 118.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 122.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 118
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 122
 .
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 118
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 122
 .
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 118.
+(Font)              <12> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 118.
+(Font)              <8> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 118.
-LaTeX Font Info:    Try loading font information for U+msa on input line 118.
+(Font)              <6> on input line 122.
+LaTeX Font Info:    Try loading font information for U+msa on input line 122.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 118.
+LaTeX Font Info:    Try loading font information for U+msb on input line 122.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 129.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 126.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 126.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 126.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 135.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 158.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 158.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 158.
-<../figures/dist-1.pdf, id=22, 587.19376pt x 839.135pt>
+<../figures/dist-1.pdf, id=24, 591.20876pt x 836.12375pt>
 File: ../figures/dist-1.pdf Graphic file (type pdf)
 <use ../figures/dist-1.pdf>
-Package pdftex.def Info: ../figures/dist-1.pdf  used on input line 179.
-(pdftex.def)             Requested size: 455.14214pt x 650.42532pt.
+Package pdftex.def Info: ../figures/dist-1.pdf  used on input line 185.
+(pdftex.def)             Requested size: 459.93214pt x 650.4643pt.
 
-LaTeX Warning: Float too large for page by 59.93974pt on input line 181.
+LaTeX Warning: Float too large for page by 59.97871pt on input line 187.
 
 [2] [3pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.184 
+l.190 
        <../figures/dist-1.pdf>] [4pdfTeX warning (ext4): destination with the s
 ame identifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.232 3
-       9 & GunnarsrÃ¸d 2 & Shoreline/typology & 7000 & 6000\\] [5] [6] [7] [8]
-<../figures/cor-1.pdf, id=79, 633.36626pt x 911.405pt>
+l.218 1
+       9 & Hovland 2 & Shoreline/typology & 8300 & 7900\\] [5]
+<../figures/variable-aggregation-1.pdf, id=56, 611.28375pt x 703.62875pt>
+File: ../figures/variable-aggregation-1.pdf Graphic file (type pdf)
+<use ../figures/variable-aggregation-1.pdf>
+Package pdftex.def Info: ../figures/variable-aggregation-1.pdf  used on input l
+ine 266.
+(pdftex.def)             Requested size: 469.74788pt x 540.71143pt.
+[6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.271 
+       <../figures/variable-aggregation-1.pdf>] [8] [9]
+<../figures/cor-1.pdf, id=399, 633.36626pt x 911.405pt>
 File: ../figures/cor-1.pdf Graphic file (type pdf)
 <use ../figures/cor-1.pdf>
-Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 292.
+Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 304.
 (pdftex.def)             Requested size: 452.01265pt x 650.43974pt.
 
-LaTeX Warning: Float too large for page by 24.50974pt on input line 294.
+LaTeX Warning: Float too large for page by 72.50974pt on input line 306.
 
-<../figures/flintcor-1.pdf, id=80, 633.36626pt x 911.405pt>
+<../figures/flintcor-1.pdf, id=400, 633.36626pt x 911.405pt>
 File: ../figures/flintcor-1.pdf Graphic file (type pdf)
 <use ../figures/flintcor-1.pdf>
-Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 298.
+Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 310.
 (pdftex.def)             Requested size: 452.01265pt x 650.43974pt.
 
-LaTeX Warning: Float too large for page by 24.50974pt on input line 300.
+LaTeX Warning: Float too large for page by 24.50974pt on input line 312.
 
-<../figures/cor-plot-1.pdf, id=85, 712.6625pt x 676.5275pt>
+<../figures/cor-plot-1.pdf, id=405, 712.6625pt x 676.5275pt>
 File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
 <use ../figures/cor-plot-1.pdf>
-Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 308.
+Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 320.
 (pdftex.def)             Requested size: 469.74974pt x 445.93143pt.
-<../figures/pca-analysis-1.pdf, id=86, 644.4075pt x 543.02875pt>
+<../figures/pca-analysis-1.pdf, id=406, 644.4075pt x 543.02875pt>
 File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
 <use ../figures/pca-analysis-1.pdf>
-Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 314.
+Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 326.
 
 (pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
-<../figures/var-contrib-1.pdf, id=87, 633.36626pt x 193.72375pt>
+<../figures/var-contrib-1.pdf, id=407, 633.36626pt x 193.72375pt>
 File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
 <use ../figures/var-contrib-1.pdf>
-Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 320.
+Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 332.
 (pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
-<../figures/wabi-1.pdf, id=90, 705.63625pt x 333.245pt>
-File: ../figures/wabi-1.pdf Graphic file (type pdf)
-<use ../figures/wabi-1.pdf>
-Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 328.
-(pdftex.def)             Requested size: 469.75903pt x 221.8492pt.
-[9] [10pdfTeX warning (ext4): destination with the same identifier (name{figure
-.2}) has been already used, duplicate ignored
+[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 
-       <../figures/cor-1.pdf>] [11pdfTeX warning (ext4): destination with the s
-ame identifier (name{figure.3}) has been already used, duplicate ignored
+l.337 
+       <../figures/cor-1.pdf>] [12pdfTeX warning (ext4): destination with the s
+ame identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 
-       <../figures/flintcor-1.pdf>] [12pdfTeX warning (ext4): destination with 
-the same identifier (name{figure.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.333 
-       <../figures/cor-plot-1.pdf>] [13pdfTeX warning (ext4): destination with 
+l.337 
+       <../figures/flintcor-1.pdf>] [13pdfTeX warning (ext4): destination with 
 the same identifier (name{figure.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-6}) has been already used, duplicate ignored
+l.337 
+       <../figures/cor-plot-1.pdf>] [14pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 
+l.337 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.337 
        <../figures/pca-analysis-1.pdf> <../figures/var-contrib-1.pdf>]
-<../figures/simplot-1.pdf, id=162, 847.165pt x 985.6825pt>
+<../figures/wabi-1.pdf, id=477, 705.63625pt x 333.245pt>
+File: ../figures/wabi-1.pdf Graphic file (type pdf)
+<use ../figures/wabi-1.pdf>
+Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 340.
+(pdftex.def)             Requested size: 469.75903pt x 221.8492pt.
+<../figures/simplot-1.pdf, id=481, 847.165pt x 985.6825pt>
 File: ../figures/simplot-1.pdf Graphic file (type pdf)
 <use ../figures/simplot-1.pdf>
-Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 336.
+Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 348.
 (pdftex.def)             Requested size: 469.75555pt x 546.56393pt.
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 
-       <../figures/wabi-1.pdf>] [15pdfTeX warning (ext4): destination with the 
-same identifier (name{figure.8}) has been already used, duplicate ignored
+l.356 
+       <../figures/wabi-1.pdf>] [16pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 
-       <../figures/simplot-1.pdf>] [16] [17]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 380--384
+l.356 
+       <../figures/simplot-1.pdf>] [17] [18] [19]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 392--396
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 385--389
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 397--401
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
+Underfull \hbox (badness 10000) in paragraph at lines 397--401
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 390--394
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 402--406
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--394
+Underfull \hbox (badness 10000) in paragraph at lines 402--406
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 395--399
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 407--411
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--399
+Underfull \hbox (badness 10000) in paragraph at lines 407--411
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 400--404
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 412--416
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--404
+Underfull \hbox (badness 10000) in paragraph at lines 412--416
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 405--408
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 417--420
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--408
+Underfull \hbox (badness 10000) in paragraph at lines 417--420
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 409--413
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 421--425
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--413
+Underfull \hbox (badness 10000) in paragraph at lines 421--425
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 414--418
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 426--430
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--418
+Underfull \hbox (badness 10000) in paragraph at lines 426--430
 
  []
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 422--422
+Underfull \hbox (badness 4556) in paragraph at lines 434--434
 []\T1/lmr/m/n/10 (+20) The For-ma-tion of Lithic As-sem-blages. \T1/lmr/m/it/10
  (+20) Jour-nal of Ar-chae-o-log-i-cal Sci-ence \T1/lmr/m/n/10 (+20) 46:334--35
 2.
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 419--423
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 431--435
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--423
+Underfull \hbox (badness 10000) in paragraph at lines 431--435
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 424--428
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 436--440
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--428
+Underfull \hbox (badness 10000) in paragraph at lines 436--440
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 429--433
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 441--445
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--433
+Underfull \hbox (badness 10000) in paragraph at lines 441--445
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 434--438
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 446--450
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--438
+Underfull \hbox (badness 10000) in paragraph at lines 446--450
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 439--443
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 451--455
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--443
-
- []
-
-[18]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 444--447
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 444--447
+Underfull \hbox (badness 10000) in paragraph at lines 451--455
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 448--452
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 456--459
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--459
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 460--464
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 448--452
+Underfull \hbox (badness 10000) in paragraph at lines 460--464
 
  []
 
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 453--457
+[20]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 465--469
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--457
+Underfull \hbox (badness 10000) in paragraph at lines 465--469
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 458--462
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 470--474
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--462
+Underfull \hbox (badness 10000) in paragraph at lines 470--474
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 463--467
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 475--479
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--467
+Underfull \hbox (badness 10000) in paragraph at lines 475--479
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 468--471
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 480--483
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--471
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 472--475
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 472--475
+Underfull \hbox (badness 10000) in paragraph at lines 480--483
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 476--479
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 484--487
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--479
+Underfull \hbox (badness 10000) in paragraph at lines 484--487
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 480--484
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 488--491
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--491
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 492--496
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--484
+Underfull \hbox (badness 10000) in paragraph at lines 492--496
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 485--488
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 497--500
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--488
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 489--492
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 489--492
+Underfull \hbox (badness 10000) in paragraph at lines 497--500
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 493--497
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 501--504
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--504
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 505--509
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--497
+Underfull \hbox (badness 10000) in paragraph at lines 505--509
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 498--502
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 510--514
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--502
+Underfull \hbox (badness 10000) in paragraph at lines 510--514
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 503--507
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 515--519
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--507
+Underfull \hbox (badness 10000) in paragraph at lines 515--519
 
  []
 
-[19]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 508--512
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 520--524
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--512
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--516
+Underfull \hbox (badness 10000) in paragraph at lines 528--528
 []\T1/lmr/m/n/10 (+20) Bayesian Anal-y-sis of Ra-dio-car-bon Dates. \T1/lmr/m/i
 t/10 (+20) Ra-dio-car-bon \T1/lmr/m/n/10 (+20) 51(1):337--360.
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 513--517
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 525--529
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--517
+Underfull \hbox (badness 10000) in paragraph at lines 525--529
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 518--521
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 530--533
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 518--521
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 522--526
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 522--526
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 527--531
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 527--531
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 532--536
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--536
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 537--541
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 537--541
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 542--546
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 542--546
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 547--551
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 547--551
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 552--556
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--556
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 557--561
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 557--561
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 562--566
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 562--566
-
- []
-
-[20]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 567--571
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--571
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 572--576
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--576
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 577--580
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--580
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 581--585
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--585
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 586--589
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--589
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 590--594
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 590--594
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 595--599
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--599
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 600--604
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 600--604
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 605--609
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--609
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 610--614
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 610--614
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 615--618
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 615--618
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 619--622
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 619--622
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 623--627
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 623--627
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
 
  []
 
 [21]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 628--631
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 628--631
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 632--636
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 534--538
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--636
+Underfull \hbox (badness 10000) in paragraph at lines 534--538
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 637--641
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 539--543
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--641
+Underfull \hbox (badness 10000) in paragraph at lines 539--543
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 642--646
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 544--548
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--646
+Underfull \hbox (badness 10000) in paragraph at lines 544--548
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 647--651
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 549--553
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--651
+Underfull \hbox (badness 10000) in paragraph at lines 549--553
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 652--656
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 554--558
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 652--656
+Underfull \hbox (badness 10000) in paragraph at lines 554--558
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 657--661
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 559--563
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--661
+Underfull \hbox (badness 10000) in paragraph at lines 559--563
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 662--666
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 564--568
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--666
+Underfull \hbox (badness 10000) in paragraph at lines 564--568
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 667--671
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 569--573
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--671
+Underfull \hbox (badness 10000) in paragraph at lines 569--573
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 672--676
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 574--578
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--676
+Underfull \hbox (badness 10000) in paragraph at lines 574--578
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 677--681
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 579--583
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--681
+Underfull \hbox (badness 10000) in paragraph at lines 579--583
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 682--686
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 584--588
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--686
+Underfull \hbox (badness 10000) in paragraph at lines 584--588
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 687--691
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 589--593
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--691
+Underfull \hbox (badness 10000) in paragraph at lines 589--593
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 594--597
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--597
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 598--602
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--602
 
  []
 
 [22]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 692--696
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 603--606
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--606
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 607--611
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--696
+Underfull \hbox (badness 10000) in paragraph at lines 607--611
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 697--701
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 612--616
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--701
+Underfull \hbox (badness 10000) in paragraph at lines 612--616
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 702--706
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 617--621
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--706
+Underfull \hbox (badness 10000) in paragraph at lines 617--621
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 707--711
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 622--626
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--711
+Underfull \hbox (badness 10000) in paragraph at lines 622--626
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 712--716
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 627--631
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--716
+Underfull \hbox (badness 10000) in paragraph at lines 627--631
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 717--721
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 632--635
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 636--639
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--639
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 640--644
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--721
+Underfull \hbox (badness 10000) in paragraph at lines 640--644
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 722--726
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 645--648
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--648
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 649--653
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--726
+Underfull \hbox (badness 10000) in paragraph at lines 649--653
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 727--731
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 654--658
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--731
+Underfull \hbox (badness 10000) in paragraph at lines 654--658
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 732--736
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 659--663
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--736
+Underfull \hbox (badness 10000) in paragraph at lines 659--663
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 737--741
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 664--668
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--741
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 742--746
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 742--746
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 747--751
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 747--751
+Underfull \hbox (badness 10000) in paragraph at lines 664--668
 
  []
 
 [23]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 752--756
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 669--673
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--756
+Underfull \hbox (badness 10000) in paragraph at lines 669--673
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 757--761
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 674--678
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--761
+Underfull \hbox (badness 10000) in paragraph at lines 674--678
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 762--766
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 679--683
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 762--766
+Underfull \hbox (badness 10000) in paragraph at lines 679--683
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 767--771
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 684--688
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 684--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 775--775
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 689--693
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--693
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 694--698
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--698
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 699--703
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--703
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 704--708
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--708
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 709--713
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--713
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 714--718
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 714--718
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 719--723
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--723
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 724--728
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 724--728
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 729--733
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--733
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 734--738
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 734--738
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 739--743
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--743
+
+ []
+
+[24]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 744--748
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 744--748
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 749--753
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--753
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 754--758
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--758
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 759--763
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--763
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 764--768
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--768
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 769--773
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--773
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 774--778
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--778
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 779--783
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--783
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 784--788
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--788
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 789--793
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 789--793
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 794--798
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--798
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--802
 []\T1/lmr/m/n/10 (+20) Mesolittisk kro-nologi i Sørøst-Norge -- et forslag til 
 jus-ter-ing. \T1/lmr/m/it/10 (+20) Viking \T1/lmr/m/n/10 (+20) 79:23--51.
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 772--776
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 799--803
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--776
+Underfull \hbox (badness 10000) in paragraph at lines 799--803
 
  []
 
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 777--781
+[25]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 804--808
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 777--781
+Underfull \hbox (badness 10000) in paragraph at lines 804--808
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 782--786
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 809--813
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 782--786
+Underfull \hbox (badness 10000) in paragraph at lines 809--813
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 787--791
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 814--818
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 787--791
+Underfull \hbox (badness 10000) in paragraph at lines 814--818
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 792--795
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 819--822
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--795
+Underfull \hbox (badness 10000) in paragraph at lines 819--822
 
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 799--799
+Underfull \hbox (badness 2181) in paragraph at lines 826--826
 []\T1/lmr/m/n/10 (+20) Standing at the gates of Eu-rope: Hu-man be-hav-ior and 
 bio-geog-ra-phy in the South-ern
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 796--800
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 823--827
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 796--800
+Underfull \hbox (badness 10000) in paragraph at lines 823--827
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 801--805
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 828--832
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 801--805
+Underfull \hbox (badness 10000) in paragraph at lines 828--832
 
  []
 
-[24]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 806--810
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 833--837
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 806--810
+Underfull \hbox (badness 10000) in paragraph at lines 833--837
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 811--815
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 838--842
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--815
+Underfull \hbox (badness 10000) in paragraph at lines 838--842
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 816--820
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 843--847
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 816--820
+Underfull \hbox (badness 10000) in paragraph at lines 843--847
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 821--825
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 848--852
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 821--825
+Underfull \hbox (badness 10000) in paragraph at lines 848--852
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 826--829
-[][][] []
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 853--856
+[][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 826--829
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 830--833
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 830--833
+Underfull \hbox (badness 10000) in paragraph at lines 853--856
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 834--838
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 857--860
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 857--860
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 861--865
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--838
+Underfull \hbox (badness 10000) in paragraph at lines 861--865
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 839--843
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 866--870
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 839--843
+Underfull \hbox (badness 10000) in paragraph at lines 866--870
 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 844--848
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 871--875
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--848
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 849--853
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--853
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 854--857
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 854--857
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 858--862
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 858--862
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 863--867
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 863--867
-
- []
-
-[25]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 868--872
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 868--872
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 873--877
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 873--877
-
- []
-
-
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 878--882
-[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 878--882
+Underfull \hbox (badness 10000) in paragraph at lines 871--875
 
  []
 
 [26]
-Underfull \vbox (badness 10000) detected at line 913
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 876--880
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 876--880
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 881--884
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 881--884
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 885--889
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--889
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 890--894
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 890--894
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 895--899
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--899
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 900--904
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 900--904
+
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 905--909
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 905--909
+
  []
 
 [27]
-<../figures/supp2-1.pdf, id=408, 611.28375pt x 703.62875pt>
-File: ../figures/supp2-1.pdf Graphic file (type pdf)
-<use ../figures/supp2-1.pdf>
-Package pdftex.def Info: ../figures/supp2-1.pdf  used on input line 967.
-(pdftex.def)             Requested size: 469.74788pt x 540.71143pt.
-[28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 969.
-[29 <../figures/supp2-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 969.
+<../figures/unnamed-chunk-1-1.pdf, id=725, 633.36626pt x 1055.945pt>
+File: ../figures/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use ../figures/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: ../figures/unnamed-chunk-1-1.pdf  used on input line 9
+19.
+(pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
+
+LaTeX Warning: Float too large for page by 36.49545pt on input line 921.
+
+<../figures/unnamed-chunk-2-1.pdf, id=726, 633.36626pt x 1055.945pt>
+File: ../figures/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use ../figures/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: ../figures/unnamed-chunk-2-1.pdf  used on input line 9
+25.
+(pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
+
+LaTeX Warning: Float too large for page by 60.49545pt on input line 927.
+
+<../figures/unnamed-chunk-3-1.pdf, id=727, 633.36626pt x 1272.755pt>
+File: ../figures/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use ../figures/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: ../figures/unnamed-chunk-3-1.pdf  used on input line 9
+31.
+(pdftex.def)             Requested size: 323.6697pt x 650.41708pt.
+
+LaTeX Warning: Float too large for page by 24.48708pt on input line 933.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 935.
+[28] [29pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.935 \end{document}
+                     <../figures/unnamed-chunk-1-1.pdf>] [30pdfTeX warning (ext
+4): destination with the same identifier (name{figure.11}) has been already use
+d, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.935 \end{document}
+                     <../figures/unnamed-chunk-2-1.pdf>] [31pdfTeX warning (ext
+4): destination with the same identifier (name{figure.12}) has been already use
+d, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.935 \end{document}
+                     <../figures/unnamed-chunk-3-1.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 935.
 (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 969.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 969.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 969.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 935.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 935.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 935.
  ) 
 Here is how much of TeX's memory you used:
- 15428 strings out of 492982
- 220724 string characters out of 6134896
- 346528 words of memory out of 5000000
- 18369 multiletter control sequences out of 15000+600000
- 74961 words of font info for 148 fonts, out of 8000000 for 9000
+ 15486 strings out of 492982
+ 221859 string characters out of 6134896
+ 346228 words of memory out of 5000000
+ 18404 multiletter control sequences out of 15000+600000
+ 81373 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,9n,38p,2137b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,11n,38p,2152b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb>
-Output written on paper.pdf (29 pages, 5795983 bytes).
+pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmss8.pfb>
+Output written on paper.pdf (31 pages, 5862792 bytes).
 PDF statistics:
- 837 PDF objects out of 1000 (max. 8388607)
- 607 compressed objects within 7 object streams
- 170 named destinations out of 1000 (max. 500000)
- 14478 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 640 compressed objects within 7 object streams
+ 176 named destinations out of 1000 (max. 500000)
+ 16533 words of extra memory for PDF output out of 17280 (max. 10000000)
 
