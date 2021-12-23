@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  15 DEC 2021 15:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  23 DEC 2021 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1159,12 +1159,12 @@ ame identifier (name{table.1}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.218 1
        9 & Hovland 2 & Shoreline/typology & 8300 & 7900\\] [5]
-<../figures/variable-aggregation-1.pdf, id=56, 611.28375pt x 703.62875pt>
+<../figures/variable-aggregation-1.pdf, id=59, 634.37pt x 703.62875pt>
 File: ../figures/variable-aggregation-1.pdf Graphic file (type pdf)
 <use ../figures/variable-aggregation-1.pdf>
 Package pdftex.def Info: ../figures/variable-aggregation-1.pdf  used on input l
 ine 266.
-(pdftex.def)             Requested size: 469.74788pt x 540.71143pt.
+(pdftex.def)             Requested size: 469.76523pt x 521.0529pt.
 [6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2}) has been already used, duplicate ignored
 
@@ -1172,15 +1172,15 @@ ine 266.
                                                   \fi \fi 
 l.271 
        <../figures/variable-aggregation-1.pdf>] [8] [9]
-<../figures/cor-1.pdf, id=399, 633.36626pt x 911.405pt>
+<../figures/cor-1.pdf, id=402, 633.36626pt x 911.405pt>
 File: ../figures/cor-1.pdf Graphic file (type pdf)
 <use ../figures/cor-1.pdf>
 Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 304.
 (pdftex.def)             Requested size: 452.01265pt x 650.43974pt.
 
-LaTeX Warning: Float too large for page by 72.50974pt on input line 306.
+LaTeX Warning: Float too large for page by 71.95416pt on input line 306.
 
-<../figures/flintcor-1.pdf, id=400, 633.36626pt x 911.405pt>
+<../figures/flintcor-1.pdf, id=403, 633.36626pt x 911.405pt>
 File: ../figures/flintcor-1.pdf Graphic file (type pdf)
 <use ../figures/flintcor-1.pdf>
 Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 310.
@@ -1188,18 +1188,18 @@ Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 310.
 
 LaTeX Warning: Float too large for page by 24.50974pt on input line 312.
 
-<../figures/cor-plot-1.pdf, id=405, 712.6625pt x 676.5275pt>
+<../figures/cor-plot-1.pdf, id=408, 712.6625pt x 676.5275pt>
 File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
 <use ../figures/cor-plot-1.pdf>
 Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 320.
 (pdftex.def)             Requested size: 469.74974pt x 445.93143pt.
-<../figures/pca-analysis-1.pdf, id=406, 644.4075pt x 543.02875pt>
+<../figures/pca-analysis-1.pdf, id=409, 644.4075pt x 543.02875pt>
 File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
 <use ../figures/pca-analysis-1.pdf>
 Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 326.
 
 (pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
-<../figures/var-contrib-1.pdf, id=407, 633.36626pt x 193.72375pt>
+<../figures/var-contrib-1.pdf, id=410, 633.36626pt x 193.72375pt>
 File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
 <use ../figures/var-contrib-1.pdf>
 Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 332.
@@ -1235,12 +1235,12 @@ l.337
                                                   \fi \fi 
 l.337 
        <../figures/pca-analysis-1.pdf> <../figures/var-contrib-1.pdf>]
-<../figures/wabi-1.pdf, id=477, 705.63625pt x 333.245pt>
+<../figures/wabi-1.pdf, id=480, 705.63625pt x 333.245pt>
 File: ../figures/wabi-1.pdf Graphic file (type pdf)
 <use ../figures/wabi-1.pdf>
 Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 340.
 (pdftex.def)             Requested size: 469.75903pt x 221.8492pt.
-<../figures/simplot-1.pdf, id=481, 847.165pt x 985.6825pt>
+<../figures/simplot-1.pdf, id=484, 847.165pt x 985.6825pt>
 File: ../figures/simplot-1.pdf Graphic file (type pdf)
 <use ../figures/simplot-1.pdf>
 Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 348.
@@ -2353,7 +2353,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 905--909
  []
 
 [27]
-<../figures/unnamed-chunk-1-1.pdf, id=725, 633.36626pt x 1055.945pt>
+<../figures/unnamed-chunk-1-1.pdf, id=728, 633.36626pt x 1055.945pt>
 File: ../figures/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-1-1.pdf  used on input line 9
@@ -2362,21 +2362,21 @@ Package pdftex.def Info: ../figures/unnamed-chunk-1-1.pdf  used on input line 9
 
 LaTeX Warning: Float too large for page by 36.49545pt on input line 921.
 
-<../figures/unnamed-chunk-2-1.pdf, id=726, 633.36626pt x 1055.945pt>
+<../figures/unnamed-chunk-2-1.pdf, id=729, 633.36626pt x 1055.945pt>
 File: ../figures/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-2-1.pdf  used on input line 9
 25.
 (pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
 
-LaTeX Warning: Float too large for page by 60.49545pt on input line 927.
+LaTeX Warning: Float too large for page by 72.49545pt on input line 927.
 
-<../figures/unnamed-chunk-3-1.pdf, id=727, 633.36626pt x 1272.755pt>
+<../figures/unnamed-chunk-3-1.pdf, id=730, 705.63625pt x 1272.755pt>
 File: ../figures/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-3-1.pdf  used on input line 9
 31.
-(pdftex.def)             Requested size: 323.6697pt x 650.41708pt.
+(pdftex.def)             Requested size: 360.60188pt x 650.41708pt.
 
 LaTeX Warning: Float too large for page by 24.48708pt on input line 933.
 
@@ -2411,7 +2411,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 935.
 Here is how much of TeX's memory you used:
  15486 strings out of 492982
  221859 string characters out of 6134896
- 346228 words of memory out of 5000000
+ 346324 words of memory out of 5000000
  18404 multiletter control sequences out of 15000+600000
  81373 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2425,10 +2425,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (31 pages, 5862792 bytes).
+Output written on paper.pdf (31 pages, 5869044 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 640 compressed objects within 7 object streams
+ 892 PDF objects out of 1000 (max. 8388607)
+ 641 compressed objects within 7 object streams
  176 named destinations out of 1000 (max. 500000)
  16533 words of extra memory for PDF output out of 17280 (max. 10000000)
 
