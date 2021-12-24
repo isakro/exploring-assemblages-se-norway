@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  23 DEC 2021 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  24 DEC 2021 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2357,62 +2357,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 905--909
 File: ../figures/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-1-1.pdf  used on input line 9
-19.
+18.
 (pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
 
-LaTeX Warning: Float too large for page by 36.49545pt on input line 921.
+LaTeX Warning: Float too large for page by 36.49545pt on input line 920.
 
 <../figures/unnamed-chunk-2-1.pdf, id=729, 633.36626pt x 1055.945pt>
 File: ../figures/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-2-1.pdf  used on input line 9
-25.
+24.
 (pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
 
-LaTeX Warning: Float too large for page by 72.49545pt on input line 927.
+LaTeX Warning: Float too large for page by 72.49545pt on input line 926.
 
 <../figures/unnamed-chunk-3-1.pdf, id=730, 705.63625pt x 1272.755pt>
 File: ../figures/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use ../figures/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: ../figures/unnamed-chunk-3-1.pdf  used on input line 9
-31.
+30.
 (pdftex.def)             Requested size: 360.60188pt x 650.41708pt.
 
-LaTeX Warning: Float too large for page by 24.48708pt on input line 933.
+LaTeX Warning: Float too large for page by 24.48708pt on input line 932.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 935.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 934.
 [28] [29pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.935 \end{document}
+l.934 \end{document}
                      <../figures/unnamed-chunk-1-1.pdf>] [30pdfTeX warning (ext
 4): destination with the same identifier (name{figure.11}) has been already use
 d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.935 \end{document}
+l.934 \end{document}
                      <../figures/unnamed-chunk-2-1.pdf>] [31pdfTeX warning (ext
 4): destination with the same identifier (name{figure.12}) has been already use
 d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.935 \end{document}
+l.934 \end{document}
                      <../figures/unnamed-chunk-3-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 935.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 934.
 (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 935.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 935.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 935.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 934.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 934.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 934.
  ) 
 Here is how much of TeX's memory you used:
- 15486 strings out of 492982
- 221859 string characters out of 6134896
- 346324 words of memory out of 5000000
- 18404 multiletter control sequences out of 15000+600000
+ 15482 strings out of 492982
+ 221798 string characters out of 6134896
+ 346306 words of memory out of 5000000
+ 18402 multiletter control sequences out of 15000+600000
  81373 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,11n,38p,2152b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2425,10 +2425,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (31 pages, 5869044 bytes).
+Output written on paper.pdf (31 pages, 5868264 bytes).
 PDF statistics:
- 892 PDF objects out of 1000 (max. 8388607)
- 641 compressed objects within 7 object streams
- 176 named destinations out of 1000 (max. 500000)
- 16533 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 886 PDF objects out of 1000 (max. 8388607)
+ 635 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 16525 words of extra memory for PDF output out of 17280 (max. 10000000)
 
