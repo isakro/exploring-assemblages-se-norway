@@ -33,7 +33,7 @@ keywords: |
 ## Highlights {-}
 
 * Multivariate exploratory analysis of Mesolithic assemblages in south-eastern Norway
-* Explores relevance of established artefact categories in Norwegian archaeology 
+* Explores patterns related to established artefact categories in Norwegian archaeology
 * Explores variables associated with mobility patterns in lithic assemblage studies
 * Draws on the Whole Assemblage Behavioural Indicators (WABI)
 * Relevance for Mesolithic Norway supports the notion that WABI are widely applicable
@@ -98,7 +98,7 @@ countries <- st_read(here::here('analysis/data/raw_data/naturalearth_countries.g
 
 This study employs multivariate exploratory statistics to analyse lithic assemblages associated with Mesolithic sites located in south-eastern Norway. This is done to identify latent patterns and structure in the relationship between the assemblages, with the ultimate aim of identifying behaviourally induced variation in their composition across time. However, the composition of the assemblages can be expected to be determined by a multitude of factors [e.g. @dibble2017; @rezek2020], ranging from the impact of natural formation processes, to various and intermixed behavioural aspects such as purpose, duration, frequency and group sizes at visits to the sites. The assemblages are also likely to be impacted by variation in lithic technology, artefact function, use-life and discard patterns, as well as procurement strategies and access to raw materials. Finally, analytic and methodological dimensions relating to survey, excavation and classification practices are also fundamental to how the assemblages are defined. Consequently, the analysis conducted here is done from an exploratory perspective, where all of these factors should be seen as potential contributors to any observed pattern. In an attempt to limit the influence of some potentially confounding effects, the material chosen for analysis has a constrained geographical distribution, and stems from recent investigations that have employed comparable methods for excavation and classification within larger unified projects.
 
-Even though each individual assemblage can have been impacted by an virtual infinitude of effects that might skew an archaeological interpretation, this does not preclude the applicability of inductive analyses aimed at revealing overarching structure in the data without imposing overly complex analytical frameworks that attempt to account for these particularities [@bevan2015]. Structure that can be revealed from considering all of the assemblages in aggregate can constitute a step in an iterative analytical chain that ultimately aims to tease apart the multitude of factors that have shaped the composition of the assemblages, and should be of value to subsequent in-depth studies of any individual site. The most immediate danger of the approach outlined here is rather to be overly naive in the causal significance and cultural importance that is ascribed to any identified pattern. As such, the main aim of this analysis is to compare the results with findings reported in previous literature concerned with the Mesolithic in southern Norway and have the generation of new hypotheses as a possible outcome. To this end, the analysis follows two analytical avenues. The first involves an analysis of the assemblages using the classification of the artefacts done for the original excavation reports. The second involves an analysis of the assemblages in light of the so-called Whole Assemblage Behavioural Indicators [e.g. @clark2017] and other factors that have been employed to align properties of lithic assemblages with land-use and mobility patterns.
+Even though each individual assemblage can have been impacted by an virtual infinitude of effects that might skew an archaeological interpretation, this does not preclude the applicability of inductive analyses aimed at revealing overarching structure in the data without imposing overly complex analytical frameworks that attempt to account for these particularities [@bevan2015]. Structure that can be revealed from considering all of the assemblages in aggregate can constitute a step in an iterative analytical chain that ultimately aims to tease apart the multitude of factors that have shaped the composition of the assemblages. This would in turn give analytical access to the organisation of lithic technology and variation in past behaviour, adaptation and demographic development [see for example @andrefsky2009; @binford1979; @barton2011; @dibble2017; @rezek2020]. The most immediate danger of the approach outlined here is rather to be overly naive in the causal significance and cultural importance that is ascribed to any identified pattern. As such, the main aim of this analysis is to compare the results with findings reported in previous literature concerned with the Mesolithic in southern Norway and have the generation of new hypotheses as a possible outcome. To this end, the analysis follows two analytical avenues. The first involves an analysis of the assemblages using the classification of the artefacts done for the original excavation reports. The second involves an analysis of the assemblages in light of the so-called Whole Assemblage Behavioural Indicators [e.g. @clark2017] and other factors that have been employed to align properties of lithic assemblages with land-use and mobility patterns.
 
 # Archaeological context and material
 
@@ -176,7 +176,7 @@ rcarb_data <- do.call(rbind, posteriors)
   
 ```
 
-The Early Mesolithic, or Flake Axe Phase, is defined as lasting from c. 9300--8200 BCE (Table \@ref(tab:tab2)), and is set to start with the first recorded human presence in Norway [@damlien2018b]. Previous research has typically proposed that the Early Mesolithic is characterised by a relatively high degree of mobility, and low variation in site types and associated mobility patterns [e.g. @bjerck2008; @breivik2016; @fuglestvedt2012; @nærøy2018; but see @viken2018c]. Around the transition to the subsequent Middle Mesolithic or Microlith Phase at c. 8200 BCE, pervasive changes in blade and axe technology occur [@damlien2016; @eymundsson2018; @solheim2020], which in turn has been associated with changes in population genomics and related migration events hailing from the Eurasian steppes [@günther2018; @manninen2021]. The Microlith Phase is defined as lasting until around 7000 BCE, which is followed by the Pecked Adze Phase, characterised by a more dominating presence of non-flint macro tools and associated production waste in the assemblages [@reitan2016]. The next typological transition at c. 5600 BCE signifies the onset of the Nøstvet Adze Phase. While previously defined as having a slightly longer duration, the Nøstvet Phase has traditionally been seen as representing the onset of more varied settlement systems and stable mobility patterns [e.g. @jaksland2001; @lindblom1984]. In recent years it has been suggested that the transition to a decrease in mobility and more varied land-use patterns can be traced back to the Middle Mesolithic [@solheim2016]. The subsequent Transverse Arrowhead Phase (c. 4500--3900 BCE) is characterised by a dramatic decrease in axe finds, and the introduction of new flint projectiles [@reitan2016]. It has recently been suggested that a dispersal of people from southern Scandinavia into southern Norway takes place in this period [@eigeland2015, 379; @nielsen2021], which could follow after a preceding population decline at c. 4300 BCE [@nielsen2021; cf. @solheim2020a; @solheim2018a].
+The Early Mesolithic, or Flake Axe Phase, is defined as lasting from c. 9300--8200 BCE (Table \@ref(tab:tab2)), and is set to start with the first recorded human presence in Norway [@damlien2018b]. Previous research has typically proposed that the Early Mesolithic is characterised by a relatively high degree of mobility, and low variation in site types and associated mobility patterns [e.g. @bjerck2008; @breivik2016; @fuglestvedt2012; @nærøy2018; but see @åstveit2014; @viken2018c]. Around the transition to the subsequent Middle Mesolithic or Microlith Phase at c. 8200 BCE, pervasive changes in blade and axe technology occur [@damlien2016; @eymundsson2018; @solheim2020], which in turn has been associated with changes in population genomics and related migration events hailing from the Eurasian steppes [@günther2018; @manninen2021]. The Microlith Phase is defined as lasting until around 7000 BCE, which is followed by the Pecked Adze Phase, characterised by a more dominating presence of non-flint macro tools and associated production waste in the assemblages [@reitan2016]. The next typological transition at c. 5600 BCE signifies the onset of the Nøstvet Adze Phase. While previously defined as having a slightly longer duration, the Nøstvet Phase has traditionally been seen as representing the onset of more varied settlement systems and stable mobility patterns [e.g. @jaksland2001; @lindblom1984]. In recent years it has been suggested that the transition to a decrease in mobility and more varied land-use patterns can be traced back to the Middle Mesolithic [@solheim2016]. The subsequent Transverse Arrowhead Phase (c. 4500--3900 BCE) is characterised by a dramatic decrease in axe finds, and the introduction of new flint projectiles [@reitan2016]. It has recently been suggested that a dispersal of people from southern Scandinavia into southern Norway takes place in this period [@eigeland2015, 379; @nielsen2021], which could follow after a preceding population decline at c. 4300 BCE [@nielsen2021; cf. @solheim2020a; @solheim2018a].
 
 ```{r tab1}
 # Table. Overview of chronological framework.
@@ -343,9 +343,9 @@ sites %>%
 
 # The analysis of lithic assemblages
 
-Studies concerned with chronological changes in the composition of lithic assemblages in southern Norway have typically had a focus on morphological variation among artefacts [e.g. @ballin1999; @bjerck1986; @reitan2016] or been concerned with technological processes associated with certain sub-categories of the site inventories, such as the production of blades or axes [e.g. @berg-hansen2017; @eymundsson2018; @damlien2016; @solheim2020]. Studies that have involved entire assemblages have either been concerned with general compositional traits such as relative frequency of various tool types and raw-materials [e.g. @breivik2016; @viken2018c; @breivik2020; @reitan2016], or involved extremely in-depth studies of technological organisation associated with a handful of assemblages [e.g. @eigeland2015; @fuglestvedt2007; @mansrud2016]. These studies are, however, based on non-quantitative and less formal methods, leaving the weighting of the different variables for the final interpretations unclear. To my knowledge, only a single study dealing with the composition of Mesolithic assemblages in southern Norway has involved the use of a multivariate quantitative framework, which was employed to structure the analysis of eight Middle Mesolithic assemblages [@solheim2013a; see @glørstad2010, 145--146 for a spatial application]. In sum then, previous studies have typically either been limited to a small number of sites, to a subset of the inventories, to morphological characteristics, or to subjectively and narratively driven methods that are difficult to scale and consistently balance in the comparison of a larger number of artefact categories and assemblages.
+Studies concerned with chronological changes in the composition of lithic assemblages in southern Norway have typically had a focus on morphological variation among artefacts [e.g. @ballin1999; @bjerck1986; @reitan2016] or been concerned with technological processes associated with certain sub-categories of the site inventories, such as the production of blades or axes [e.g. @berg-hansen2017; @eymundsson2018; @damlien2016; @solheim2020]. Studies that have involved entire assemblages have either been concerned with general compositional traits such as relative frequency of various tool types and raw-materials [e.g. @breivik2016; @viken2018c; @breivik2020; @reitan2016], or involved extremely in-depth studies of technological organisation associated with a handful of assemblages [e.g. @eigeland2015; @fuglestvedt2007; @mansrud2016]. These studies are, however, based on non-quantitative and less formal methods, leaving the weighting of the different variables for the final interpretations unclear. To my knowledge, only a single study dealing with the composition of Mesolithic assemblages in southern Norway has involved the use of a multivariate quantitative framework, which was employed to structure the analysis of eight Middle Mesolithic assemblages [@solheim2013a; see @glørstad2010, 145--146 for a spatial application]. In sum then, previous studies have typically either been limited to a small number of sites, to a subset of the inventories, to morphological characteristics, or to less formal and subjectively driven methods that are difficult to scale and consistently balance in the comparison of a larger number of artefact categories and assemblages.
 
-The aim of the first of part of the analysis conducted here is to evaluate the degree to which the composition of the assemblages align with earlier studies that have employed more informal methods. This therefore assumes that the artefact categories employed in Norwegian Stone Age archaeology are, at least to a certain extent, behaviourally meaningful. However, the approach taken is also partially informed by the so-called Frison effect [@jelinek1976], which pertains to the fact that lithics studied by archaeologists can have had long and complex use-lives in which they took on a multitude of different shapes before they were ultimately discarded. Several scholars have built on this to argue that morphological variation in retouched lithics from the Palaeolithic cannot be assumed to predominantly be the result of the intention of the original knapper to reach some desired end-product, but rather that what is commonly categorised as discrete types of artefacts by archaeologists can instead in large part be related to variable degrees of modification through use and rejuvenation [e.g. @barton1991; @dibble1995; @barton2021]. Consequently, several artefact categories have here been collapsed for the CA (Figure \@ref(fig:variable-aggregation)). This for example pertains to tool types such as scrapers, burins, drills, knives and otherwise indeterminate artefacts with retouch. That these categories are internally consistent and categorically exclusive in terms of fulfilled purpose is at best a dubious proposition, in turn potentially rendering their contribution as discrete analytic units misleading. An underlying assumption is therefore effectively that the retained categories represent artefact categories that have fulfilled different purposes or are related to different technological processes. While aggregating artefact categories in this manner could potentially subsume important variation, it does also reduce the possibility that any conclusions are not simply the result of employing erroneous units of analysis.
+The aim of the first of part of the analysis conducted here is to evaluate the degree to which the composition of the assemblages align with earlier studies that have employed more informal methods. This therefore assumes that the artefact categories employed in Norwegian Stone Age archaeology are, at least to a certain extent, behaviourally meaningful. However, the approach taken is also partially informed by the so-called Frison effect [@jelinek1976], which pertains to the fact that lithics studied by archaeologists can have had long and complex use-lives in which they took on a multitude of different shapes before they were ultimately discarded. Several scholars have built on this to argue that morphological variation in retouched lithics from the Palaeolithic cannot be assumed to predominantly be the result of the intention of the original knapper to reach some desired end-product, but rather that what is commonly categorised as discrete types of artefacts by archaeologists can instead in large part be related to variable degrees of modification through use and rejuvenation [e.g. @barton1991; @dibble1995; @barton2021]. Consequently, several artefact categories have here been collapsed for the CA (Figure \@ref(fig:variable-aggregation)). This for example pertains to tool types such as scrapers, burins, drills, knives and otherwise indeterminate artefacts with retouch. That these categories are internally consistent and categorically exclusive in terms of fulfilled purpose is at best a dubious proposition, in turn potentially rendering their contribution as discrete analytic units misleading. While aggregating artefact categories in this manner could potentially subsume important variation, it does also reduce the possibility that any conclusions are not simply the result of employing erroneous units of analysis. An underlying assumption of the aggregation procedure is therefore effectively that the retained categories represent artefact categories that have fulfilled different purposes or are related to different technological processes, which, consequently, is largely intuitively determined.
 
 ```{r variable-aggregation, fig.cap = "Aggregation of variables for the correspondence analysis. The column on the left shows the variables as originally compiled. The column on the right shows how these have been aggregated for the analysis.", fig.height = 7}
 # Most of the code for assembling the Sankey plot has been taken directly from 
@@ -634,7 +634,7 @@ lithicstr <- lithics2 %>%
 corr_plot(select(lithicstr, -reported_start_bc, -reported_end_bc, -dating_method))
 ```
 
-```{r pca-analysis, fig.cap = "PCA using variables that have been related to mobility patterns. Note that details on the transformation of the variables has been left out of the plot for clarity, but follow those given in Figure 4.", fig.height = 8}
+```{r pca-analysis, fig.cap = "PCA biplot resulting from variables that have been related to mobility patterns. Note that details on the transformation of the variables has been left out of the plot for clarity, but follow those given in Figure 4.", fig.height = 8}
 # Rename the transformed variables again to avoid clutter in the plot. 
 # Specify in figure caption that the transformed variables are used.
 lithicspca <- lithicstr %>% 
@@ -646,6 +646,7 @@ lithicspca <- lithicstr %>%
   )
 
 
+# Perform PCA with standardised variables (scale.unit = TRUE)
 pcalithics <- PCA(select(lithicspca, -reported_start_bc, -dating_method,
                          -reported_end_bc, -mean_date),
                   scale.unit = TRUE, graph = FALSE)
@@ -907,7 +908,7 @@ As it stands, the main hypotheses resulting from the present analysis would be t
 
 The results of the CA align well with results of previous research in south-eastern Norway, indicating that meaningful chronological patterning is associated with the employed artefact categories. These tendencies are already well-established when it comes to the formal tool types and some debitage categories, but have been given less focus in light of entire assemblages. Precisely what behavioural implication the development in the occurrences of the tool and debitage categories have are less clear, but appears to follow a different and more complex development over time than that of curation, as operationalised here.
 
-The temporal trends associated with the curation index corresponds surprisingly well with trajectories of cultural development previously suggested in the literature, and does therefore, in my view, suggest that shifts in land-use and mobility patterns are the main drivers behind this empirical pattern---in line with the framework of @barton2011. Another perspective would be that this is not surprising at all [cf. @kuhn2015, 14], and that the previously demonstrated relevance of these measures across a wide range of contexts points to their pervasive relevance for the organisation of lithic technology, and, therefore, that there should be little reason to think Mesolithic south-eastern Norway should be any different. However, the conclusion that these these measures apply to and appear to capture the dimensions of interest in a relatively controlled empirical setting, reached by means of an exploratory analysis can only constitute a first analytical step. As @elster2015 [12] has pointed out, the human mind seems to have a propensity to settle for an explanation that *can* be true, as soon as this has been reached. This, however, can only constitute the absolute minimum of what is required of a proposed explanation. Subsequent steps should be to probe and challenge this explanatory framework, also in light of alternative hypotheses [e.g. @clark2009; @perreault2019]. The empirical relationship does nonetheless hold great potential for large scale comparative studies in Mesolithic Scandinavia and beyond. Furthermore, the curation index was here simply narratively associated with the most immediate chronological trends emphasised in the literature concerned with the Mesolithic of south-eastern Norway. The explicit quantification does, however, offer the possibility to conduct formal comparisons with a wide range of environmental, demographic and cultural dimensions across multiple scales of analysis.
+The temporal trends associated with the curation index corresponds surprisingly well with trajectories of cultural development previously suggested in the literature, and does therefore, in my view, suggest that shifts in land-use and mobility patterns are the main drivers behind this empirical pattern---in line with the framework of @barton2011. Another perspective would be that this is not surprising at all [cf. @kuhn2015, 14], and that the previously demonstrated relevance of these measures across a wide range of contexts points to their pervasive relevance for the organisation of lithic technology, and, therefore, that there should be little reason to think Mesolithic south-eastern Norway should be any different. However, the conclusion that these these measures apply to and appear to capture the dimensions of interest in a relatively controlled empirical setting, reached by means of an exploratory analysis can only constitute a first analytical step. As @elster2015 [12] has pointed out, the human mind seems to have a propensity to settle for an explanation that *can* be true, as soon as this has been reached. This, however, can only constitute the absolute minimum of what is required of a proposed explanation. Subsequent steps should be to probe and challenge this explanatory framework, also in light of alternative hypotheses [e.g. @clark2009, 29--30; @perreault2019]. The empirical relationship does nonetheless hold great potential for large scale comparative studies in Mesolithic Scandinavia and beyond. Furthermore, the curation index was here simply narratively associated with the most immediate chronological trends emphasised in the literature concerned with the Mesolithic of south-eastern Norway. The explicit quantification does, however, offer the possibility to conduct formal comparisons with a wide range of environmental, demographic and cultural dimensions across multiple scales of analysis.
 
 \newpage
 
@@ -922,6 +923,39 @@ The author has no conflicts of interest to declare.
 :::
 
 \newpage
+
+```{r, fig.height = 18, fig.cap = "Correspondence analysis using all original artefact categories. A) Row plot, B) Column plot.", fig.width = 10}
+all_cats <- sites %>%
+  # Make site names the rownames
+  column_to_rownames(var = "no") %>% 
+  # Deselect a few of the columns not be used
+  select(-excavation_project, -excavated_m3, -dating_method)
+
+caallcats <- CA(select(all_cats, -site, -mean_date, -artefact_count,
+                       -flint_count, -nonflint_count, -reported_start_bc,
+                       -reported_end_bc, -askeladden_id),
+                graph = FALSE)
+
+splt1 <- fviz_ca_row(caallcats, col.row = "black",
+            fill = all_cats$mean_date / 1000, title = "A",
+                     repel = TRUE, shape = 21, pointsize = 2.9) +
+  scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
+                        high="red", midpoint = centdate) +
+  ggtitle("Supplementary material") +
+  theme(legend.position = "bottom",
+        plot.title = element_text(size = 23, face = "bold",
+                                  family = "serif")) 
+
+
+splt2 <- fviz_ca_col(caallcats, col.col = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
+             title = "B") +
+  labs(colour = "Contribution to total inertia") +
+  theme(legend.position = "bottom") 
+
+splt1/
+splt2 
+```
 
 ```{r, fig.height = 15, fig.cap = "Correspondence analysis collapsing artefact types irrespective of raw-material and including proportion of non-flint as its own variable. A) Row plot, B) Column plot."}
 
@@ -962,25 +996,22 @@ nonprop <- CA(select(all_nonflint_prop, -site, -mean_date, -flint_count,
                 graph = FALSE)
 
 
-splt1 <- fviz_ca_row(nonprop, col.row = "black",
+splt3 <- fviz_ca_row(nonprop, col.row = "black",
             fill = all_nonflint_prop$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
-  ggtitle("Supplementary material") +
-  theme(legend.position = "bottom",
-        plot.title = element_text(size = 23, face = "bold",
-                                  family = "serif")) 
+  theme(legend.position = "bottom") 
 
 
-splt2 <- fviz_ca_col(nonprop, col.col = "contrib",
+splt4 <- fviz_ca_col(nonprop, col.col = "contrib",
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
              title = "B") +
   labs(colour = "Contribution to total inertia") +
   theme(legend.position = "bottom") 
 
-splt1 /
-splt2
+splt3 /
+splt4
 
 ```
 
@@ -997,52 +1028,25 @@ nonpropsup <- CA(moddat,
                 graph = FALSE)
 
 
-splt3 <- fviz_ca_row(nonpropsup, col.row = "black",
+splt5 <- fviz_ca_row(nonpropsup, col.row = "black",
             fill = all_nonflint_prop$mean_date / 1000, title = "A",
                      repel = TRUE, shape = 21, pointsize = 2.9) +
   scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
                         high="red", midpoint = centdate) +
   theme(legend.position = "bottom") 
 
-splt4 <- fviz(nonpropsup, element = "col", col.col.sup = "black",
+# Seems to be a bug to change colour of supplementary column using 
+# fviz_ca_row(): 
+splt6 <- fviz(nonpropsup, element = "col", pointshape = 17,
+              col.col.sup = "black",
              color = "contrib", 
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
              title = "B") +
   labs(colour = "Contribution to total inertia") +
   theme(legend.position = "bottom")
 
-splt3 /
-splt4
+splt5 /
+splt6
 
 
-```
-
-```{r, fig.height = 18, fig.cap = "Correspondence analysis using all original artefact categories. A) Row plot, B) Column plot.", fig.width = 10}
-all_cats <- sites %>%
-  # Make site names the rownames
-  column_to_rownames(var = "no") %>% 
-  # Deselect a few of the columns not be used
-  select(-excavation_project, -excavated_m3, -dating_method)
-
-caallcats <- CA(select(all_cats, -site, -mean_date, -artefact_count,
-                       -flint_count, -nonflint_count, -reported_start_bc,
-                       -reported_end_bc, -askeladden_id),
-                graph = FALSE)
-
-splt5 <- fviz_ca_row(caallcats, col.row = "black",
-            fill = all_cats$mean_date / 1000, title = "A",
-                     repel = TRUE, shape = 21, pointsize = 2.9) +
-  scale_fill_gradient2(name = "Mean age kyr BCE", low="yellow", mid="orange", 
-                        high="red", midpoint = centdate) +
-  theme(legend.position = "bottom") 
-
-
-splt6 <- fviz_ca_col(caallcats, col.col = "contrib",
-             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
-             title = "B") +
-  labs(colour = "Contribution to total inertia") +
-  theme(legend.position = "bottom") 
-
-splt5/
-splt6 
 ```
