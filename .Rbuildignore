@@ -6,3 +6,5 @@
 ^CONTRIBUTING\.md$
 analysis
 ^LICENSE\.md$
+^Dockerfile$
+^\.travis\.yml$
