@@ -925,7 +925,7 @@ The author has no conflicts of interest to declare.
 
 \newpage
 
-```{r, fig.height = 18, fig.cap = "Correspondence analysis using all original artefact categories. A) Row plot, B) Column plot.", fig.width = 10}
+```{r supplementary1, fig.height = 18, fig.cap = "Correspondence analysis using all original artefact categories. A) Row plot, B) Column plot.", fig.width = 10}
 all_cats <- sites %>%
   # Make site names the rownames
   column_to_rownames(var = "no") %>% 
@@ -958,7 +958,7 @@ splt1/
 splt2 
 ```
 
-```{r, fig.height = 15, fig.cap = "Correspondence analysis collapsing artefact types irrespective of raw-material and including proportion of non-flint as its own variable. A) Row plot, B) Column plot."}
+```{r supplementary2, fig.height = 15, fig.cap = "Correspondence analysis collapsing artefact types irrespective of raw-material and including proportion of non-flint as its own variable. A) Row plot, B) Column plot."}
 
 # A reviewer wanted artefact types combined irrespective of raw-material and 
 # non-flint as supplementary column. I start by including it as a normal 
@@ -1016,7 +1016,7 @@ splt4
 
 ```
 
-```{r, fig.height = 15, fig.cap = "Same as above, only that here the proportion of non-flint is used as a supplementary column. The negligble difference between this CA and that above indicates that the flint/non-flint distinction is integrated in the different artefact types, and therefore that the effect of artefact types and raw material cannot be seperated. These plots thus hide important variability that is captured in the ones presented in the main text. A) Row plot, B) Column plot."}
+```{r supplementary3, fig.height = 15, fig.cap = "Same as above, only that here the proportion of non-flint is used as a supplementary column. The negligble difference between this CA and that above indicates that the flint/non-flint distinction is integrated in the different artefact types, and therefore that the effect of artefact types and raw material cannot be seperated. These plots thus hide important variability that is captured in the ones presented in the main text. A) Row plot, B) Column plot."}
 
 # Version of the above where the proportion of non-flint is simply added as a 
 # supplementary column, following suggestion from the reviewer. 

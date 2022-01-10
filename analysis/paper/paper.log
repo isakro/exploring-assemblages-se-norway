@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  10 JAN 2022 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  11 JAN 2022 00:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2395,29 +2395,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 920--924
  []
 
 [27]
-<../figures/unnamed-chunk-1-1.pdf, id=735, 705.63625pt x 1272.755pt>
-File: ../figures/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use ../figures/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: ../figures/unnamed-chunk-1-1.pdf  used on input line 9
-31.
+<../figures/supplementary1-1.pdf, id=735, 705.63625pt x 1272.755pt>
+File: ../figures/supplementary1-1.pdf Graphic file (type pdf)
+<use ../figures/supplementary1-1.pdf>
+Package pdftex.def Info: ../figures/supplementary1-1.pdf  used on input line 93
+1.
 (pdftex.def)             Requested size: 360.60188pt x 650.41708pt.
 
 LaTeX Warning: Float too large for page by 24.48708pt on input line 933.
 
-<../figures/unnamed-chunk-2-1.pdf, id=736, 633.36626pt x 1055.945pt>
-File: ../figures/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use ../figures/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: ../figures/unnamed-chunk-2-1.pdf  used on input line 9
-37.
+<../figures/supplementary2-1.pdf, id=736, 633.36626pt x 1055.945pt>
+File: ../figures/supplementary2-1.pdf Graphic file (type pdf)
+<use ../figures/supplementary2-1.pdf>
+Package pdftex.def Info: ../figures/supplementary2-1.pdf  used on input line 93
+7.
 (pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
 
 LaTeX Warning: Float too large for page by 36.49545pt on input line 939.
 
-<../figures/unnamed-chunk-3-1.pdf, id=737, 633.36626pt x 1055.945pt>
-File: ../figures/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use ../figures/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: ../figures/unnamed-chunk-3-1.pdf  used on input line 9
-43.
+<../figures/supplementary3-1.pdf, id=737, 633.36626pt x 1055.945pt>
+File: ../figures/supplementary3-1.pdf Graphic file (type pdf)
+<use ../figures/supplementary3-1.pdf>
+Package pdftex.def Info: ../figures/supplementary3-1.pdf  used on input line 94
+3.
 (pdftex.def)             Requested size: 390.13162pt x 650.42546pt.
 
 LaTeX Warning: Float too large for page by 72.49545pt on input line 945.
@@ -2429,21 +2429,21 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 947.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.947 \end{document}
-                     <../figures/unnamed-chunk-1-1.pdf>] [29pdfTeX warning (ext
-4): destination with the same identifier (name{figure.11}) has been already use
-d, duplicate ignored
+                     <../figures/supplementary1-1.pdf>] [29pdfTeX warning (ext4
+): destination with the same identifier (name{figure.11}) has been already used
+, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.947 \end{document}
-                     <../figures/unnamed-chunk-2-1.pdf>] [30pdfTeX warning (ext
-4): destination with the same identifier (name{figure.12}) has been already use
-d, duplicate ignored
+                     <../figures/supplementary2-1.pdf>] [30pdfTeX warning (ext4
+): destination with the same identifier (name{figure.12}) has been already used
+, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.947 \end{document}
-                     <../figures/unnamed-chunk-3-1.pdf>]
+                     <../figures/supplementary3-1.pdf>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 947.
 (./paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 947.
@@ -2452,7 +2452,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 947.
  ) 
 Here is how much of TeX's memory you used:
  15506 strings out of 492982
- 222169 string characters out of 6134896
+ 222151 string characters out of 6134896
  344816 words of memory out of 5000000
  18417 multiletter control sequences out of 15000+600000
  81592 words of font info for 156 fonts, out of 8000000 for 9000
@@ -2467,7 +2467,7 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (30 pages, 5863747 bytes).
+Output written on paper.pdf (30 pages, 5863758 bytes).
 PDF statistics:
  890 PDF objects out of 1000 (max. 8388607)
  640 compressed objects within 7 object streams
