@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  11 JAN 2022 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  20 JAN 2022 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1177,7 +1177,7 @@ ine 267.
                                                   \fi \fi 
 l.273 
        <../figures/variable-aggregation-1.pdf>] [8] [9]
-<../figures/cor-1.pdf, id=402, 633.36626pt x 911.405pt>
+<../figures/cor-1.pdf, id=400, 633.36626pt x 911.405pt>
 File: ../figures/cor-1.pdf Graphic file (type pdf)
 <use ../figures/cor-1.pdf>
 Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 306.
@@ -1185,7 +1185,7 @@ Package pdftex.def Info: ../figures/cor-1.pdf  used on input line 306.
 
 LaTeX Warning: Float too large for page by 71.95416pt on input line 308.
 
-<../figures/flintcor-1.pdf, id=403, 633.36626pt x 911.405pt>
+<../figures/flintcor-1.pdf, id=401, 633.36626pt x 911.405pt>
 File: ../figures/flintcor-1.pdf Graphic file (type pdf)
 <use ../figures/flintcor-1.pdf>
 Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 312.
@@ -1193,76 +1193,77 @@ Package pdftex.def Info: ../figures/flintcor-1.pdf  used on input line 312.
 
 LaTeX Warning: Float too large for page by 24.50974pt on input line 314.
 
-<../figures/cor-plot-1.pdf, id=408, 719.68875pt x 719.68875pt>
-File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
-<use ../figures/cor-plot-1.pdf>
-Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 322.
-(pdftex.def)             Requested size: 469.76883pt x 469.76883pt.
-<../figures/pca-analysis-1.pdf, id=409, 644.4075pt x 543.02875pt>
-File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
-<use ../figures/pca-analysis-1.pdf>
-Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 328.
-
-(pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
-<../figures/var-contrib-1.pdf, id=410, 633.36626pt x 193.72375pt>
-File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
-<use ../figures/var-contrib-1.pdf>
-Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 334.
-(pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
 [10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.339 
+l.319 
        <../figures/cor-1.pdf>] [12pdfTeX warning (ext4): destination with the s
 ame identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.339 
-       <../figures/flintcor-1.pdf>] [13pdfTeX warning (ext4): destination with 
-the same identifier (name{figure.5}) has been already used, duplicate ignored
+l.319 
+       <../figures/flintcor-1.pdf>]
+<../figures/cor-plot-1.pdf, id=442, 719.68875pt x 719.68875pt>
+File: ../figures/cor-plot-1.pdf Graphic file (type pdf)
+<use ../figures/cor-plot-1.pdf>
+Package pdftex.def Info: ../figures/cor-plot-1.pdf  used on input line 322.
+(pdftex.def)             Requested size: 469.76883pt x 469.76883pt.
+<../figures/pca-analysis-1.pdf, id=443, 644.4075pt x 543.02875pt>
+File: ../figures/pca-analysis-1.pdf Graphic file (type pdf)
+<use ../figures/pca-analysis-1.pdf>
+Package pdftex.def Info: ../figures/pca-analysis-1.pdf  used on input line 328.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.339 
-       <../figures/cor-plot-1.pdf>] [14pdfTeX warning (ext4): destination with 
-the same identifier (name{figure.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.339 
-       <../figures/pca-analysis-1.pdf>]
-<../figures/wabi-1.pdf, id=472, 705.63625pt x 333.245pt>
+(pdftex.def)             Requested size: 469.77443pt x 395.8691pt.
+<../figures/var-contrib-1.pdf, id=444, 633.36626pt x 193.72375pt>
+File: ../figures/var-contrib-1.pdf Graphic file (type pdf)
+<use ../figures/var-contrib-1.pdf>
+Package pdftex.def Info: ../figures/var-contrib-1.pdf  used on input line 334.
+(pdftex.def)             Requested size: 469.76611pt x 143.68439pt.
+<../figures/wabi-1.pdf, id=447, 705.63625pt x 333.245pt>
 File: ../figures/wabi-1.pdf Graphic file (type pdf)
 <use ../figures/wabi-1.pdf>
 Package pdftex.def Info: ../figures/wabi-1.pdf  used on input line 342.
 (pdftex.def)             Requested size: 469.75903pt x 221.8492pt.
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
+<../figures/simplot-1.pdf, id=451, 847.165pt x 985.6825pt>
+File: ../figures/simplot-1.pdf Graphic file (type pdf)
+<use ../figures/simplot-1.pdf>
+Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 350.
+(pdftex.def)             Requested size: 469.75555pt x 546.56393pt.
+[13] [14pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.347 
+l.360 
+       <../figures/cor-plot-1.pdf>] [15pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.360 
+       <../figures/pca-analysis-1.pdf>] [16pdfTeX warning (ext4): destination w
+ith the same identifier (name{figure.7}) has been already used, duplicate ignor
+ed
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.360 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.347 
-       <../figures/var-contrib-1.pdf> <../figures/wabi-1.pdf>]
-<../figures/simplot-1.pdf, id=497, 847.165pt x 985.6825pt>
-File: ../figures/simplot-1.pdf Graphic file (type pdf)
-<use ../figures/simplot-1.pdf>
-Package pdftex.def Info: ../figures/simplot-1.pdf  used on input line 350.
-(pdftex.def)             Requested size: 469.75555pt x 546.56393pt.
-[16] [17pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.9}) has been already used, duplicate ignored
+l.360 
+       <../figures/var-contrib-1.pdf> <../figures/wabi-1.pdf>] [17pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.9}) has been alread
+y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.364 
+l.360 
        <../figures/simplot-1.pdf>] [18] [19]
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 394--398
 [] []
@@ -2453,7 +2454,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 947.
 Here is how much of TeX's memory you used:
  15506 strings out of 492982
  222151 string characters out of 6134896
- 344816 words of memory out of 5000000
+ 346328 words of memory out of 5000000
  18417 multiletter control sequences out of 15000+600000
  81592 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2467,7 +2468,7 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (30 pages, 5863758 bytes).
+Output written on paper.pdf (30 pages, 5863855 bytes).
 PDF statistics:
  890 PDF objects out of 1000 (max. 8388607)
  640 compressed objects within 7 object streams
