@@ -1,4 +1,3 @@
-base
 tidyverse
 ggplot2
 tibble
@@ -17,3 +16,6 @@ factoextra
 sf
 rnaturalearth
 oxcAAR
+knitr
+kableExtra
+networkD3
