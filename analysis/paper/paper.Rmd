@@ -14,7 +14,7 @@ institute:
   - UiO: University of Oslo, Department of Archaeology, Conservation and History
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
-    bookdown::word_document2:
+    bookdown::pdf_document2:
       toc: false
       fig_caption: yes
       reference_docx: "../templates/template.docx" # Insert path for the DOCX file
@@ -24,7 +24,6 @@ output:
       - --lua-filter=../templates/pagebreak.lua
 bibliography: references.bib
 csl: "../templates/saa.csl" # Insert path for the bib-style
-always_allow_html: true
 abstract: |
   This paper leverages multivariate statistics to explore the composition of 54 Mesolithic assemblages located in south-eastern Norway. To provide analytical control pertaining to factors such as variable excavation practices, systems for artefact categorisation and raw-material availability, the sites chosen for analysis have all been excavated relatively recently and have a constrained geographical distribution. The assemblages were explored following two strains of analysis. The first of these entailed the use of artefact categories that are in established use within Norwegian Mesolithic archaeology, while the other involved drawing on measures that have been linked directly to land-use and mobility patterns associated with lithic assemblages more widely. The findings pertaining to the established artefact categories largely reflect the temporal development previously reported in Norwegian Mesolithic research, which has been based on more subjectively driven methods. Furthermore, the chronological trends associated with variables taken from the so-called Whole Assemblage Behavioural Indicators (e.g. Clark and Barton 2017), originally devised for characterising Palaeolithic assemblages in terms of associated mobility patterns, also align with the development previously proposed in the literature. This provides an initial indication that these measures are applicable in a Norwegian Mesolithic setting as well, setting the stage for a more targeted and rigorous model evaluation outside this exploratory setting. Furthermore, this finding supports the notion that these measures can offer a powerful comparative tool in the analysis of lithic assemblages more generally.
 
@@ -197,10 +196,9 @@ framework <- c(rep("Glørstad (2010)", 4), rep("Reitan (2016)", 5))
 
 df <- data.frame(Period, Duration, framework)
 
-
-kable(select(df, -framework), booktabs = TRUE, 
-      caption = "Chronological framework. Glørstad's (2010) divison of phases reflects the more traditional framework, to which Reitan (2016) has recently suggested considerable changes.", 
-      col.names = NULL) %>% 
+kable(select(df, -framework), booktabs = TRUE,
+      caption = "Chronological framework. Glørstad's (2010) divison of phases reflects the more traditional framework, to which Reitan (2016) has recently suggested considerable changes.",
+      col.names = NULL) %>%
 pack_rows(index = c("Glørstad (2010)" = 4, "Reitan (2016)" = 5))
 
 ```
@@ -939,12 +937,10 @@ caallcats <- CA(select(all_cats, -site, -mean_date, -artefact_count,
                 graph = FALSE)
 
 splt1 <- fviz_ca_col(caallcats, col.col = "contrib",
-             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE) +
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), repel = TRUE,
+             title = "A") +
   labs(colour = "Contribution to total inertia") +
-  ggtitle("Supplementary material") +
-  theme(legend.position = "bottom",
-        plot.title = element_text(size = 23, face = "bold",
-                                  family = "serif")) 
+  theme(legend.position = "bottom") 
 
 splt2 <- fviz_ca_row(caallcats, col.row = "black",
             fill = all_cats$mean_date / 1000, title = "B",
