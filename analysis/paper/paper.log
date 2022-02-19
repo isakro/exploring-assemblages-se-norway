@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  15 FEB 2022 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.10)  19 FEB 2022 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2474,11 +2474,11 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 959.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 959.
  ) 
 Here is how much of TeX's memory you used:
- 15638 strings out of 492982
- 223690 string characters out of 6134896
+ 15636 strings out of 492982
+ 223668 string characters out of 6134896
  348337 words of memory out of 5000000
  18544 multiletter control sequences out of 15000+600000
- 81592 words of font info for 156 fonts, out of 8000000 for 9000
+ 81503 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,11n,43p,2167b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
@@ -2490,7 +2490,7 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss8.pfb>
-Output written on paper.pdf (30 pages, 5865532 bytes).
+Output written on paper.pdf (30 pages, 5865013 bytes).
 PDF statistics:
  890 PDF objects out of 1000 (max. 8388607)
  640 compressed objects within 7 object streams

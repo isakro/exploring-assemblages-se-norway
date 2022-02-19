@@ -5,23 +5,23 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/isakro/exploring-assemblages-se-norway/master?urlpath=rstudio)
 
-<!-- This repository contains the data and code for the paper: -->
-<!-- > Authors, (YYYY). *Exploring the Composition of Lithic Assemblages in Mesolithic South-Eastern Norway*. Name of journal/book -->
-<!-- > <https://doi.org/xxx/xxx> -->
+This repository contains the data and code for the paper:
+
+> Roalkvam, Isak (2022). Exploring the Composition of Lithic Assemblages
+> in Mesolithic South-Eastern Norway. *Journal of Archaeological
+> Science: Reports* <https://doi.org/10.1016/j.jasrep.2022.103371>
 
 Pre-print is online here:
 
-> Roalkvam, Isak (2021). *Exploring the Composition of Lithic
-> Assemblages in Mesolithic South-Eastern Norway*. Accessed 07 Jan 2022.
+> Roalkvam, Isak (2022). *Exploring the Composition of Lithic
+> Assemblages in Mesolithic South-Eastern Norway*. Accessed 19 Feb 2022.
 > Online at <https://doi.org/10.31235/osf.io/cqaps>
-
-### How to cite
 
 Please cite this compendium as:
 
 > Roalkvam, Isak (2022). *Compendium of R code and data for Exploring
 > the Composition of Lithic Assemblages in Mesolithic South-Eastern
-> Norway*. Accessed 07 Jan 2022. Online at
+> Norway*. Accessed 19 Feb 2022. Online at
 > <https://doi.org/10.17605/osf.io/ehjfc>
 
 ## Contents

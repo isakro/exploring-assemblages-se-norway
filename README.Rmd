@@ -21,18 +21,16 @@ Title <- "Exploring the Composition of Lithic Assemblages in Mesolithic South-Ea
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/isakro/exploring-assemblages-se-norway/master?urlpath=rstudio)
 
-<!-- This repository contains the data and code for the paper: -->
+This repository contains the data and code for the paper:
 
-<!-- > Authors, (YYYY). *`r Title`*. Name of journal/book -->
-<!-- > <https://doi.org/xxx/xxx> -->
+> Roalkvam, Isak (2022). `r Title`. *Journal of Archaeological Science: Reports*
+> <https://doi.org/10.1016/j.jasrep.2022.103371>
 
 Pre-print is online here:
 
->  Roalkvam, Isak (2021). *`r Title`*. Accessed
+>  Roalkvam, Isak (2022). *`r Title`*. Accessed
 > `r format(Sys.Date(), "%d %b %Y")`. Online at
 > <https://doi.org/10.31235/osf.io/cqaps>
-
-### How to cite
 
 Please cite this compendium as:
 
