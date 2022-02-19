@@ -7,9 +7,11 @@
 
 This repository contains the data and code for the paper:
 
-> Roalkvam, Isak (2022). Exploring the Composition of Lithic Assemblages
-> in Mesolithic South-Eastern Norway. *Journal of Archaeological
-> Science: Reports* <https://doi.org/10.1016/j.jasrep.2022.103371>
+> Roalkvam, Isak <a href="https://orcid.org/0000-0001-6974-1374">
+> <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>
+> (2022). Exploring the Composition of Lithic Assemblages in Mesolithic
+> South-Eastern Norway. *Journal of Archaeological Science: Reports*
+> <https://doi.org/10.1016/j.jasrep.2022.103371>
 
 Pre-print is online here:
 
